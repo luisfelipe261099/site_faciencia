@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cursos de Extensão EAD FaCiencia - Aprimore seus conhecimentos com cursos de curta duração online. Certificação rápida e conteúdo de qualidade.">
+    <title>Cursos de Extensão EAD - FaCiencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9d359c;
+            --primary-dark: #7d287c;
+            --primary-light: #c965cc;
+            --secondary: #ffe925;
+            --dark: #333333;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --success: #28a745;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Base Styles */
+        body {
+            font-family: "Roboto", sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover, 
+        .btn-primary:focus {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(157, 53, 156, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background-color: #e6d020;
+            border-color: #e6d020;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 233, 37, 0.3);
+            color: var(--primary-dark);
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-primary:focus {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title.text-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: var(--primary-dark);
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .navbar-nav .nav-link:hover:before,
+        .navbar-nav .nav-link.active:before {
+            left: 15px;
+            right: 15px;
+            opacity: 1;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--secondary);
+        }
+
+        .dropdown-menu {
+            background-color: var(--primary-dark);
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+
+        /* Breadcrumbs */
+        .breadcrumb-section {
+            background-color: rgba(157, 53, 156, 0.05);
+            padding: 15px 0;
+        }
+
+        .breadcrumb {
+            margin-bottom: 0;
+        }
+
+        .breadcrumb-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: var(--gray);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 120px 0;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 14px;
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: both;
+        }
+
+        .hero-cta {
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Features Section */
+        .features-section {
+            background-color: var(--white);
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(157, 53, 156, 0.1);
+            border-radius: 50%;
+            margin-bottom: 25px;
+            font-size: 35px;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover .feature-icon {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+
+        .feature-box h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .feature-box p {
+            color: var(--gray);
+        }
+
+        /* Course Filter Section */
+        .filter-section {
+            background-color: var(--light);
+        }
+
+        .filter-container {
+            margin-bottom: 40px;
+        }
+
+        .filter-box {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .filter-title {
+            margin-bottom: 20px;
+            color: var(--dark);
+            font-size: 18px;
+        }
+
+        .filter-search {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .filter-search input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 16px;
+        }
+
+        .filter-search input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .filter-search button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-search button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .filter-category-title {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: var(--dark);
+        }
+
+        .filter-category {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .filter-category li {
+            margin-bottom: 10px;
+        }
+
+        .filter-category li a {
+            display: flex;
+            align-items: center;
+            color: var(--gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+        }
+
+        .filter-category li a:hover,
+        .filter-category li a.active {
+            color: var(--primary);
+        }
+
+        .filter-category li a i {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .filter-category li a span {
+            margin-left: auto;
+            background-color: rgba(157, 53, 156, 0.1);
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* Course Card */
+        .course-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .course-card:hover .course-image img {
+            transform: scale(1.1);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary);
+            color: var(--white);
+            font-size: 12px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .course-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .course-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+
+        .course-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .course-features li i {
+            margin-right: 10px;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .course-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+        }
+
+        .course-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .course-price .old-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 14px;
+            font-weight: 400;
+            margin-right: 10px;
+        }
+
+        /* How It Works Section */
+        .how-it-works-section {
+            background-color: var(--white);
+        }
+
+        .step-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(157, 53, 156, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .step-card h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .step-card p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--light);
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(157, 53, 156, 0.1);
+            font-family: 'Georgia', serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 15px;
+            font-weight: 700;
+        }
+
+        .testimonial-info h5 {
+            margin: 0 0 5px;
+            font-size: 16px;
+        }
+
+        .testimonial-info p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .accordion-button {
+            padding: 20px 25px;
+            font-weight: 600;
+            font-family: "Montserrat", sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: var(--primary);
+            background-color: rgba(157, 53, 156, 0.05);
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(157, 53, 156, 0.1);
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%239d359c'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        .accordion-body {
+            padding: 20px 25px;
+            font-size: 15px;
+            color: var(--gray);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('pattern.png');
+            opacity: 0.1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background-color: var(--white);
+            color: var(--primary);
+            font-weight: 700;
+            padding: 15px 40px;
+            font-size: 16px;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary);
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+
+        .footer-logo img {
+            height: 80px;
+        }
+
+        .footer-info p {
+            margin-bottom: 10px;
+        }
+
+        .footer-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .footer h5 {
+            color: var(--white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer h5:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* Back-to-top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+            color: var(--white);
+        }
+
+        /* Application Form */
+        .course-modal .modal-content {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: none;
+        }
+
+        .course-modal .modal-header {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 20px 30px;
+        }
+
+        .course-modal .modal-header .btn-close {
+            color: var(--white);
+            opacity: 1;
+        }
+
+        .course-modal .modal-body {
+            padding: 30px;
+        }
+
+        .course-modal .form-control {
+            height: 50px;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .course-modal .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary);
+        }
+
+        .course-modal textarea.form-control {
+            height: 120px;
+            resize: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .hero-section {
+                padding: 100px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .filter-box {
+                margin-bottom: 30px;
+            }
+
+            .cta-title {
+                font-size: 28px;
+            }
+
+            .cta-text {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+
+            .step-card, .testimonial-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="home">
+            <img src="logo.png" alt="FaCiencia">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="home">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Institucional</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quem-somos">Quem Somos</a></li>
+                  <li><a class="dropdown-item" href="sede">Sede FaCiencia</a></li>
+                  <li><a class="dropdown-item" href="infra">Infraestrutura</a></li>
+                  <li><a class="dropdown-item" href="valida">Validador Diploma</a></li>
+                  <li><a class="dropdown-item" href="doc-institucional">Doc Institucional</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Cursos</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="tecnologo">Tecnólogo</a></li>
+                  <li><a class="dropdown-item" href="extensao">Extensão</a></li>
+                  <li><a class="dropdown-item" href="pos-graduacao">Pós-Graduação</a></li>
+                </ul>
+              </li>
+              <!-- Parceria -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+                  <li><a class="dropdown-item" href="polo-apoio">Polo de Apoio</a></li>
+                  <li><a class="dropdown-item" href="solicitacao">Solicitação do Polo</a></li>
+                </ul>
+              </li>
+              <!-- Biblioteca -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+                  <li><a class="dropdown-item" href="biblioteca">Biblioteca</a></li>
+                  <li><a class="dropdown-item" href="revista">Revista</a></li>
+                  <li><a class="dropdown-item" href="editora">Editora</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Acesso</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://ava.faciencia.edu.br/login/index.php">AVA</a></li>
+                  <li><a class="dropdown-item" href="https://lfmtecnologia.com/reinandus/loginaluno.php">Portal do Aluno</a></li>
+                </ul>
+              </li>
+              <!-- Atendimento -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+                  <li><a class="dropdown-item" href="ouvidoria">Ouvidoria</a></li>
+                  <li><a class="dropdown-item" href="contato">Contato</a></li>
+                  <li><a class="dropdown-item" href="enviar-documento">Enviar Documento</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="indicacao.php">Indique um Amigo</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-secondary ms-lg-3" href="https://wa.link/vfs21y" target="_blank">
+                  <i class="fas fa-user-plus me-2"></i>Inscreva-se
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-section" style="margin-top: 100px;">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="home">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Cursos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Extensão</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <span class="hero-badge">CURSOS DE CURTA DURAÇÃO</span>
+            <h1 data-aos="fade-up">Cursos de Extensão EAD</h1>
+            <p data-aos="fade-up" data-aos-delay="100">
+                Aprimore suas habilidades profissionais com cursos online de curta duração, 
+                focados em conhecimentos práticos para o mercado de trabalho.
+            </p>
+            <div class="hero-cta">
+                <a href="#courses" class="btn btn-secondary">Ver Todos os Cursos</a>
+                <a href="#how-it-works" class="btn btn-outline-light ms-3">Como Funciona</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Por que escolher nossos cursos de extensão?</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Curta Duração</h3>
+                        <p>Cursos rápidos que podem ser concluídos em poucas semanas, permitindo aplicação imediata dos conhecimentos.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Certificação</h3>
+                        <p>Receba certificado reconhecido assim que concluir o curso, agregando valor ao seu currículo profissional.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>100% Online</h3>
+                        <p>Estude quando e onde quiser através de nossa plataforma de ensino a distância, compatível com todos os dispositivos.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Investimento Acessível</h3>
+                        <p>Preços acessíveis e opções de parcelamento, permitindo atualização profissional sem grandes investimentos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="filter-section" id="courses">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Nossos Cursos de Extensão</h2>
+            <div class="row">
+                <!-- Filter Sidebar -->
+                <div class="col-lg-3" data-aos="fade-up">
+                    <div class="filter-container">
+                        <div class="filter-box">
+                            <h5 class="filter-title">Buscar Cursos</h5>
+                            <div class="filter-search">
+                                <input type="text" placeholder="Digite o que procura..." id="courseSearch">
+                                <button type="button"><i class="fas fa-search"></i></button>
+                            </div>
+                            <h5 class="filter-category-title">Categorias</h5>
+                            <ul class="filter-category">
+                                <li>
+                                    <a href="#" class="active" data-category="all">
+                                        <i class="fas fa-th"></i> Todos os Cursos
+                                        <span>9</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-category="excel">
+                                        <i class="fas fa-table"></i> Excel
+                                        <span>3</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-category="gestao">
+                                        <i class="fas fa-briefcase"></i> Gestão
+                                        <span>4</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-category="marketing">
+                                        <i class="fas fa-bullhorn"></i> Marketing
+                                        <span>1</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-category="vendas">
+                                        <i class="fas fa-handshake"></i> Vendas
+                                        <span>1</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course List -->
+                <div class="col-lg-9">
+                    <div class="row" id="courseList">
+                        <!-- Course 1 -->
+                        <div class="col-md-6 col-lg-4 course-item" data-category="excel" data-aos="fade-up" data-aos-delay="100">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://faciencia.edu.br/antigo/wp-content/uploads/2023/12/Image-by-Rubaitul-Azad-scaled-e1702584333911-300x300.webp" alt="Excel Avançado">
+                                    <span class="course-badge">Excel</span>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Excel Avançado</h3>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-clock"></i> Duração: 40 horas</li>
+                                        <li><i class="fas fa-certificate"></i> Certificado incluso</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Início imediato</li>
+                                    </ul>
+                                    <p class="course-description">
+                                        Aprenda a dominar ferramentas avançadas do Excel para otimizar suas planilhas e aumentar sua produtividade. Funções complexas, tabelas dinâmicas e macros.
+                                    </p>
+                                    <div class="course-footer">
+                                        <div class="course-price">
+                                            <span class="old-price">R$ 299,00</span>
+                                            R$ 197,00
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#courseModal" data-course="Excel Avançado">Inscreva-se</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course 2 -->
+                        <div class="col-md-6 col-lg-4 course-item" data-category="excel" data-aos="fade-up" data-aos-delay="200">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://faciencia.edu.br/antigo/wp-content/uploads/2023/12/Image-by-Rubaitul-Azad-scaled-e1702584333911-300x300.webp" alt="Excel Básico">
+                                    <span class="course-badge">Excel</span>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Excel Básico</h3>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-clock"></i> Duração: 20 horas</li>
+                                        <li><i class="fas fa-certificate"></i> Certificado incluso</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Início imediato</li>
+                                    </ul>
+                                    <p class="course-description">
+                                        Curso ideal para quem está começando e quer aprender a utilizar o Excel no dia a dia de forma eficaz. Formatações, fórmulas básicas e gráficos.
+                                    </p>
+                                    <div class="course-footer">
+                                        <div class="course-price">
+                                            <span class="old-price">R$ 199,00</span>
+                                            R$ 97,00
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#courseModal" data-course="Excel Básico">Inscreva-se</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course 3 -->
+                        <div class="col-md-6 col-lg-4 course-item" data-category="excel" data-aos="fade-up" data-aos-delay="300">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://faciencia.edu.br/antigo/wp-content/uploads/2023/12/Image-by-Rubaitul-Azad-scaled-e1702584333911-300x300.webp" alt="Excel Intermediário">
+                                    <span class="course-badge">Excel</span>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Excel Intermediário</h3>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-clock"></i> Duração: 30 horas</li>
+                                        <li><i class="fas fa-certificate"></i> Certificado incluso</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Início imediato</li>
+                                    </ul>
+                                    <p class="course-description">
+                                        Desenvolva suas habilidades intermediárias em Excel e aprenda a criar planilhas mais complexas, usar funções lógicas e criar dashboards básicos.
+                                    </p>
+                                    <div class="course-footer">
+                                        <div class="course-price">
+                                            <span class="old-price">R$ 249,00</span>
+                                            R$ 147,00
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#courseModal" data-course="Excel Intermediário">Inscreva-se</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course 4 -->
+                        <div class="col-md-6 col-lg-4 course-item" data-category="gestao" data-aos="fade-up" data-aos-delay="100">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/12/person-holding-white-POS-machine-scaled-e1702585475999-300x300.jpg.webp" alt="Gestão de Compras">
+                                    <span class="course-badge">Gestão</span>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Gestão de Compras</h3>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-clock"></i> Duração: 40 horas</li>
+                                        <li><i class="fas fa-certificate"></i> Certificado incluso</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Início imediato</li>
+                                    </ul>
+                                    <p class="course-description">
+                                        Aprenda técnicas essenciais para gerir compras e negociações eficazes em qualquer empresa. Processo de compras, seleção de fornecedores e controle.
+                                    </p>
+                                    <div class="course-footer">
+                                        <div class="course-price">
+                                            <span class="old-price">R$ 349,00</span>
+                                            R$ 197,00
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#courseModal" data-course="Gestão de Compras">Inscreva-se</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course 5 -->
+                        <div class="col-md-6 col-lg-4 course-item" data-category="gestao" data-aos="fade-up" data-aos-delay="200">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/12/structure-transport-facade-shelf-stadium-package-1070638-pxhere.com_-e1702585355737-300x300.jpg.webp" alt="Gestão de Estoque">
+                                    <span class="course-badge">Gestão</span>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Gestão de Estoque</h3>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-clock"></i> Duração: 40 horas</li>
+                                        <li><i class="fas fa-certificate"></i> Certificado incluso</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Início imediato</li>
+                                    </ul>
+                                    <p class="course-description">
+                                        Saiba como organizar e gerenciar estoques para evitar desperdícios e garantir a eficiência. Controle de inventário, giro de estoque e custo de armazenagem.
+                                    </p>
+                                    <div class="course-footer">
+                                        <div class="course-price">
+                                            <span class="old-price">R$ 349,00</span>
+                                            R$ 197,00
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#courseModal" data-course="Gestão de Estoque">Inscreva-se</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course 6 -->
+                        <div class="col-md-6 col-lg-4 course-item" data-category="gestao" data-aos="fade-up" data-aos-delay="300">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://faciencia.edu.br/antigo/wp-content/uploads/2023/12/Mulher-de-negocios-com-laptop-scaled-e1702583562161-300x300.webp" alt="Gestão Empresarial">
+                                    <span class="course-badge">Gestão</span>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Gestão Empresarial</h3>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-clock"></i> Duração: 60 horas</li>
+                                        <li><i class="fas fa-certificate"></i> Certificado incluso</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Início imediato</li>
+                                    </ul>
+                                    <p class="course-description">
+                                        Desenvolva competências em gestão e liderança para administrar empresas com eficiência. Planejamento estratégico, gestão de equipes e indicadores.
+                                    </p>
+                                    <div class="course-footer">
+                                        <div class="course-price">
+                                            <span class="old-price">R$ 499,00</span>
+                                            R$ 297,00
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#courseModal" data-course="Gestão Empresarial">Inscreva-se</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course 7 -->
+                        <div class="col-md-6 col-lg-4 course-item" data-category="marketing" data-aos="fade-up" data-aos-delay="100">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://faciencia.edu.br/antigo/wp-content/uploads/2023/12/Image-by-Rodion-Kutsaiev-scaled-300x300.webp" alt="Marketing Digital">
+                                    <span class="course-badge">Marketing</span>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Marketing Digital</h3>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-clock"></i> Duração: 50 horas</li>
+                                        <li><i class="fas fa-certificate"></i> Certificado incluso</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Início imediato</li>
+                                    </ul>
+                                    <p class="course-description">
+                                        Aprenda estratégias de marketing digital para promover produtos e serviços na internet. Redes sociais, SEO, tráfego pago e análise de resultados.
+                                    </p>
+                                    <div class="course-footer">
+                                        <div class="course-price">
+                                            <span class="old-price">R$ 399,00</span>
+                                            R$ 247,00
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#courseModal" data-course="Marketing Digital">Inscreva-se</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course 8 -->
+                        <div class="col-md-6 col-lg-4 course-item" data-category="gestao" data-aos="fade-up" data-aos-delay="200">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/12/agent-agreement-boss-brainstorming-business-businessman-1442697-pxhere.com_-e1702585915924-300x300.jpg.webp" alt="Técnicas de Negociação em Compras">
+                                    <span class="course-badge">Gestão</span>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Negociação em Compras</h3>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-clock"></i> Duração: 30 horas</li>
+                                        <li><i class="fas fa-certificate"></i> Certificado incluso</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Início imediato</li>
+                                    </ul>
+                                    <p class="course-description">
+                                        Domine as técnicas de negociação para garantir as melhores condições nas compras. Estratégias, táticas e psicologia da negociação aplicada.
+                                    </p>
+                                    <div class="course-footer">
+                                        <div class="course-price">
+                                            <span class="old-price">R$ 299,00</span>
+                                            R$ 177,00
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#courseModal" data-course="Negociação em Compras">Inscreva-se</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course 9 -->
+                        <div class="col-md-6 col-lg-4 course-item" data-category="vendas" data-aos="fade-up" data-aos-delay="300">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://faciencia.edu.br/antigo/wp-content/uploads/2023/12/Image-by-Markus-Spiske-scaled-e1702586035877-300x300.webp" alt="Técnicas de Vendas">
+                                    <span class="course-badge">Vendas</span>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Técnicas de Vendas</h3>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-clock"></i> Duração: 40 horas</li>
+                                        <li><i class="fas fa-certificate"></i> Certificado incluso</li>
+                                        <li><i class="fas fa-calendar-alt"></i> Início imediato</li>
+                                    </ul>
+                                    <p class="course-description">
+                                        Aprenda como vender mais e melhor, utilizando técnicas de venda eficazes. Abordagem, argumentação, objeções e fechamento de vendas.
+                                    </p>
+                                    <div class="course-footer">
+                                        <div class="course-price">
+                                            <span class="old-price">R$ 349,00</span>
+                                            R$ 197,00
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#courseModal" data-course="Técnicas de Vendas">Inscreva-se</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Como Funciona</h2>
+            <div class="row">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Escolha o Curso</h4>
+                        <p>Navegue pelo nosso catálogo e selecione o curso que melhor atende às suas necessidades profissionais.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h4>Realize a Inscrição</h4>
+                        <p>Efetue o pagamento de forma segura através de cartão de crédito, boleto bancário ou PIX.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h4>Acesse o Conteúdo</h4>
+                        <p>Após a confirmação do pagamento, você receberá acesso imediato ao ambiente virtual de aprendizagem.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4>Receba o Certificado</h4>
+                        <p>Ao concluir o curso e ser aprovado nas avaliações, seu certificado ficará disponível para download.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">O que dizem nossos alunos</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "O curso de Excel Avançado superou minhas expectativas. O conteúdo é prático e atual, e consegui aplicar o conhecimento imediatamente no meu trabalho. Recomendo!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">M</div>
+                            <div class="testimonial-info">
+                                <h5>Márcia Oliveira</h5>
+                                <p>Analista Financeiro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "A flexibilidade do curso online me permitiu conciliar os estudos com minha rotina. O conteúdo de Gestão de Compras é excelente e os professores são muito atenciosos."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">R</div>
+                            <div class="testimonial-info">
+                                <h5>Ricardo Santos</h5>
+                                <p>Coordenador de Suprimentos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "O curso de Marketing Digital da FaCiencia me ajudou a compreender como divulgar meu negócio nas redes sociais. O certificado já me abriu várias portas no mercado!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">C</div>
+                            <div class="testimonial-info">
+                                <h5>Camila Ferreira</h5>
+                                <p>Empreendedora</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Perguntas Frequentes</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    O que são cursos de extensão?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Cursos de extensão são programas educacionais de curta duração que visam complementar a formação acadêmica ou profissional. Eles são focados em habilidades específicas e têm como objetivo atualizar, aprofundar conhecimentos ou desenvolver novas competências em determinada área.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Qual a validade do certificado?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Os certificados emitidos pela FaCiencia têm validade em todo o território nacional e são reconhecidos pelo mercado de trabalho. Eles são válidos para horas complementares em cursos de graduação, para comprovação de conhecimentos específicos em processos seletivos e para enriquecimento do currículo profissional.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Como funcionam as aulas?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    As aulas são 100% online e ficam disponíveis 24 horas por dia no Ambiente Virtual de Aprendizagem (AVA). O conteúdo é composto por videoaulas, materiais complementares, exercícios práticos e avaliações. Você pode estudar no seu próprio ritmo, dentro do período de acesso ao curso.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Quanto tempo tenho para concluir o curso?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Após a confirmação do pagamento, você terá acesso ao curso por 3 meses. Este período é suficiente para concluir o conteúdo programático com tranquilidade, mesmo para quem possui uma rotina agitada. Caso necessite de mais tempo, é possível solicitar uma prorrogação do acesso.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Existe suporte aos alunos durante o curso?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim! Todos os nossos cursos contam com suporte técnico e pedagógico. Você pode entrar em contato através do fórum de dúvidas disponível no Ambiente Virtual de Aprendizagem ou por e-mail. Nossa equipe está disponível para auxiliar em questões relacionadas ao conteúdo ou ao uso da plataforma.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2 class="cta-title">Impulsione sua carreira hoje mesmo!</h2>
+                <p class="cta-text">Invista em sua formação profissional com os cursos de extensão da FaCiencia. Conhecimento prático, certificação reconhecida e preços acessíveis.</p>
+                <a href="#courses" class="btn cta-btn">Conheça Nossos Cursos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="FaCiencia">
+                    </div>
+                    <div class="footer-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Rua Visconde de Nacar, 1510 – 10° Andar – Conj. 1003 – Centro – Curitiba/PR – 80.410-201</p>
+                        <p><i class="fas fa-phone"></i> (41) 9 9256-2500</p>
+                        <p><i class="fas fa-envelope"></i> contato@faciencia.edu.br</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h5>Institucional</h5>
+                    <ul class="footer-links">
+                        <li><a href="quem-somos">Quem Somos</a></li>
+                        <li><a href="sede">Sede FaCiencia</a></li>
+                        <li><a href="infra">Infraestrutura</a></li>
+                        <li><a href="doc-institucional">Documentos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h5>Cursos</h5>
+                    <ul class="footer-links">
+                        <li><a href="tecnologo">Tecnólogo</a></li>
+                        <li><a href="extensao">Extensão</a></li>
+                        <li><a href="pos-graduacao">Pós-Graduação</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h5>Links Rápidos</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://ava.faciencia.edu.br/">AVA</a></li>
+                        <li><a href="https://portal.faciencia.edu.br/">Portal do Aluno</a></li>
+                        <li><a href="biblioteca">Biblioteca</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h5>Atendimento</h5>
+                    <ul class="footer-links">
+                        <li><a href="ouvidoria">Ouvidoria</a></li>
+                        <li><a href="contato">Contato</a></li>
+                        <li><a href="enviar-documento">Enviar Documento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <p>&copy; 2025 FaCiencia. Todos os direitos reservados.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="https://emec.mec.gov.br/emec/consulta-cadastro/detalhamento/d96957f455f6405d14c6542552b0f6eb/MjQ2Nzc=" target="_blank">
+                            <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/Mec-QRcode.png.webp" alt="QR Code MEC" height="60">
+                        </a>
+                        <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/ULTIMO-SELO.png.webp" alt="Selo MEC" height="60" class="ms-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Course Modal -->
+    <div class="modal fade course-modal" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="courseModalLabel">Inscrever-se no Curso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="courseForm">
+                        <input type="hidden" id="courseName" name="courseName">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefone/WhatsApp</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="payment" class="form-label">Forma de Pagamento</label>
+                            <select class="form-control" id="payment" name="payment" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="credit_card">Cartão de Crédito</option>
+                                <option value="boleto">Boleto Bancário</option>
+                                <option value="pix">PIX</option>
+                            </select>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Confirmar Inscrição</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back-to-top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom Scripts -->
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar Scroll Effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Course Modal
+        const courseModal = document.getElementById('courseModal');
+        if (courseModal) {
+            courseModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const courseName = button.getAttribute('data-course');
+                const modalInput = document.getElementById('courseName');
+                if (modalInput) {
+                    modalInput.value = courseName;
+                }
+                const modalTitle = this.querySelector('.modal-title');
+                if (modalTitle) {
+                    modalTitle.textContent = `Inscrever-se no Curso: ${courseName}`;
+                }
+            });
+        }
+
+        // Course Form Submission
+        const courseForm = document.getElementById('courseForm');
+        if (courseForm) {
+            courseForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Inscrição enviada com sucesso! Em breve entraremos em contato para finalizar seu cadastro.');
+                const modal = bootstrap.Modal.getInstance(courseModal);
+                if (modal) {
+                    modal.hide();
+                }
+                courseForm.reset();
+            });
+        }
+
+        // Course Search and Filter
+        const courseSearch = document.getElementById('courseSearch');
+        const courseItems = document.querySelectorAll('.course-item');
+        const categoryLinks = document.querySelectorAll('.filter-category a');
+
+        if (courseSearch) {
+            courseSearch.addEventListener('keyup', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                courseItems.forEach(item => {
+                    const title = item.querySelector('.course-title').textContent.toLowerCase();
+                    const description = item.querySelector('.course-description').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        if (categoryLinks.length > 0) {
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    categoryLinks.forEach(l => l.classList.remove('active'));
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    courseItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+</html>

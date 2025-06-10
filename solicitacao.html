@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Polo - FaCiencia</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #9d359c;
+            --primary-dark: #7d287c;
+            --primary-light: #c965cc;
+            --secondary: #ffe925;
+            --dark: #333333;
+            --light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 80px; /* Compensar navbar fixa */
+        }
+
+       
+    /* ---- Navbar ---- */
+    .navbar {
+      padding: 10px 0;
+      background-color: var(--primary);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      padding: 5px 0;
+      background-color: var(--primary-dark);
+    }
+
+    .navbar-brand img {
+      height: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled .navbar-brand img {
+      height: 40px;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--white);
+      font-weight: 500;
+      padding: 8px 12px;
+      position: relative;
+      font-size: 15px;
+    }
+
+    .navbar-nav .nav-link:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      right: 50%;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .navbar-nav .nav-link:hover:before,
+    .navbar-nav .nav-link.active:before {
+      left: 12px;
+      right: 12px;
+      opacity: 1;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--secondary);
+    }
+
+    .dropdown-menu {
+      background-color: var(--primary-dark);
+      border: none;
+      border-radius: var(--border-radius);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .dropdown-item {
+      color: var(--white);
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-size: 15px;
+    }
+
+    .dropdown-item:hover, 
+    .dropdown-item:focus {
+      background-color: var(--primary-light);
+      color: var(--white);
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+      margin-right: 5px;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      width: 24px;
+      height: 17px;
+      background-image: none;
+      position: relative;
+      border-bottom: 2px solid var(--white);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon:after,
+    .navbar-toggler-icon:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 2px;
+      background-color: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon:after {
+      top: 8px;
+    }
+
+    .navbar-toggler-icon:before {
+      top: 16px;
+    }
+    /* Mobile menu improvements */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background-color: var(--primary-dark);
+        padding: 15px;
+        border-radius: var(--border-radius);
+        margin-top: 10px;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      
+      .navbar-nav {
+        padding: 10px 0;
+      }
+      
+      .navbar-nav .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+      }
+      
+      .navbar-nav .nav-link {
+        padding: 12px 15px;
+        font-size: 16px;
+      }
+      
+      .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0 0 10px 10px;
+        margin: 0;
+        border-left: 2px solid var(--secondary);
+        position: static;
+        float: none;
+        width: 100%;
+        display: none;
+      }
+      
+      .dropdown-menu.show {
+        display: block;
+      }
+      
+      .dropdown-item {
+        padding: 10px 15px;
+        white-space: normal;
+      }
+      
+      .dropdown-toggle::after {
+        float: right;
+        margin-top: 8px;
+      }
+      
+      .btn-inscreva {
+        margin: 10px 15px !important;
+        display: block;
+        text-align: center;
+      }
+    }
+
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: -50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .btn-submit {
+            background-color: var(--primary);
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1100;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .floating-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .floating-btn.whatsapp {
+            background-color: #25D366;
+        }
+
+        .floating-btn.whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        /* Estilos para mensagens de erro */
+        .error-message {
+            color: red;
+            font-size: 0.85rem;
+            margin-top: -15px;
+            margin-bottom: 15px;
+        }
+/* ---- Footer ---- */
+.footer {
+      background-color: var(--primary-dark);
+      color: var(--white);
+      padding: 60px 0 30px;
+    }
+
+    .footer-logo {
+      margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+      height: 70px;
+    }
+
+    .footer-info p {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      font-size: 0.9rem;
+    }
+
+    .footer-info i {
+      margin-right: 10px;
+      color: var(--secondary);
+      margin-top: 4px;
+    }
+
+    .footer h5 {
+      color: var(--white);
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .footer h5:after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--secondary);
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary);
+      transform: translateX(5px);
+    }
+        /* Modal de carregamento */
+        #loadingModal .modal-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 40px 0 20px;
+            }
+
+            .form-container {
+                margin-top: -30px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<br>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="home">
+          <img src="logo.png" alt="FaCiencia">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-label="Menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="quem-somos">Quem Somos</a></li>
+                <li><a class="dropdown-item" href="sede">Sede FaCiencia</a></li>
+                <li><a class="dropdown-item" href="infra">Infraestrutura</a></li>
+                <li><a class="dropdown-item" href="valida">Validador Diploma</a></li>
+                <li><a class="dropdown-item" href="doc-institucional">Doc Institucional</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="tecnologo">Tecnólogo</a></li>
+                <li><a class="dropdown-item" href="extensao">Extensão</a></li>
+                <li><a class="dropdown-item" href="pos-graduacao">Pós-Graduação</a></li>
+              </ul>
+            </li>
+            <!-- Parceria -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button" data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+                <li><a class="dropdown-item" href="polo-apoio">Polo de Apoio</a></li>
+                <li><a class="dropdown-item" href="solicitacao">Solicitação do Polo</a></li>
+              </ul>
+            </li>
+            <!-- Biblioteca -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button" data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+                <li><a class="dropdown-item" href="biblioteca">Biblioteca</a></li>
+                <li><a class="dropdown-item" href="revista">Revista</a></li>
+                <li><a class="dropdown-item" href="editora">Editora</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acesso</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://ava.faciencia.edu.br/login/index.php">AVA</a></li>
+                <li><a class="dropdown-item" href="https://lfmtecnologia.com/reinandus/loginaluno.php">Portal do Aluno</a></li>
+              </ul>
+            </li>
+            <!-- Atendimento -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button" data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+                <li><a class="dropdown-item" href="ouvidoria">Ouvidoria</a></li>
+                <li><a class="dropdown-item" href="contato">Contato</a></li>
+                <li><a class="dropdown-item" href="enviar-documento">Enviar Documento</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="indicacao.php">Indique um Amigo</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-secondary btn-inscreva" href="https://wa.link/vfs21y" target="_blank">
+                <i class="fas fa-user-plus me-2"></i>Inscreva-se
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Solicitação de Polo</h1>
+            <p>Preencha o formulário abaixo para se tornar um polo de apoio FaCiencia</p>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-container">
+                    <form id="poloForm" action="processar_solicitacao.php" method="POST" novalidate>
+                        <!-- reCAPTCHA -->
+                        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                        
+                        <!-- Honeypot campo oculto -->
+                        <div style="display:none;">
+                            <input type="text" name="campoOculto" id="campoOculto">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="nome_empresa">Nome da Empresa</label>
+                                <input type="text" class="form-control" id="nome_empresa" name="nome_empresa" required>
+                                <div class="error-message" id="nome_empresa_error"></div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="cnpj">CNPJ</label>
+                                <input type="text" class="form-control" id="cnpj" name="cnpj" required>
+                                <div class="error-message" id="cnpj_error"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="nome_solicitante">Nome do Solicitante</label>
+                                <input type="text" class="form-control" id="nome_solicitante" name="nome_solicitante" required>
+                                <div class="error-message" id="nome_solicitante_error"></div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" class="form-control" id="telefone" name="telefone" required>
+                                <div class="error-message" id="telefone_error"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="error-message" id="email_error"></div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="link_planilha">Link da Planilha</label>
+                                <div class="input-group">
+                                    <input type="url" class="form-control" id="link_planilha" name="link_planilha" required>
+                                    <button class="btn btn-secondary" type="button" id="baixar_planilha">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                                <div class="error-message" id="link_planilha_error"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="tipo_solicitacao">Tipo de Solicitação</label>
+                                <select class="form-control" id="tipo_solicitacao" name="tipo_solicitacao" required>
+                                    <option value="">Selecione</option>
+                                    <option value="declaracao">Declaração</option>
+                                    
+                                    <option value="certificado">Certificado</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                                <div class="error-message" id="tipo_solicitacao_error"></div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="quantidade">Quantidade</label>
+                                <input type="number" class="form-control" id="quantidade" name="quantidade" min="1" required>
+                                <div class="error-message" id="quantidade_error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="observacao">Observações (Opcional)</label>
+                            <textarea class="form-control" id="observacao" name="observacao" rows="4"></textarea>
+                        </div>
+
+                        <!-- reCAPTCHA Container -->
+                        <div class="recaptcha-container mb-3 text-center">
+                            <div class="g-recaptcha" data-sitekey="6LeNe7YqAAAAACJTgf5KjjV2AS6CEZpt2E1TYz3d"></div>
+                            <div class="error-message" id="recaptcha_error"></div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-submit btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Enviar Solicitação
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<br></br>
+<br></br>
+<br></br>
+    <!-- Loading Modal -->
+    <div class="modal fade" id="loadingModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <p class="mt-3">Enviando solicitação. Por favor, aguarde...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <i class="fas fa-check-circle text-success fa-4x mb-3"></i>
+                    <h4>Solicitação Enviada com Sucesso!</h4>
+                    <p id="protocolText" class="mb-3"></p>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.link/vfs21y" class="floating-btn whatsapp" target="_blank" title="Fale Conosco">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="floating-btn" id="backToTop" title="Voltar ao Topo">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-logo">
+            <img src="logo.png" alt="FaCiencia">
+          </div>
+          <div class="footer-info">
+            <p><i class="fas fa-map-marker-alt"></i> Rua Visconde de Nacar, 1510 – 10° Andar – Conj. 1003 – Centro – Curitiba/PR</p>
+            <p><i class="fas fa-phone"></i> (41) 9 9256-2500</p>
+            <p><i class="fas fa-envelope"></i> contato@faciencia.edu.br</p>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
+          <h5>Institucional</h5>
+          <ul class="footer-links">
+            <li><a href="quem-somos">Quem Somos</a></li>
+            <li><a href="sede">Nossa Sede</a></li>
+            <li><a href="infra">Infraestrutura</a></li>
+            <li><a href="doc-institucional">Documentos</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
+          <h5>Cursos</h5>
+          <ul class="footer-links">
+            <li><a href="tecnologo">Tecnólogo</a></li>
+            <li><a href="extensao">Extensão</a></li>
+            <li><a href="pos-graduacao">Pós-Graduação</a></li>
+            <li><a href="vestibular">Vestibular</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
+          <h5>Links Rápidos</h5>
+          <ul class="footer-links">
+            <li><a href="https://ava.faciencia.edu.br/login/index.php">AVA</a></li>
+            <li><a href="https://lfmtecnologia.com/reinandus/loginaluno.php">Portal</a></li>
+            <li><a href="biblioteca">Biblioteca</a></li>
+            <li><a href="contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
+          <h5>Atendimento</h5>
+          <ul class="footer-links">
+            <li><a href="ouvidoria">Ouvidoria</a></li>
+            <li><a href="contato">Contato</a></li>
+            <li><a href="enviar-documento">Documentos</a></li>
+            <li><a href="https://wa.link/vfs21y">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <p>&copy; 2025 FaCiencia. Todos os direitos reservados.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="https://emec.mec.gov.br/emec/consulta-cadastro/detalhamento/d96957f455f6405d14c6542552b0f6eb/MjQ2Nzc=" target="_blank">
+              <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/Mec-QRcode.png.webp" alt="QR Code MEC" height="50">
+            </a>
+            <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/ULTIMO-SELO.png.webp" alt="Selo MEC" height="50" class="ms-2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script>
+        // Máscara para CNPJ
+        function maskCNPJ(value) {
+            value = value.replace(/\D/g, '');
+            value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+            value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+            value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+            value = value.replace(/\/(\d{4})(\d)/, '/$1-$2');
+            return value;
+        }
+
+        // Máscara para Telefone
+        function maskPhone(value) {
+            value = value.replace(/\D/g, '');
+            value = value.replace(/^(\d{2})(\d)/, '($1) $2');
+            value = value.replace(/(\d{4})(\d)/, '$1-$2');
+            return value;
+        }
+
+        // Validação de Email
+        function isValidEmail(email) {
+            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // Validação de CNPJ
+        function isValidCNPJ(cnpj) {
+            // Remove caracteres não numéricos
+            cnpj = cnpj.replace(/[^\d]/g, '');
+            
+            // Verifica se tem 14 dígitos
+            if (cnpj.length !== 14) return false;
+            
+            // Verifica se todos os dígitos são iguais
+            if (/^(\d)\1+$/.test(cnpj)) return false;
+            
+            // Calcula os dígitos verificadores
+            let soma = 0;
+            let peso = 2;
+            
+            // Primeiro dígito verificador
+            for (let i = 11; i >= 0; i--) {
+                soma += parseInt(cnpj.charAt(i)) * peso;
+                peso = peso === 9 ? 2 : peso + 1;
+            }
+            
+            let resto = soma % 11;
+            let digitoVerificador1 = resto < 2 ? 0 : 11 - resto;
+            
+            if (parseInt(cnpj.charAt(12)) !== digitoVerificador1) return false;
+            
+            // Segundo dígito verificador
+            soma = 0;
+            peso = 2;
+            
+            for (let i = 12; i >= 0; i--) {
+                soma += parseInt(cnpj.charAt(i)) * peso;
+                peso = peso === 9 ? 2 : peso + 1;
+            }
+            
+            resto = soma % 11;
+            let digitoVerificador2 = resto < 2 ? 0 : 11 - resto;
+            
+            return parseInt(cnpj.charAt(13)) === digitoVerificador2;
+        }
+
+        // Gerar número de protocolo
+        function generateProtocolNumber() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const random = Math.floor(Math.random() * 90000) + 10000;
+            return `POLO-${year}${month}${day}-${random}`;
+        }
+
+        // Limpar mensagens de erro
+        function clearErrorMessages() {
+            const errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(el => el.textContent = '');
+        }
+
+        // Validar formulário
+        function validateForm() {
+            clearErrorMessages();
+            let isValid = true;
+
+            // Validar Nome da Empresa
+            const nomeEmpresa = document.getElementById('nome_empresa');
+            if (!nomeEmpresa.value.trim()) {
+                document.getElementById('nome_empresa_error').textContent = 'Nome da empresa é obrigatório';
+                isValid = false;
+            }
+
+            // Validar CNPJ
+            const cnpj = document.getElementById('cnpj');
+            const cnpjValue = cnpj.value.replace(/[^\d]/g, '');
+            if (!cnpjValue) {
+                document.getElementById('cnpj_error').textContent = 'CNPJ é obrigatório';
+                isValid = false;
+            } else if (!isValidCNPJ(cnpjValue)) {
+                document.getElementById('cnpj_error').textContent = 'CNPJ inválido';
+                isValid = false;
+            }
+
+            // Validar Nome do Solicitante
+            const nomeSolicitante = document.getElementById('nome_solicitante');
+            if (!nomeSolicitante.value.trim()) {
+                document.getElementById('nome_solicitante_error').textContent = 'Nome do solicitante é obrigatório';
+                isValid = false;
+            }
+
+            // Validar Telefone
+            const telefone = document.getElementById('telefone');
+            const telefoneValue = telefone.value.replace(/[^\d]/g, '');
+            if (!telefoneValue) {
+                document.getElementById('telefone_error').textContent = 'Telefone é obrigatório';
+                isValid = false;
+            } else if (telefoneValue.length < 10) {
+                document.getElementById('telefone_error').textContent = 'Telefone inválido';
+                isValid = false;
+            }
+
+            // Validar Email
+            const email = document.getElementById('email');
+            if (!email.value.trim()) {
+                document.getElementById('email_error').textContent = 'Email é obrigatório';
+                isValid = false;
+            } else if (!isValidEmail(email.value)) {
+                document.getElementById('email_error').textContent = 'Email inválido';
+                isValid = false;
+            }
+
+            // Validar Link da Planilha
+            const linkPlanilha = document.getElementById('link_planilha');
+            if (!linkPlanilha.value.trim()) {
+                document.getElementById('link_planilha_error').textContent = 'Link da planilha é obrigatório';
+                isValid = false;
+            }
+
+            // Validar Tipo de Solicitação
+            const tipoSolicitacao = document.getElementById('tipo_solicitacao');
+            if (!tipoSolicitacao.value) {
+                document.getElementById('tipo_solicitacao_error').textContent = 'Selecione um tipo de solicitação';
+                isValid = false;
+            }
+
+            // Validar Quantidade
+            const quantidade = document.getElementById('quantidade');
+            if (!quantidade.value || parseInt(quantidade.value) < 1) {
+                document.getElementById('quantidade_error').textContent = 'Quantidade inválida';
+                isValid = false;
+            }
+
+            // Validar reCAPTCHA
+            const recaptchaResponse = document.getElementById('g-recaptcha-response').value;
+            if (!recaptchaResponse) {
+                document.getElementById('recaptcha_error').textContent = 'Por favor, complete a verificação reCAPTCHA';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Máscaras de input
+        document.getElementById('cnpj').addEventListener('input', function(e) {
+            e.target.value = maskCNPJ(e.target.value);
+        });
+
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            e.target.value = maskPhone(e.target.value);
+        });
+
+        // Baixar Planilha (placeholder)
+        document.getElementById('baixar_planilha').addEventListener('click', function() {
+            alert('Funcionalidade de download em desenvolvimento');
+        });
+
+        // Voltar ao topo
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Efeito de rolagem na navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Submissão do formulário
+        document.getElementById('poloForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Validar formulário
+            if (!validateForm()) {
+                return;
+            }
+
+            // Mostrar modal de carregamento
+            const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+            loadingModal.show();
+
+            // Preparar dados do formulário
+            const formData = new FormData(this);
+            
+            // Adicionar protocolo
+            const protocolo = generateProtocolNumber();
+            formData.append('protocolo', protocolo);
+
+            // Enviar formulário via AJAX
+            fetch('processar_solicitacao.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                // Fechar modal de carregamento
+                const loadingModal = bootstrap.Modal.getInstance(document.getElementById('loadingModal'));
+                loadingModal.hide();
+
+                // Mostrar modal de sucesso
+                const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                document.getElementById('protocolText').textContent = `Protocolo: ${protocolo}`;
+                successModal.show();
+
+                // Resetar formulário
+                document.getElementById('poloForm').reset();
+                clearErrorMessages();
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                
+                // Fechar modal de carregamento
+                const loadingModal = bootstrap.Modal.getInstance(document.getElementById('loadingModal'));
+                loadingModal.hide();
+
+                // Alertar erro
+                alert('Erro ao enviar solicitação. Por favor, tente novamente.');
+            });
+        });
+    </script>
+</body>
+</html>

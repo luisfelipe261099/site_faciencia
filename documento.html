@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Enviar Documentos - FaCiencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        :root {
+            --primary: #9d359c;
+            --primary-dark: #7d287c;
+            --primary-light: #c965cc;
+            --secondary: #ffe925;
+            --dark: #333333;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Base Styles */
+        body {
+            font-family: "Roboto", sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .btn {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            touch-action: manipulation;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(157, 53, 156, 0.3);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary);
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 5px 0;
+            background-color: var(--primary-dark);
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .navbar-brand img {
+            height: 40px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            padding: 8px 12px;
+            position: relative;
+            font-size: 15px;
+        }
+
+        .navbar-nav .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .navbar-nav .nav-link:hover:before,
+        .navbar-nav .nav-link.active:before {
+            left: 12px;
+            right: 12px;
+            opacity: 1;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--secondary);
+        }
+
+        .dropdown-menu {
+            background-color: var(--primary-dark);
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .dropdown-item {
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+
+        /* Mobile menu improvements */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: var(--primary-dark);
+                padding: 15px;
+                border-radius: var(--border-radius);
+                margin-top: 10px;
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+
+            .navbar-nav {
+                padding: 10px 0;
+            }
+
+            .navbar-nav .nav-item {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar-nav .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 12px 15px;
+                font-size: 16px;
+            }
+
+            .dropdown-menu {
+                background-color: rgba(0, 0, 0, 0.2);
+                border-radius: 0;
+                box-shadow: none;
+                padding: 0 0 10px 10px;
+                margin: 0;
+                border-left: 2px solid var(--secondary);
+                position: static;
+                float: none;
+                width: 100%;
+                display: none;
+            }
+
+            .dropdown-menu.show {
+                display: block;
+            }
+
+            .dropdown-item {
+                padding: 10px 15px;
+                white-space: normal;
+            }
+
+            .dropdown-toggle::after {
+                float: right;
+                margin-top: 8px;
+            }
+
+            .btn-inscreva {
+                margin: 10px 15px !important;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /* Breadcrumbs */
+        .breadcrumb-section {
+            background-color: rgba(157, 53, 156, 0.05);
+            padding: 15px 0;
+            margin-top: 70px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 0;
+        }
+
+        .breadcrumb-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: var(--gray);
+        }
+
+        /* Content Section */
+        .content-section {
+            flex: 1;
+            padding: 40px 0;
+            background-color: var(--white);
+            box-sizing: border-box;
+            margin-top: 30px;
+        }
+
+        .content-section h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .content-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-container h4 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .form-container .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-container .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-container .form-group input[type="text"],
+        .form-container .form-group input[type="email"],
+        .form-container .form-group input[type="file"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-container .form-group input[type="text"]:focus,
+        .form-container .form-group input[type="email"]:focus,
+        .form-container .form-group input[type="file"]:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(157, 53, 156, 0.25);
+            outline: none;
+        }
+
+        .form-container .form-group button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-container .form-group button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(157, 53, 156, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 60px 0 20px;
+            position: relative;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 70px;
+        }
+
+        .footer-info p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+            margin-top: 4px;
+        }
+
+        .footer h5 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .footer h5:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+            display: inline-block;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .content-section {
+                padding: 30px 0;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-container h4 {
+                font-size: 1.2rem;
+            }
+
+            .footer {
+                padding: 40px 0 20px;
+                text-align: center;
+            }
+
+            .footer h5:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-info p {
+                justify-content: center;
+            }
+
+            .footer-links {
+                margin-bottom: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home">
+                <img src="logo.png" alt="FaCiencia">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-label="Menu de navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="quem-somos">Quem Somos</a></li>
+                            <li><a class="dropdown-item" href="sede">Sede FaCiencia</a></li>
+                            <li><a class="dropdown-item" href="infra">Infraestrutura</a></li>
+                            <li><a class="dropdown-item" href="valida">Validador Diploma</a></li>
+                            <li><a class="dropdown-item" href="doc-institucional">Doc Institucional</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tecnologo">Tecnólogo</a></li>
+                            <li><a class="dropdown-item" href="extensao">Extensão</a></li>
+                            <li><a class="dropdown-item" href="pos-graduacao">Pós-Graduação</a></li>
+                        </ul>
+                    </li>
+                    <!-- Parceria -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button" data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+                            <li><a class="dropdown-item" href="polo-apoio">Polo de Apoio</a></li>
+                            <li><a class="dropdown-item" href="solicitacao">Solicitação do Polo</a></li>
+                        </ul>
+                    </li>
+                    <!-- Biblioteca -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button" data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+                            <li><a class="dropdown-item" href="biblioteca">Biblioteca</a></li>
+                            <li><a class="dropdown-item" href="revista">Revista</a></li>
+                            <li><a class="dropdown-item" href="editora">Editora</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acesso</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://ava.faciencia.edu.br/login/index.php">AVA</a></li>
+                            <li><a class="dropdown-item" href="https://lfmtecnologia.com/reinandus/loginaluno.php">Portal do Aluno</a></li>
+                        </ul>
+                    </li>
+                    <!-- Atendimento -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button" data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+                            <li><a class="dropdown-item" href="ouvidoria">Ouvidoria</a></li>
+                            <li><a class="dropdown-item" href="contato">Contato</a></li>
+                            <li><a class="dropdown-item" href="enviar-documento">Enviar Documento</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="indicacao.php">Indique um Amigo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary btn-inscreva" href="vestibular">
+                            <i class="fas fa-graduation-cap me-2"></i>Vestibular
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="home">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Atendimento</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Enviar Documento</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Envie seus documentos</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="form-container" data-aos="fade-up">
+                        <h4>Formulário de Envio de Documentos</h4>
+                        <p class="text-center mb-4">Aproveite e nos envie as cópias do RG, CPF, Diploma (frente e verso) e comprovante de residência.</p>
+                        <form action="processar_documentos.php" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label for="nome">Nome Completo*</label>
+                                    <input type="text" id="nome" name="nome" class="form-control" required>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <label for="email">Seu melhor e-mail*</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="rg">Seu RG*</label>
+                                    <input type="file" id="rg" name="rg" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="cpf">Seu CPF*</label>
+                                    <input type="file" id="cpf" name="cpf" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="diploma_frente">Diploma (Frente)*</label>
+                                    <input type="file" id="diploma_frente" name="diploma_frente" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="diploma_verso">Diploma (Verso)*</label>
+                                    <input type="file" id="diploma_verso" name="diploma_verso" class="form-control" required>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <label for="comprovante_residencia">Comprovante de residência*</label>
+                                    <input type="file" id="comprovante_residencia" name="comprovante_residencia" class="form-control" required>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <label for="outros_documentos">Outros documentos (opcional)</label>
+                                    <input type="file" id="outros_documentos" name="outros_documentos" class="form-control">
+                                </div>
+                                <div class="col-md-12 form-group mt-3 text-center">
+                                    <div class="g-recaptcha d-inline-block" data-sitekey="6LcS6rEqAAAAAMLhDljeXLPl3L6BiWYFXSvV8SDu"></div>
+                                </div>
+                                <div class="col-md-12 form-group mt-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane me-2"></i>Enviar Documentos
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="FaCiencia">
+                    </div>
+                    <div class="footer-info mt-4">
+                        <p><i class="fas fa-map-marker-alt"></i> Rua Visconde de Nacar, 1510 – 10. Andar – Conj. 1003 – Centro – Curitiba/PR – 80.410-201</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:contato@faciencia.edu.br">contato@faciencia.edu.br</a></p>
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:+5541992562500">(41) 9 9256-2500</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Institucional</h5>
+                    <ul class="footer-links">
+                        <li><a href="quem-somos">Quem Somos</a></li>
+                        <li><a href="sede">Sede FaCiencia</a></li>
+                        <li><a href="infra">Infraestrutura</a></li>
+                        <li><a href="valida">Validador Diploma</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Cursos</h5>
+                    <ul class="footer-links">
+                        <li><a href="tecnologo">Tecnólogo</a></li>
+                        <li><a href="extensao">Extensão</a></li>
+                        <li><a href="pos-graduacao">Pós-Graduação</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Biblioteca</h5>
+                    <ul class="footer-links">
+                        <li><a href="biblioteca">Biblioteca</a></li>
+                        <li><a href="revista">Revista</a></li>
+                        <li><a href="editora">Editora</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Atendimento</h5>
+                    <ul class="footer-links">
+                        <li><a href="ouvidoria">Ouvidoria</a></li>
+                        <li><a href="contato">Contato</a></li>
+                        <li><a href="enviar-documento">Enviar Documento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FaCiencia - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS and other scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Add active class to current nav item
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLocation = location.pathname;
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (currentLocation.includes(linkPath) && linkPath !== 'home') {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

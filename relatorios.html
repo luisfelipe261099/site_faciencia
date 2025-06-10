@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios Autoavaliação Institucional - Faculdade FaCiencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #e4e4e4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .navbar {
+            background-color: #9D359C;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fbff00;
+        }
+
+        .dropdown-menu {
+            background-color: #9D359C;
+            border: none;
+            border-radius: 0;
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #fbff00;
+            color: #9D359C;
+        }
+
+        /* Slideshow Section (opcional) */
+        .slideshow-container {
+            width: 100%;
+            max-width: 100%;
+            height: 490px;
+            overflow: hidden;
+            background-color: #cecece;
+            text-align: center;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .slideshow-container img {
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 50px 0;
+            background-color: #ffffff;
+        }
+
+        .content-section h2 {
+            color: #9D359C;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .content-section ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .content-section ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .content-section ul li::before {
+            content: "✔️";
+            margin-right: 10px;
+            color: #9D359C;
+        }
+
+        .content-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+   /* ------------------------------------------------
+           Footer
+        -------------------------------------------------- */
+        .footer {
+          background-color: #9d359c;
+          color: white;
+          padding: 40px 0;
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+        }
+    
+        .footer img {
+          max-height: 100px;
+          margin: 0 25px;
+        }
+    
+        .footer .footer-logo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+    
+        .footer .footer-contact {
+          margin-top: 20px;
+          font-size: 14px;
+        }
+    
+        .footer a {
+          color: #ffe925;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+    
+        .footer a:hover {
+          color: #fff;
+        }
+    
+
+        /* Seção Relatórios */
+        .relatorios-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .relatorios-section h3 {
+            color: #9D359C;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .relatorio-item {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .relatorio-item h4 {
+            color: #9D359C;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            background-color: #9D359C;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #7a2673;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="custom-navbar navbar navbar-expand-md navbar-dark" aria-label="Furni navigation bar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="logo.png" alt="FaCiencia"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+                aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsFurni">
+                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <!-- Institucional -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownInstitucional" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownInstitucional">
+                            <li><a class="dropdown-item" href="quem-somos.html">Quem Somos</a></li>
+                            <li><a class="dropdown-item" href="sede.html">Sede FaCiencia</a></li>
+                            <li><a class="dropdown-item" href="infra">Infraestrutura</a></li>
+                            <li><a class="dropdown-item" href="valida">Validador Diploma</a></li>
+                            <li><a class="dropdown-item" href="doc-institucional.html">Doc Institucional</a></li>
+                            <li><a class="dropdown-item" href="relatorios">Relatorio Autoavaliaçao</a></li>
+                        </ul>
+                    </li>
+                    <!-- Cursos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCursos" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
+                            <li><a class="dropdown-item" href="tecnologo.html">Tecnólogo</a></li>
+                            <li><a class="dropdown-item" href="extensao.html">Extensão</a></li>
+                            <li><a class="dropdown-item" href="pos-graduacao.html">Pós-Graduação</a></li>
+                        </ul>
+                    </li>
+                    <!-- Parceria -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+                            <li><a class="dropdown-item" href="influenciadores.html">Influenciadores</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Parceiros Comercial</a></li> -->
+                            <li><a class="dropdown-item" href="polo-apoio.html">Polo de Apoio</a></li>
+                            <li><a class="dropdown-item" href="solicitacao.html">Solicitação do Polo</a></li>
+                        </ul>
+                    </li>
+                    <!-- Biblioteca -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+                            <li><a class="dropdown-item" href="biblioteca.html">Biblioteca</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Acervo Acadêmico</a></li> -->
+                            <li><a class="dropdown-item" href="revista.html">Revista</a></li>
+                           <li><a class="dropdown-item" href="editora.html">Editora</a></li> 
+                        </ul>
+                    </li>
+                    <!-- Atendimento -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+                            <li><a class="dropdown-item" href="ouvidoria.html">Ouvidoria</a></li>
+                            <li><a class="dropdown-item" href="contato.html">Contato</a></li>
+                            <li><a class="dropdown-item" href="enviar-documento.html">Enviar Documento</a></li>
+                        </ul>
+                    </li>
+                    <!-- Relatórios -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="relatorios.html">Relatórios</a>
+                    </li>
+                           <!-- login -->
+           <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownlogin"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+            Login
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownlogin">
+              <li><a class="dropdown-item" href="https://ava.faciencia.edu.br/">AVA</a></li>
+              <li><a class="dropdown-item" href="https://portal.faciencia.edu.br/">Portal</a></li>
+            </ul>
+          </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Slideshow Section (opcional) -->
+    <!-- Você pode incluir ou remover esta seção conforme necessário -->
+    <div id="slideshow" class="slideshow-container">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://lfmtecnologia.com/FACIENCIA/SITE/images/4.webp" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://lfmtecnologia.com/FACIENCIA/SITE/images/4.webp" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://lfmtecnologia.com/FACIENCIA/SITE/images/4.webp" alt="Slide 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Relatórios Autoavaliação Institucional -->
+    <div class="relatorios-section">
+        <div class="container">
+            <h3>Relatórios Autoavaliação Institucional</h3>
+
+            <!-- Relatório 1: Publicação dos Resultados 2024 -->
+            <div class="relatorio-item">
+                <h4>Publicação dos Resultados 1 semestre 2024</h4>
+                <p>Apresentação detalhada dos resultados alcançados pela Faculdade FaCiencia em 2024, destacando os principais indicadores de desempenho e conquistas institucionais.</p>
+                <a href="Autoavaliação Institucional - Relatório 1 - 2024.pdf" class="download-btn" download>Baixar Relatório</a>
+            </div>
+            <div class="relatorio-item">
+                <h4>Publicação dos Resultados 2 semestre 2024</h4>
+                <p>Apresentação detalhada dos resultados alcançados pela Faculdade FaCiencia em 2024, destacando os principais indicadores de desempenho e conquistas institucionais.</p>
+                <a href="Autoavaliaçao Institucional - Relatório 2 - 2024.pdf" class="download-btn" download>Baixar Relatório</a>
+            </div>
+
+          
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <!-- Logo Section -->
+                <div class="col-lg-3 col-md-6 text-center text-lg-start mb-3 mb-lg-0">
+                    <img src="logo.png" alt="FaCiencia" class="img-fluid">
+                </div>
+
+                <!-- Address Section -->
+               <div class="col-lg-5 col-md-6 text-center text-lg-start mb-3 mb-lg-0">
+                    <div class="footer-contact">
+                        <p>Rua Visconde de Nacar, 1510 – 10. Andar – Conj. 1003 – Centro – Curitiba/PR – 80.410-201</p>
+                        <p>📞 (41) 9 9256-2500 | 📧 contato@faciencia.edu.br</p>
+                        <a href="https://www.google.com/maps/place/R.+Visconde+de+Nacar,+1510+-+Centro,+Curitiba+-+PR,+80410-201"
+                            target="_blank">
+                            Ver no Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QR Code and Seal Section -->
+                <div class="col-lg-4 col-md-12 text-center text-lg-end">
+                    <div class="footer-logos">
+                        <a href="https://emec.mec.gov.br/emec/consulta-cadastro/detalhamento/d96957f455f6405d14c6542552b0f6eb/MjQ2Nzc=" target="_blank">
+                            <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/Mec-QRcode.png.webp" alt="QR Code" class="img-fluid mb-2" />
+                          </a>
+                          
+                    <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/ULTIMO-SELO.png.webp"
+                        alt="MEC Seal" class="img-fluid mb-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
