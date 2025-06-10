@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polos - FaCiencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #e4e4e4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #9D359C;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fbff00;
+        }
+
+        .dropdown-menu {
+            background-color: #9D359C;
+            border: none;
+            border-radius: 0;
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #fbff00;
+            color: #9D359C;
+        }
+
+        .content-section {
+            padding: 40px 0;
+            background-color: #ffffff;
+        }
+
+        .content-section h2 {
+            color: #9D359C;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .table {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .pagination {
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            height: 500px;
+            width: 100%;
+        }
+
+        .footer {
+            background-color: #9D359C;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer img {
+            max-height: 40px;
+            margin: 0 10px;
+        }
+
+        .footer .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer .footer-contact {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+      <nav class="custom-navbar navbar navbar-expand-md navbar-dark" aria-label="Furni navigation bar">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo.png" alt="FaCiencia"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+                aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsFurni">
+              <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home">Home</a>
+                    </li>
+                    <!-- Institucional -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownInstitucional" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownInstitucional">
+                            <li><a class="dropdown-item" href="quem-somos">Quem Somos</a></li>
+                            <li><a class="dropdown-item" href="sede">Sede FaCiencia</a></li>
+                            <li><a class="dropdown-item" href="doc-institucional">Doc Institucional</a></li>
+                        </ul>
+                    </li>
+                    <!-- Cursos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCursos" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
+                            <li><a class="dropdown-item" href="tecnologo">Tecnólogo</a></li>
+                            <li><a class="dropdown-item" href="extensao">Extensão</a></li>
+                            <li><a class="dropdown-item" href="pos-graduacao">Pós-Graduação</a></li>
+                        </ul>
+                    </li>
+                    <!-- Parceria -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+                            <li><a class="dropdown-item" href="influenciadores">Influenciadores</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Parceiros Comercial</a></li> -->
+                            <li><a class="dropdown-item" href="polo-apoio">Polo de Apoio</a></li>
+                            <li><a class="dropdown-item" href="solicitacao">Solicitação do Polo</a></li>
+                        </ul>
+                    </li>
+                    <!-- Biblioteca -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+                            <li><a class="dropdown-item" href="biblioteca">Normas Biblioteca</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Acervo Acadêmico</a></li> -->
+                            <li><a class="dropdown-item" href="revista">Revista</a></li>
+                            <li><a class="dropdown-item" href="editora">Editora</a></li>
+                        </ul>
+                    </li>
+                    <!-- Atendimento -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+                            <li><a class="dropdown-item" href="ouvidoria">Ouvidoria</a></li>
+                            <li><a class="dropdown-item" href="contato">Contato</a></li>
+                            <li><a class="dropdown-item" href="enviar-documento">Enviar Documento</a></li>
+                        </ul>
+                    </li>
+                    <!-- Login -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="content-section">
+        <div class="container">
+            <h2>Polos FaCiencia</h2>
+
+            <div class="table-container">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Denominação</th>
+                            <th>Endereço</th>
+                            <th>Município</th>
+                        </tr>
+                    </thead>
+                    <tbody id="polos-table-body">
+                        <!-- As linhas da tabela serão preenchidas pelo JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination" id="pagination">
+                    <!-- As páginas serão geradas pelo JavaScript -->
+                </ul>
+            </nav>
+
+            <!-- Map Section -->
+            <div id="map" class="map-container"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <!-- Logo Section -->
+                <div class="col-lg-3 col-md-6 text-center text-lg-start mb-3 mb-lg-0">
+                    <img src="logo.png" alt="FaCiencia" class="img-fluid">
+                </div>
+
+                <!-- Address Section -->
+              <div class="col-lg-5 col-md-6 text-center text-lg-start mb-3 mb-lg-0">
+                    <div class="footer-contact">
+                        <p>Rua Visconde de Nacar, 1510 – 10. Andar – Conj. 1003 – Centro – Curitiba/PR – 80.410-201</p>
+                        <p>📞 (41) 9 9256-2500 | 📧 secretaria@faciencia.edu.br</p>
+                        <a href="https://www.google.com/maps/place/R.+Visconde+de+Nacar,+1510+-+Centro,+Curitiba+-+PR,+80410-201"
+                            target="_blank">
+                            Ver no Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QR Code and Seal Section -->
+                <div class="col-lg-4 col-md-12 text-center text-lg-end">
+                    <div class="footer-logos">
+                        <img src="https://faciencia.edu.br/wp-content/webp-express/webp-images/uploads/2023/11/Mec-QRcode.png.webp" alt="QR Code" class="img-fluid mb-2">
+                        <img src="https://faciencia.edu.br/wp-content/webp-express/webp-images/uploads/2023/11/ULTIMO-SELO.png.webp" alt="MEC Seal" class="img-fluid mb-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        const polosPerPage = 10;
+        let currentPage = 1;
+        const polos = [
+        { codigo: "1160067", denominacao: "Polo Maceió Ser Psicólogo", endereco: "Engenheiro Mário de Gusmão, 988 - Ponta Verde", municipio: "Maceió", latitude: -9.648620, longitude: -35.708949 },
+        { codigo: "1155756", denominacao: "Polo Palmeira dos Índios Agostiniano", endereco: "Pedro Barbosa, 271 - São Cristóvão", municipio: "Palmeira dos Índios", latitude: -9.416298, longitude: -36.619787 },
+        { codigo: "1165276", denominacao: "Polo Curitiba Instituto Ocellaris", endereco: "Alcides Therézio de Carvalho, 433 - Guabirotuba", municipio: "Curitiba", latitude: -25.441105, longitude: -49.276855 },
+        { codigo: "1158250", denominacao: "Polo Curitiba RTS Brazil", endereco: "Avenida Iguaçu, 2345 - Água Verde", municipio: "Curitiba", latitude: -25.446750, longitude: -49.276870 },
+        { codigo: "1156060", denominacao: "Polo Curitiba Datavirtus", endereco: "Holanda, 1397 - Boa Vista", municipio: "Curitiba", latitude: -25.394001, longitude: -49.289555 },
+        { codigo: "1157288", denominacao: "Polo Curitiba IBTG", endereco: "Holanda, 1397 - Boa Vista", municipio: "Curitiba", latitude: -25.394001, longitude: -49.289555 },
+        { codigo: "1164614", denominacao: "Polo Curitiba Parapsicologia", endereco: "Júlio Perneta, 220 - Mercês", municipio: "Curitiba", latitude: -25.423146, longitude: -49.291872 },
+        { codigo: "1166214", denominacao: "Polo Curitiba Negócios da Mente", endereco: "Paraná, 202 - Cabral", municipio: "Curitiba", latitude: -25.408726, longitude: -49.268405 },
+        { codigo: "1170336", denominacao: "Polo Curitiba IPOS", endereco: "República Argentina, 1505 - Água Verde", municipio: "Curitiba", latitude: -25.446749, longitude: -49.275937 },
+        { codigo: "1141598", denominacao: "Polo Curitiba Alvef", endereco: "Rua Desembargador Ermelino de Leão, 15 - Centro", municipio: "Curitiba", latitude: -25.428610, longitude: -49.269694 },
+        { codigo: "1141646", denominacao: "Polo Curitiba HLS treinamento", endereco: "Rua Emiliano Perneta, 822 - Centro", municipio: "Curitiba", latitude: -25.435675, longitude: -49.273123 },
+        { codigo: "1107693", denominacao: "Campus Principal", endereco: "Rua Visconde de Nacar, 1510 - Centro", municipio: "Curitiba", latitude: -25.432193, longitude: -49.275210 },
+        { codigo: "1142997", denominacao: "Polo Londrina Instituto Nacional de Medicina Laboratorial", endereco: "Avenida Celso Garcia Cid, 1300 - Nossa Senhora de Lourdes", municipio: "Londrina", latitude: -23.309095, longitude: -51.164489 },
+        { codigo: "1135923", denominacao: "Polo Londrina Cursau Educação", endereco: "Avenida Juscelino Kubitschek, 1977 - Vila Ipiranga", municipio: "Londrina", latitude: -23.319123, longitude: -51.159345 },
+        { codigo: "1169583", denominacao: "Polo Londrina NeuroSaber", endereco: "Canudos, 264 - Jardim Higienópolis", municipio: "Londrina", latitude: -23.313732, longitude: -51.162216 },
+        { codigo: "1151948", denominacao: "Polo SJP Future Publishers Group", endereco: "Rua Quinze de Novembro, 2175 - Centro", municipio: "São José dos Pinhais", latitude: -25.534096, longitude: -49.206054 },
+        { codigo: "1166029", denominacao: "Polo Rio de Janeiro Mercado in Foco", endereco: "Av. das Américas, 19005 - Recreio dos Bandeirantes", municipio: "Rio de Janeiro", latitude: -23.006627, longitude: -43.450701 },
+        { codigo: "1159371", denominacao: "Polo Rio de Janeiro IBND", endereco: "Avenida Américas 500 - Barra da Tijuca", municipio: "Rio de Janeiro", latitude: -23.010300, longitude: -43.473194 },
+        { codigo: "1152076", denominacao: "Polo Rio de Janeiro Carreira em Movimento", endereco: "Avenida Lobo Júnior, 1878 - Penha Circular", municipio: "Rio de Janeiro", latitude: -22.828722, longitude: -43.288829 },
+        { codigo: "1137094", denominacao: "Polo Rio de Janeiro Nova Era da Saúde", endereco: "Ayrton Senna, 2600 - Barra da Tijuca", municipio: "Rio de Janeiro", latitude: -23.001711, longitude: -43.395713 },
+        { codigo: "1169671", denominacao: "Polo Rio de Janeiro Performance Digital", endereco: "Cardoso de Morais, 250 - Bonsucesso", municipio: "Rio de Janeiro", latitude: -22.879711, longitude: -43.246506 },
+        { codigo: "1152921", denominacao: "Polo RJ IDEA", endereco: "Correia Teixeira, 5 - Realengo", municipio: "Rio de Janeiro", latitude: -22.884646, longitude: -43.404155 },
+        { codigo: "1170134", denominacao: "Polo Rio de Janeiro Condança", endereco: "Silva Pinto, 114 - Vila Isabel", municipio: "Rio de Janeiro", latitude: -22.921503, longitude: -43.248725 },
+        { codigo: "1166999", denominacao: "Polo Natal Instituto Aprimore", endereco: "Avenida Engenheiro Roberto Freire, 1962 - Capim Macio", municipio: "Natal", latitude: -5.837692, longitude: -35.200887 },
+        { codigo: "1167645", denominacao: "Polo Natal Metacognitiva Cursos", endereco: "Professor Moura Rabelo, 1945 - Candelária", municipio: "Natal", latitude: -5.832689, longitude: -35.209163 },
+        { codigo: "1170813", denominacao: "Polo Natal CAMP- Centro Avançado de Medicina Psicodélica", endereco: "Rui Barbosa, 1868 - Lagoa Nova", municipio: "Natal", latitude: -5.801975, longitude: -35.210920 },
+        { codigo: "1154524", denominacao: "Polo Parnamirim Walkyria Fernandes University", endereco: "Ayrton Senna, 2940 - Nova Parnamirim", municipio: "Parnamirim", latitude: -5.888711, longitude: -35.245274 },
+        { codigo: "1141597", denominacao: "Polo Gramado Lotus Desenvolvimento Pessoal", endereco: "Rua São Pedro, 752 - centro", municipio: "Gramado", latitude: -29.375856, longitude: -50.874957 },
+        { codigo: "1140950", denominacao: "Polo Novo Hamburgo FisioWork", endereco: "Rua Marcílio Dias, 1431 - Centro", municipio: "Novo Hamburgo", latitude: -29.688737, longitude: -51.129739 },
+        { codigo: "1151949", denominacao: "Polo Porto Alegre Saúde Avançada", endereco: "Avenida Princesa Isabel, 1155 - Santana", municipio: "Porto Alegre", latitude: -30.040132, longitude: -51.215309 },
+        { codigo: "1155755", denominacao: "Polo Porto Alegre ABM", endereco: "João Berutti, 661 - Chácara das Pedras", municipio: "Porto Alegre", latitude: -30.018673, longitude: -51.160798 },
+        { codigo: "1164609", denominacao: "Polo Agronomica TIEXAMES", endereco: "Rua expedicionário Leopoldo Venturi, 936 - Vila Fragosos", municipio: "Agronômica", latitude: -27.266928, longitude: -49.712303 },
+        { codigo: "1163448", denominacao: "Polo Floripa Psicopedagodança", endereco: "Abel Álvares Cabral Júnior, 504 - Ingleses do Rio Vermelho", municipio: "Florianópolis", latitude: -27.432498, longitude: -48.396726 },
+        { codigo: "1152922", denominacao: "Polo Floripa Cloud Treinamentos", endereco: "Almirante Tamandaré, 94 - Coqueiros", municipio: "Florianópolis", latitude: -27.594869, longitude: -48.548219 },
+        { codigo: "1156717", denominacao: "Polo Florianópolis Pro Educacional", endereco: "Desembargador Vítor Lima, 260 - Trindade", municipio: "Florianópolis", latitude: -27.596833, longitude: -48.517057 },
+        { codigo: "1170472", denominacao: "Polo Florianópolis PIUS", endereco: "João Motta Espezim, 1339 - Saco dos Limões", municipio: "Florianópolis", latitude: -27.604289, longitude: -48.514952 },
+        { codigo: "1159567", denominacao: "Polo Floripa AM PHD", endereco: "José Carlos Daux, 5500 - Saco Grande", municipio: "Florianópolis", latitude: -27.513963, longitude: -48.504388 },
+        { codigo: "1161303", denominacao: "Polo Joinville PSI Parapsicologia", endereco: "Otto Boehm, 972a - Glória", municipio: "Joinville", latitude: -26.305351, longitude: -48.845671 },
+        { codigo: "1156584", denominacao: "Polo Arujá IPDMS", endereco: "Av. Alberto Hinoto, 1101 - Caputera", municipio: "Arujá", latitude: -23.396730, longitude: -46.320171 },
+        { codigo: "1154607", denominacao: "Polo Barueri Sbcopy", endereco: "Marcos Penteado de Ulhôa Rodrigues, 939 - Tamboré", municipio: "Barueri", latitude: -23.493907, longitude: -46.835313 },
+        { codigo: "1157136", denominacao: "Polo SBC MindMaster", endereco: "Avenida Pereira Barreto, 1479 - Baeta Neves", municipio: "São Bernardo do Campo", latitude: -23.705250, longitude: -46.564945 },
+        { codigo: "1157183", denominacao: "Polo SBC Strong Security Brasil", endereco: "Francisco Prestes Maia, 275 - Centro", municipio: "São Bernardo do Campo", latitude: -23.717434, longitude: -46.549160 },
+        { codigo: "1161244", denominacao: "Polo SCS Vianna e Consultores", endereco: "Cavalheiro Ernesto Giuliano, 866 - São José", municipio: "São Caetano do Sul", latitude: -23.622723, longitude: -46.573605 },
+        { codigo: "1160347", denominacao: "Polo SJRP Projeto Cirurgião", endereco: "Francisco das Chagas Oliveira, 2550 - Higienópolis", municipio: "São José do Rio Preto", latitude: -20.798364, longitude: -49.377559 },
+        { codigo: "1168253", denominacao: "Polo São Paulo Instituto de Engenharia Elétrica", endereco: "Almirante Noronha, 986 - Jardim São Paulo(Zona Norte)", municipio: "São Paulo", latitude: -23.492712, longitude: -46.623474 },
+        { codigo: "1152428", denominacao: "Polo São Paulo Engenhando Soluções", endereco: "Avenida Paulista, 1079 - Bela Vista", municipio: "São Paulo", latitude: -23.565440, longitude: -46.652243 },
+        { codigo: "1167005", denominacao: "Polo São Paulo Clinic Cursos", endereco: "Avenida Paulista, 1159 - Bela Vista", municipio: "São Paulo", latitude: -23.565243, longitude: -46.651821 },
+        { codigo: "1159042", denominacao: "Polo São Paulo Personal Global", endereco: "do Arraial, 209 - Vila Mariana", municipio: "São Paulo", latitude: -23.590765, longitude: -46.636523 },
+        { codigo: "1161468", denominacao: "Polo São Paulo Mike School", endereco: "Domingues Vidigal, 58 - Jardim Jaraguá (Itaim Paulista)", municipio: "São Paulo", latitude: -23.505606, longitude: -46.394213 },
+        { codigo: "1152923", denominacao: "Polo São Paulo Uniradio", endereco: "Doutor Zuquim, 449 - Santana", municipio: "São Paulo", latitude: -23.506712, longitude: -46.624945 },
+        { codigo: "1169651", denominacao: "Polo São Paulo Live University", endereco: "Fidêncio Ramos, 302 - Vila Olímpia", municipio: "São Paulo", latitude: -23.593207, longitude: -46.683318 },
+        { codigo: "1168485", denominacao: "Polo São Paulo Vida + Leve", endereco: "Itu, 1579 - Jardim Paulista", municipio: "São Paulo", latitude: -23.569589, longitude: -46.660630 },
+        { codigo: "1138467", denominacao: "Polo São Paulo Tabata Maffini", endereco: "Rua Martinico Prado, 167 - Vila Buarque", municipio: "São Paulo", latitude: -23.545678, longitude: -46.650580 },
+        { codigo: "1160346", denominacao: "Polo São Paulo Casa do Cuidar", endereco: "Rua Vitorino Carmilo, 644 - Barra Funda", municipio: "São Paulo", latitude: -23.528580, longitude: -46.661350 },
+        { codigo: "1157283", denominacao: "Polo São Paulo Tacto Cursos", endereco: "Vergueiro, 2087 - Vila Mariana", municipio: "São Paulo", latitude: -23.585145, longitude: -46.634938 },
+        { codigo: "1167018", denominacao: "Polo Taubaté AVCB EM DIA", endereco: "Itália, 928 - Jardim das Nações", municipio: "Taubaté", latitude: -23.028009, longitude: -45.556947 },
+        { codigo: "1170129", denominacao: "Polo Espanha ENEB", endereco: "C/ Llull, 321-329", municipio: "Barcelona", latitude: 41.403629, longitude: 2.189625 }
+    ];
+
+        function renderTable(page) {
+            const tableBody = document.getElementById("polos-table-body");
+            tableBody.innerHTML = "";
+            const start = (page - 1) * polosPerPage;
+            const end = start + polosPerPage;
+            const paginatedPolos = polos.slice(start, end);
+
+            paginatedPolos.forEach(polo => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${polo.codigo}</td>
+                    <td>${polo.denominacao}</td>
+                    <td>${polo.endereco}</td>
+                    <td>${polo.municipio}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function renderPagination() {
+            const pagination = document.getElementById("pagination");
+            const pageCount = Math.ceil(polos.length / polosPerPage);
+            pagination.innerHTML = "";
+
+            for (let i = 1; i <= pageCount; i++) {
+                const pageItem = document.createElement("li");
+                pageItem.className = `page-item ${i === currentPage ? "active" : ""}`;
+                pageItem.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+                pageItem.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    renderTable(currentPage);
+                    renderPagination();
+                });
+                pagination.appendChild(pageItem);
+            }
+        }
+
+        function initMap() {
+            var map = L.map('map').setView([-15.7801, -47.9292], 4); // Define o centro e o zoom do mapa
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+            }).addTo(map);
+
+            polos.forEach(polo => {
+                L.marker([polo.latitude, polo.longitude]).addTo(map)
+                    .bindPopup(`${polo.denominacao}<br>${polo.endereco}<br>${polo.municipio}`);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderTable(currentPage);
+            renderPagination();
+            initMap();
+        });
+    </script>
+</body>
+</html>

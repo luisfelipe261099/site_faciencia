@@ -1,0 +1,20 @@
+[2025-05-15 11:25:13] Iniciando verificação simples
+[2025-05-15 11:25:13] Método: POST
+[2025-05-15 11:25:13] Dados recebidos: {"cpf":"10249351404"}
+[2025-05-15 11:25:13] CPF após limpeza: 10249351404
+[2025-05-15 11:25:13] CPF de teste encontrado: 102.493.514-04 (Laiz Alves Araújo)
+[2025-05-15 11:25:52] Iniciando verificação simples
+[2025-05-15 11:25:52] Método: POST
+[2025-05-15 11:25:52] Dados recebidos: {"cpf":"10249351404"}
+[2025-05-15 11:25:52] CPF após limpeza: 10249351404
+[2025-05-15 11:25:52] CPF de teste encontrado: 102.493.514-04 (Laiz Alves Araújo)
+[2025-05-15 11:26:47] Iniciando verificação simples
+[2025-05-15 11:26:47] Método: GET
+[2025-05-15 11:26:47] Dados recebidos: []
+[2025-05-15 11:26:47] CPF após limpeza: 
+[2025-05-15 11:26:47] CPF não corresponde ao CPF de teste
+[2025-05-15 11:32:37] Iniciando verificação simples
+[2025-05-15 11:32:37] Método: GET
+[2025-05-15 11:32:37] Dados recebidos: []
+[2025-05-15 11:32:37] CPF após limpeza: 
+[2025-05-15 11:32:37] CPF não corresponde ao CPF de teste

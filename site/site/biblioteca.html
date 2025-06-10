@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normas da Biblioteca - FaCiencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #e4e4e4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .navbar {
+            background-color: #9D359C;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fbff00;
+        }
+
+        .dropdown-menu {
+            background-color: #9D359C;
+            border: none;
+            border-radius: 0;
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #fbff00;
+            color: #9D359C;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 40px 0;
+            background-color: #ffffff;
+        }
+
+        .content-section h2 {
+            color: #9D359C;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .normas-container {
+            margin-top: 20px;
+        }
+
+        .normas-container h4 {
+            color: #9D359C;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .normas-container p {
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #9D359C;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer img {
+            max-height: 40px;
+            margin: 0 10px;
+        }
+
+        .footer .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer .footer-contact {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<br>
+    <!-- Header -->
+       <nav class="custom-navbar navbar navbar-expand-md navbar-dark" aria-label="Furni navigation bar">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo.png" alt="FaCiencia"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+                aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsFurni">
+              <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home">Home</a>
+                    </li>
+                    <!-- Institucional -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownInstitucional" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownInstitucional">
+                            <li><a class="dropdown-item" href="quem-somos">Quem Somos</a></li>
+                            <li><a class="dropdown-item" href="sede">Sede FaCiencia</a></li>
+                            <li><a class="dropdown-item" href="doc-institucional">Doc Institucional</a></li>
+                        </ul>
+                    </li>
+                    <!-- Cursos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCursos" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
+                            <li><a class="dropdown-item" href="tecnologo">Tecnólogo</a></li>
+                            <li><a class="dropdown-item" href="extensao">Extensão</a></li>
+                            <li><a class="dropdown-item" href="pos-graduacao">Pós-Graduação</a></li>
+                        </ul>
+                    </li>
+                    <!-- Parceria -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+                            <li><a class="dropdown-item" href="influenciadores">Influenciadores</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Parceiros Comercial</a></li> -->
+                            <li><a class="dropdown-item" href="polo-apoio">Polo de Apoio</a></li>
+                            <li><a class="dropdown-item" href="solicitacao">Solicitação do Polo</a></li>
+                        </ul>
+                    </li>
+                    <!-- Biblioteca -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+                            <li><a class="dropdown-item" href="biblioteca">Normas Biblioteca</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Acervo Acadêmico</a></li> -->
+                            <li><a class="dropdown-item" href="revista">Revista</a></li>
+                            <li><a class="dropdown-item" href="editora">Editora</a></li>
+                        </ul>
+                    </li>
+                    <!-- Atendimento -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+                            <li><a class="dropdown-item" href="ouvidoria">Ouvidoria</a></li>
+                            <li><a class="dropdown-item" href="contato">Contato</a></li>
+                            <li><a class="dropdown-item" href="enviar-documento">Enviar Documento</a></li>
+                        </ul>
+                    </li>
+                    <!-- Login -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="content-section">
+        <div class="container">
+            <h2>Normas da Biblioteca FaCiencia</h2>
+            <div class="normas-container">
+                <h4>1. Biblioteca Virtual Curatoria</h4>
+                <p></p>
+                <h4>2. Acesso ao Acervo Digital</h4>
+                <p>Os alunos e professores têm acesso ao acervo digital da biblioteca através do portal online da FaCiencia, utilizando suas credenciais de login.</p>
+                <h4>3. Suporte e Atendimento</h4>
+                <p>Em caso de dúvidas ou necessidade de suporte, os usuários podem procurar atendimento pelo E-mail biblioteca@faciencia.edu.br ou pelo Whatsapp </p>
+            </div>
+        </div>
+    </div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <!-- Logo Section -->
+                <div class="col-lg-3 col-md-6 text-center text-lg-start mb-3 mb-lg-0">
+                    <img src="logo.png" alt="FaCiencia" class="img-fluid">
+                </div>
+
+                <!-- Address Section -->
+             <div class="col-lg-5 col-md-6 text-center text-lg-start mb-3 mb-lg-0">
+                    <div class="footer-contact">
+                        <p>Rua Visconde de Nacar, 1510 – 10. Andar – Conj. 1003 – Centro – Curitiba/PR – 80.410-201</p>
+                        <p>📞 (41) 9 9256-2500 | 📧 secretaria@faciencia.edu.br</p>
+                        <a href="https://www.google.com/maps/place/R.+Visconde+de+Nacar,+1510+-+Centro,+Curitiba+-+PR,+80410-201"
+                            target="_blank">
+                            Ver no Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QR Code and Seal Section -->
+                <div class="col-lg-4 col-md-12 text-center text-lg-end">
+                    <div class="footer-logos">
+                        <img src="https://faciencia.edu.br/wp-content/webp-express/webp-images/uploads/2023/11/Mec-QRcode.png.webp" alt="QR Code" class="img-fluid mb-2">
+                        <img src="https://faciencia.edu.br/wp-content/webp-express/webp-images/uploads/2023/11/ULTIMO-SELO.png.webp" alt="MEC Seal" class="img-fluid mb-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

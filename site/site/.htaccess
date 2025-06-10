@@ -1,0 +1,34 @@
+RewriteEngine On
+
+# Institucional
+RewriteRule ^quem-somos$ about.html [L]
+RewriteRule ^sede$ sede.html [L]
+RewriteRule ^doc-institucional$ institucional.html [L]
+RewriteRule ^privacy-policy$ privacy-policy.html [L]
+RewriteRule ^politica-de-privacidade$ privacy-policy.html [L]
+RewriteRule ^editora$ editora.html [L]
+
+# Cursos
+RewriteRule ^tecnologo$ tecnologo.html [L]
+RewriteRule ^extensao$ extensao.html [L]
+RewriteRule ^pos-graduacao$ posgraducao.html [L]
+
+# Parceria
+RewriteRule ^influenciadores$ influenciadores.html [L]
+RewriteRule ^polo-apoio$ polos.html [L]
+RewriteRule ^convenios$ convenios.html [L]
+
+# Biblioteca
+RewriteRule ^biblioteca$ biblioteca.html [L]
+RewriteRule ^revista$ revista.html [L]
+
+# Atendimento
+RewriteRule ^ouvidoria$ ouvidoria.html [L]
+RewriteRule ^contato$ contact.html [L]
+RewriteRule ^enviar-documento$ documento.html [L]
+
+# Login
+RewriteRule ^login$ https://portal.faciencia.edu.br/aluno/portal/login [L]
+RewriteRule ^home$ index.html [L]
+RewriteRule ^solicitacao$ solicitacao.html [L]
+
