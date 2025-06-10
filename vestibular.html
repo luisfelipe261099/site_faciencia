@@ -1,0 +1,2887 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="description" content="FACIENCIA - Vestibular 2025. Inscreva-se e comece a transformar seu futuro!">
+
+    <!-- Cache control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <script>
+      function addTimestampToResources() {
+          const timestamp = new Date().getTime();
+
+          document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+              link.href = link.href.split('?')[0] + '?v=' + timestamp;
+          });
+
+          document.querySelectorAll('script[src]').forEach(script => {
+              script.src = script.src.split('?')[0] + '?v=' + timestamp;
+          });
+
+          document.querySelectorAll('img[src]').forEach(img => {
+              if (!img.src.includes('data:')) {
+                  img.src = img.src.split('?')[0] + '?v=' + timestamp;
+              }
+          });
+      }
+
+      window.addEventListener('load', addTimestampToResources);
+    </script>
+    <title>Vestibular FaCiencia 2025 - Sua Jornada Começa Aqui</title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="https://faciencia.edu.br/logo.png" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+      :root {
+        --primary: #9d359c;
+        --primary-dark: #7d287c;
+        --primary-light: #c965cc;
+        --secondary: #ffe925;
+        --dark: #333333;
+        --light: #f8f9fa;
+        --white: #ffffff;
+        --gray: #6c757d;
+        --success: #28a745;
+        --info: #17a2b8;
+        --border-radius: 8px;
+        --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ---- Base Styles ---- */
+      body {
+        font-family: "Roboto", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: var(--light);
+        overflow-x: hidden;
+        font-size: 16px;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        color: var(--dark);
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .btn {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        touch-action: manipulation;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(157, 53, 156, 0.3);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--primary);
+      }
+
+      .btn-secondary:hover,
+      .btn-secondary:focus {
+        background-color: #e6d020;
+        border-color: #e6d020;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 233, 37, 0.3);
+        color: var(--primary-dark);
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      .section-title:after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--primary);
+        margin: 15px auto 0;
+        border-radius: 2px;
+      }
+
+      /* ---- Navbar ---- */
+      .navbar {
+        padding: 10px 0;
+        background-color: var(--primary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        padding: 5px 0;
+        background-color: var(--primary-dark);
+      }
+
+      .navbar-brand img {
+        height: 50px;
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled .navbar-brand img {
+        height: 40px;
+      }
+
+      .navbar-nav .nav-link {
+        color: var(--white);
+        font-weight: 500;
+        padding: 8px 12px;
+        position: relative;
+        font-size: 15px;
+      }
+
+      .navbar-nav .nav-link:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        right: 50%;
+        height: 2px;
+        background-color: var(--secondary);
+        transition: all 0.3s ease;
+        opacity: 0;
+      }
+
+      .navbar-nav .nav-link:hover:before,
+      .navbar-nav .nav-link.active:before {
+        left: 12px;
+        right: 12px;
+        opacity: 1;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        color: var(--secondary);
+      }
+
+      .dropdown-menu {
+        background-color: var(--primary-dark);
+        border: none;
+        border-radius: var(--border-radius);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        margin-top: 10px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .dropdown-item {
+        color: var(--white);
+        padding: 10px 15px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-size: 15px;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: var(--primary-light);
+        color: var(--white);
+      }
+
+      .navbar-toggler {
+        border: none;
+        padding: 0;
+        margin-right: 5px;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      .navbar-toggler-icon {
+        width: 24px;
+        height: 17px;
+        background-image: none;
+        position: relative;
+        border-bottom: 2px solid var(--white);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler-icon:after,
+      .navbar-toggler-icon:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        background-color: var(--white);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler-icon:after {
+        top: 8px;
+      }
+
+      .navbar-toggler-icon:before {
+        top: 16px;
+      }
+
+      /* Responsividade para dispositivos móveis */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          background-color: var(--primary-dark);
+          padding: 15px;
+          border-radius: var(--border-radius);
+          margin-top: 10px;
+          max-height: 80vh;
+          overflow-y: auto;
+        }
+
+        .navbar-nav {
+          padding: 10px 0;
+        }
+
+        .navbar-nav .nav-item {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-nav .nav-item:last-child {
+          border-bottom: none;
+        }
+
+        .navbar-nav .nav-link {
+          padding: 12px 15px;
+          font-size: 16px;
+        }
+
+        .dropdown-menu {
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 0;
+          box-shadow: none;
+          padding: 0 0 10px 10px;
+          margin: 0;
+          border-left: 2px solid var(--secondary);
+          position: static;
+          float: none;
+          width: 100%;
+          display: none;
+        }
+
+        .dropdown-menu.show {
+          display: block;
+        }
+
+        .dropdown-item {
+          padding: 10px 15px;
+          white-space: normal;
+        }
+
+        .dropdown-toggle::after {
+          float: right;
+          margin-top: 8px;
+        }
+
+        .btn-inscreva {
+          margin: 10px 15px !important;
+          display: block;
+          text-align: center;
+        }
+      }
+
+      /* Melhorias adicionais para dispositivos móveis */
+      @media (max-width: 767.98px) {
+        body {
+          font-size: 14px;
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+
+        .hero-btn {
+          padding: 10px 20px;
+          font-size: 14px;
+          min-width: auto;
+          width: 100%;
+          margin: 5px 0;
+        }
+
+        section {
+          padding: 30px 0;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+          margin-bottom: 25px;
+        }
+
+        .form-container {
+          padding: 15px;
+        }
+
+        .form-option {
+          padding: 10px;
+        }
+
+        .form-option-icon {
+          font-size: 1.5rem;
+          width: 40px;
+          height: 40px;
+        }
+
+        .form-option-title {
+          font-size: 1rem;
+        }
+
+        .form-buttons {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .form-buttons button {
+          width: 100%;
+        }
+
+        .accordion-button {
+          font-size: 0.9rem;
+          padding: 10px 15px;
+        }
+
+        .highlight-item {
+          margin-bottom: 20px;
+        }
+
+        .footer {
+          text-align: center;
+        }
+
+        .footer-links {
+          margin-bottom: 20px;
+        }
+      }
+
+      /* ---- Hero Section ---- */
+      .hero-section {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        margin-top: 66px;
+        background-color: #f5f5f5;
+        overflow: hidden;
+        padding: 60px 0;
+      }
+
+      .hero-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(157, 53, 156, 0.9) 0%, rgba(201, 101, 204, 0.6) 100%);
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        color: var(--white);
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: var(--white);
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: var(--white);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-img-container {
+        position: absolute;
+        right: -5%;
+        bottom: -10%;
+        width: 55%;
+        opacity: 0.8;
+        z-index: 0;
+      }
+
+      .hero-img {
+        width: 100%;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .hero-btn {
+        padding: 15px 30px;
+        font-size: 16px;
+        margin: 10px;
+        min-width: 200px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-btn:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+      }
+
+      .hero-btn:hover:after {
+        animation: ripple 1s ease-out;
+      }
+
+      @keyframes ripple {
+        0% {
+          transform: scale(0, 0);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(20, 20);
+          opacity: 0;
+        }
+      }
+
+      /* ---- Tipos de Ingresso ---- */
+      .admission-section {
+        padding: 80px 0;
+        background-color: var(--white);
+      }
+
+      /* Melhorias visuais para a seção de admissão */
+      .admission-tabs {
+        margin-bottom: 40px;
+      }
+
+      .admission-tabs {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+      }
+
+      .admission-tabs .nav-tabs {
+        border: none;
+        background-color: var(--primary);
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+      }
+
+      .admission-tabs .nav-link {
+        border: none;
+        color: var(--white);
+        font-weight: 600;
+        padding: 15px 20px;
+        border-radius: 0;
+        position: relative;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .admission-tabs .nav-link.active,
+      .admission-tabs .nav-link:hover {
+        background-color: transparent;
+        color: var(--secondary);
+      }
+
+      .admission-tabs .nav-link.active:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--secondary);
+      }
+
+      .admission-tabs .tab-content {
+        padding: 30px;
+        background-color: var(--white);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+      }
+
+      .admission-step {
+        display: flex;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .admission-step:last-child {
+        margin-bottom: 0;
+      }
+
+      .admission-step:not(:last-child):before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        height: calc(100% + 20px);
+        width: 2px;
+        background-color: var(--primary-light);
+      }
+
+      .step-number {
+        flex: 0 0 40px;
+        height: 40px;
+        background-color: var(--primary);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        margin-right: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .step-content {
+        flex: 1;
+      }
+
+      .step-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+      }
+
+      .step-content p {
+        margin-bottom: 0;
+        color: var(--gray);
+      }
+
+      /* ---- Cards de Ingresso ---- */
+      .admission-cards {
+        margin-top: 50px;
+      }
+
+      .admission-card {
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+        padding-bottom: 60px;
+      }
+
+      .admission-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .admission-card-header {
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .admission-card-header:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid var(--primary);
+      }
+
+      .admission-card-header i {
+        font-size: 40px;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .admission-card-header h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        color: var(--white);
+      }
+
+      .admission-card-body {
+        padding: 30px 20px;
+      }
+
+      .admission-card-body p {
+        margin-bottom: 15px;
+      }
+
+      .admission-card-body ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+
+      .admission-card-body ul li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 10px;
+      }
+
+      .admission-card-body ul li:before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+      }
+
+      .admission-card-footer {
+        padding: 20px;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* ---- Frequently Asked Questions ---- */
+      .faq-section {
+        background-color: var(--light);
+        padding: 80px 0;
+      }
+
+      .accordion-item {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+      }
+
+      .accordion-header .accordion-button {
+        padding: 20px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--primary);
+        background-color: var(--white);
+        box-shadow: none;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: var(--primary);
+        color: var(--white);
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+      }
+
+      .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%239d359c'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+
+      .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+
+      .accordion-body {
+        padding: 20px;
+        background-color: var(--white);
+      }
+
+      /* ---- Timeline Section ---- */
+      .timeline-section {
+        padding: 80px 0;
+        background-color: var(--white);
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: var(--primary-light);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+      }
+
+      .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+      }
+
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: -10px;
+        background-color: var(--white);
+        border: 4px solid var(--primary);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .timeline-left {
+        left: 0;
+      }
+
+      .timeline-right {
+        left: 50%;
+      }
+
+      .timeline-left::after {
+        right: -10px;
+      }
+
+      .timeline-right::after {
+        left: -10px;
+      }
+
+      .timeline-content {
+        padding: 20px;
+        background-color: var(--white);
+        position: relative;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+      }
+
+      .timeline-date {
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      .timeline-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+      }
+
+      .timeline-content p {
+        margin-bottom: 0;
+      }
+
+      /* ---- Highlights Section ---- */
+      .highlights-section {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        color: var(--white);
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .highlights-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('pattern.png');
+        opacity: 0.1;
+        z-index: 0;
+      }
+
+      .highlight-item {
+        text-align: center;
+        padding: 30px 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: var(--border-radius);
+        position: relative;
+        z-index: 1;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .highlight-item:hover {
+        transform: translateY(-10px);
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .highlight-icon {
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: var(--secondary);
+      }
+
+      .highlight-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--white);
+      }
+
+      .highlight-text {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* ---- CTA Section ---- */
+      .cta-section {
+        background: url('cta-bg.jpg') center/cover no-repeat;
+        position: relative;
+        color: var(--white);
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .cta-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(157, 53, 156, 0.9) 0%, rgba(201, 101, 204, 0.9) 100%);
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-content h2 {
+        color: var(--white);
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+      }
+
+      .cta-content p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-btn {
+        background-color: var(--white);
+        color: var(--primary);
+        font-weight: 700;
+        padding: 15px 30px;
+        font-size: 16px;
+        min-width: 200px;
+      }
+
+      .cta-btn:hover {
+        background-color: var(--secondary);
+        color: var(--primary-dark);
+      }
+
+      /* ---- Multi-step Form ---- */
+      .form-section {
+        padding: 80px 0;
+        background-color: var(--light);
+      }
+
+      .form-container {
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        overflow: hidden;
+      }
+
+      .form-progress {
+        display: flex;
+        counter-reset: step;
+        margin-bottom: 30px;
+      }
+
+      .form-progress-step {
+        flex: 1;
+        text-align: center;
+        position: relative;
+        padding: 20px 0;
+      }
+
+      .form-progress-step:before {
+        counter-increment: step;
+        content: counter(step);
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        background-color: var(--light);
+        color: var(--gray);
+        display: block;
+        margin: 0 auto 10px;
+        border: 2px solid var(--light);
+        transition: all 0.3s ease;
+      }
+
+      .form-progress-step.active:before,
+      .form-progress-step.completed:before {
+        background-color: var(--primary);
+        color: var(--white);
+        border-color: var(--primary);
+      }
+
+      .form-progress-step:after {
+        content: '';
+        position: absolute;
+        top: 35px;
+        right: -50%;
+        width: 100%;
+        height: 2px;
+        background-color: var(--light);
+        z-index: -1;
+      }
+
+      .form-progress-step:last-child:after {
+        display: none;
+      }
+
+      .form-progress-step.completed:after {
+        background-color: var(--primary);
+      }
+
+      .form-progress-step-text {
+        font-size: 14px;
+        color: var(--gray);
+        font-weight: 500;
+      }
+
+      .form-progress-step.active .form-progress-step-text,
+      .form-progress-step.completed .form-progress-step-text {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .form-step {
+        display: none;
+        padding: 30px;
+      }
+
+      .form-step.active {
+        display: block;
+      }
+
+      .form-title {
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--primary);
+      }
+
+      .form-control {
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius);
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 0.2rem rgba(157, 53, 156, 0.25);
+      }
+
+      .form-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+
+      .form-buttons .btn {
+        min-width: 120px;
+      }
+
+      .form-check-label {
+        margin-bottom: 0;
+        cursor: pointer;
+      }
+
+      .form-option {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border: 2px solid #ddd;
+        border-radius: var(--border-radius);
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .form-option:hover {
+        border-color: var(--primary-light);
+      }
+
+      .form-option.selected {
+        border-color: var(--primary);
+        background-color: rgba(157, 53, 156, 0.05);
+      }
+
+      .form-option-icon {
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary-light);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+        font-size: 20px;
+      }
+
+      .form-option-content {
+        flex: 1;
+      }
+
+      .form-option-title {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--primary);
+      }
+
+      .form-option-desc {
+        font-size: 14px;
+        color: var(--gray);
+        margin-bottom: 0;
+      }
+
+      .form-success {
+        text-align: center;
+        padding: 30px;
+      }
+
+      .form-success-icon {
+        font-size: 60px;
+        color: var(--success);
+        margin-bottom: 20px;
+      }
+
+      .form-success-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+      }
+
+      .form-success-message {
+        color: var(--gray);
+        margin-bottom: 20px;
+      }
+
+      /* ---- Autocomplete Styles ---- */
+      .autocomplete-container {
+        position: relative;
+      }
+
+      .autocomplete-suggestions {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 1000;
+        display: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .autocomplete-suggestions.show {
+        display: block;
+      }
+
+      .autocomplete-suggestion {
+        padding: 10px 15px;
+        cursor: pointer;
+        border-bottom: 1px solid #f0f0f0;
+        transition: background-color 0.2s ease;
+      }
+
+      .autocomplete-suggestion:last-child {
+        border-bottom: none;
+      }
+
+      .autocomplete-suggestion:hover,
+      .autocomplete-suggestion.selected {
+        background-color: var(--light);
+      }
+
+      .autocomplete-suggestion.active {
+        background-color: var(--primary);
+        color: var(--white);
+      }
+
+      .autocomplete-loading {
+        padding: 10px 15px;
+        text-align: center;
+        color: var(--gray);
+        font-style: italic;
+      }
+
+      .autocomplete-no-results {
+        padding: 10px 15px;
+        text-align: center;
+        color: var(--gray);
+        font-style: italic;
+      }
+
+      /* ---- Footer ---- */
+      .footer {
+        background-color: var(--primary-dark);
+        color: var(--white);
+        padding: 60px 0 30px;
+      }
+
+      .footer-logo {
+        margin-bottom: 20px;
+      }
+
+      .footer-logo img {
+        height: 70px;
+      }
+
+      .footer-info p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+        font-size: 0.9rem;
+      }
+
+      .footer-info i {
+        margin-right: 10px;
+        color: var(--secondary);
+        margin-top: 4px;
+      }
+
+      .footer h5 {
+        color: var(--white);
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        position: relative;
+      }
+
+      .footer h5:after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: var(--secondary);
+        margin-top: 10px;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 8px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+        font-size: 0.9rem;
+      }
+
+      .footer-links a:hover {
+        color: var(--secondary);
+        transform: translateX(5px);
+      }
+
+      .social-links {
+        display: flex;
+        margin-top: 15px;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--white);
+        margin-right: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--secondary);
+        color: var(--primary-dark);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 0.85rem;
+      }
+
+      .footer-bottom p {
+        margin-bottom: 0;
+      }
+
+      /* ---- Floating Buttons ---- */
+      .floating-buttons {
+        position: fixed;
+        right: 15px;
+        bottom: 15px;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .floating-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        color: var(--white);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      .floating-btn:hover {
+        background-color: var(--primary-dark);
+        transform: scale(1.05);
+        color: var(--white);
+      }
+
+      .floating-btn.whatsapp {
+        background-color: #25D366;
+      }
+
+      .floating-btn.whatsapp:hover {
+        background-color: #128C7E;
+      }
+
+      .floating-btn span {
+        position: absolute;
+        right: 60px;
+        background-color: var(--white);
+        color: var(--dark);
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: 500;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .floating-btn:hover span {
+        opacity: 1;
+        visibility: visible;
+        right: 65px;
+      }
+
+      /* ---- Responsive Styles ---- */
+      @media (max-width: 991.98px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+        }
+
+        .hero-img-container {
+          display: none;
+        }
+
+        .admission-tabs .nav-link {
+          padding: 10px 15px;
+          font-size: 14px;
+        }
+
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-item::after {
+          left: 21px;
+        }
+
+        .timeline-right {
+          left: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+
+        .hero-btn {
+          padding: 10px 20px;
+          font-size: 14px;
+          min-width: auto;
+          width: 100%;
+          margin: 5px 0;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .admission-tabs .nav-tabs {
+          flex-direction: column;
+        }
+
+        .admission-tabs .nav-link {
+          border-radius: 0;
+        }
+
+        .admission-tabs .nav-link.active:after {
+          display: none;
+        }
+
+        .timeline-content {
+          padding: 15px;
+        }
+
+        .timeline-item {
+          padding-left: 60px;
+          padding-right: 15px;
+        }
+
+        .form-progress-step-text {
+          font-size: 12px;
+        }
+
+        .form-buttons {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .form-buttons .btn {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .hero-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .section-title {
+          font-size: 1.6rem;
+        }
+
+        .admission-tabs .tab-content {
+          padding: 20px 15px;
+        }
+
+        .step-number {
+          flex: 0 0 30px;
+          height: 30px;
+          font-size: 14px;
+        }
+
+        .step-content h4 {
+          font-size: 1.1rem;
+        }
+
+        .timeline::after {
+          left: 21px;
+        }
+
+        .timeline-item {
+          padding-left: 50px;
+        }
+
+        .timeline-item::after {
+          width: 15px;
+          height: 15px;
+          left: 13px;
+        }
+
+        .form-step {
+          padding: 20px 15px;
+        }
+
+        .form-progress-step:before {
+          width: 25px;
+          height: 25px;
+          line-height: 25px;
+          font-size: 12px;
+        }
+      }
+    </style>
+</head>
+
+<body>
+  <!-- Header/Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="home">
+        <img src="logo.png" alt="FaCiencia">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-label="Menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="home">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="quem-somos">Quem Somos</a></li>
+              <li><a class="dropdown-item" href="sede">Sede FaCiencia</a></li>
+              <li><a class="dropdown-item" href="infra">Infraestrutura</a></li>
+              <li><a class="dropdown-item" href="valida">Validador Diploma</a></li>
+              <li><a class="dropdown-item" href="doc-institucional">Doc Institucional</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="tecnologo">Tecnólogo</a></li>
+              <li><a class="dropdown-item" href="extensao">Extensão</a></li>
+              <li><a class="dropdown-item" href="pos-graduacao">Pós-Graduação</a></li>
+            </ul>
+          </li>
+          <!-- Parceria -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button" data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+              <li><a class="dropdown-item" href="polo-apoio">Polo de Apoio</a></li>
+              <li><a class="dropdown-item" href="solicitacao">Solicitação do Polo</a></li>
+            </ul>
+          </li>
+          <!-- Biblioteca -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button" data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+              <li><a class="dropdown-item" href="biblioteca">Biblioteca</a></li>
+              <li><a class="dropdown-item" href="revista">Revista</a></li>
+              <li><a class="dropdown-item" href="editora">Editora</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acesso</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://ava.faciencia.edu.br/login/index.php">AVA</a></li>
+              <li><a class="dropdown-item" href="https://lfmtecnologia.com/reinandus/loginaluno.php">Portal do Aluno</a></li>
+            </ul>
+          </li>
+          <!-- Atendimento -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button" data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+              <li><a class="dropdown-item" href="ouvidoria">Ouvidoria</a></li>
+              <li><a class="dropdown-item" href="contato">Contato</a></li>
+              <li><a class="dropdown-item" href="enviar-documento">Enviar Documento</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indicacao.php">Indique um Amigo</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-secondary btn-inscreva" href="https://faciencia.edu.br/vestibular">
+              <i class="fas fa-graduation-cap me-2"></i>Vestibular
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="animate__animated animate__fadeInDown">Vestibular FaCiencia 2025</h1>
+        <p class="animate__animated animate__fadeInUp">Sua jornada para o sucesso profissional começa aqui. Escolha a melhor forma de ingresso e transforme seu futuro!</p>
+        <div class="animate__animated animate__fadeInUp animate__delay-1s">
+          <a href="#admission-options" class="btn btn-secondary hero-btn">Formas de Ingresso</a>
+          <a href="#vestibular-form" class="btn btn-outline-light hero-btn">Inscreva-se Agora</a>
+        </div>
+      </div>
+      <div class="hero-img-container">
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Admission Options Section -->
+  <section class="admission-section" id="admission-options">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Formas de Ingresso</h2>
+
+      <div class="admission-tabs" data-aos="fade-up">
+        <ul class="nav nav-tabs" id="admissionTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="vestibular-tab" data-bs-toggle="tab" data-bs-target="#vestibular-tab-pane" type="button" role="tab" aria-controls="vestibular-tab-pane" aria-selected="true">Vestibular Tradicional</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="enem-tab" data-bs-toggle="tab" data-bs-target="#enem-tab-pane" type="button" role="tab" aria-controls="enem-tab-pane" aria-selected="false">Nota do ENEM</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="transferencia-tab" data-bs-toggle="tab" data-bs-target="#transferencia-tab-pane" type="button" role="tab" aria-controls="transferencia-tab-pane" aria-selected="false">Transferência</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="segunda-graduacao-tab" data-bs-toggle="tab" data-bs-target="#segunda-graduacao-tab-pane" type="button" role="tab" aria-controls="segunda-graduacao-tab-pane" aria-selected="false">Segunda Graduação</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="admissionTabsContent">
+          <!-- Vestibular Tradicional -->
+          <div class="tab-pane fade show active" id="vestibular-tab-pane" role="tabpanel" aria-labelledby="vestibular-tab" tabindex="0">
+            <h3>Vestibular Tradicional</h3>
+            <p>Realize nossa prova online e ingresse imediatamente no curso desejado. O processo é simples, rápido e você pode fazer de onde estiver!</p>
+
+            <div class="admission-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Inscrição</h4>
+                <p>Preencha o formulário de inscrição com seus dados pessoais e escolha o curso desejado.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Prova Online</h4>
+                <p>Realize a prova de conhecimentos gerais e redação diretamente pela internet, no horário que preferir.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Resultado</h4>
+                <p>Receba o resultado em até 48 horas após a realização da prova.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Matrícula</h4>
+                <p>Aprovado? Envie os documentos necessários e efetue o pagamento da primeira mensalidade para garantir sua vaga.</p>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="#vestibular-form" class="btn btn-primary" onclick="setAdmissionType('vestibular')">Inscreva-se para o Vestibular</a>
+            </div>
+          </div>
+
+          <!-- Nota do ENEM -->
+          <div class="tab-pane fade" id="enem-tab-pane" role="tabpanel" aria-labelledby="enem-tab" tabindex="0">
+            <h3>Ingresso com Nota do ENEM</h3>
+            <p>Use sua nota do ENEM dos últimos 5 anos e garanta sua vaga sem precisar fazer o vestibular tradicional.</p>
+
+            <div class="admission-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Inscrição</h4>
+                <p>Preencha o formulário de inscrição e informe o ano de realização do ENEM e sua nota.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Análise da Nota</h4>
+                <p>Nossa equipe fará a análise da sua nota (mínimo de 450 pontos) e verificará sua elegibilidade.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Resultado</h4>
+                <p>Receba o resultado em até 48 horas após a inscrição.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Matrícula</h4>
+                <p>Aprovado? Envie os documentos necessários e efetue o pagamento da primeira mensalidade para garantir sua vaga.</p>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="#vestibular-form" class="btn btn-primary" onclick="setAdmissionType('enem')">Usar Nota do ENEM</a>
+            </div>
+          </div>
+
+          <!-- Transferência -->
+          <div class="tab-pane fade" id="transferencia-tab-pane" role="tabpanel" aria-labelledby="transferencia-tab" tabindex="0">
+            <h3>Transferência Externa</h3>
+            <p>Já começou sua graduação em outra instituição? Transfira-se para a FaCiencia e continue seus estudos com a qualidade que você merece.</p>
+
+            <div class="admission-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Inscrição</h4>
+                <p>Preencha o formulário de inscrição com seus dados e informações da instituição de origem.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Análise Curricular</h4>
+                <p>Nossa equipe analisará seu histórico escolar para verificar as disciplinas que poderão ser aproveitadas.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Resultado</h4>
+                <p>Receba o resultado e o plano de estudos personalizado em até 5 dias úteis.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Matrícula</h4>
+                <p>Aprovado? Envie os documentos necessários e efetue o pagamento da primeira mensalidade para garantir sua vaga.</p>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="#vestibular-form" class="btn btn-primary" onclick="setAdmissionType('transferencia')">Solicitar Transferência</a>
+            </div>
+          </div>
+
+          <!-- Segunda Graduação -->
+          <div class="tab-pane fade" id="segunda-graduacao-tab-pane" role="tabpanel" aria-labelledby="segunda-graduacao-tab" tabindex="0">
+            <h3>Segunda Graduação</h3>
+            <p>Já é graduado e quer ampliar seus conhecimentos? Ingresse diretamente em um novo curso sem precisar fazer vestibular.</p>
+
+            <div class="admission-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Inscrição</h4>
+                <p>Preencha o formulário de inscrição com seus dados e informações da sua graduação anterior.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Análise Documental</h4>
+                <p>Nossa equipe verificará seu diploma e histórico escolar para possíveis aproveitamentos de disciplinas.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Resultado</h4>
+                <p>Receba o resultado e o plano de estudos personalizado em até 5 dias úteis.</p>
+              </div>
+            </div>
+
+            <div class="admission-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Matrícula</h4>
+                <p>Aprovado? Envie os documentos necessários e efetue o pagamento da primeira mensalidade para garantir sua vaga.</p>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="#vestibular-form" class="btn btn-primary" onclick="setAdmissionType('segunda-graduacao')">Fazer Segunda Graduação</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="form-section" id="vestibular-form">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Inscreva-se no Vestibular</h2>
+
+      <div class="form-container" data-aos="fade-up">
+        <div class="form-progress">
+          <div class="form-progress-step active">
+            <div class="form-progress-step-text">Forma de Ingresso</div>
+          </div>
+          <div class="form-progress-step">
+            <div class="form-progress-step-text">Dados Pessoais</div>
+          </div>
+          <div class="form-progress-step">
+            <div class="form-progress-step-text">Curso</div>
+          </div>
+          <div class="form-progress-step">
+            <div class="form-progress-step-text">Confirmação</div>
+          </div>
+        </div>
+
+        <form id="vestibular-form-element">
+          <!-- Step 1: Forma de Ingresso -->
+          <div class="form-step active" id="step1">
+            <h3 class="form-title">Forma de Ingresso</h3>
+
+            <div class="mb-4">
+              <label class="form-label">Selecione a forma de ingresso*</label>
+
+              <div class="form-option" onclick="selectAdmissionType(this, 'vestibular')">
+                <div class="form-option-icon">
+                  <i class="fas fa-edit"></i>
+                </div>
+                <div class="form-option-content">
+                  <h5 class="form-option-title">Vestibular Tradicional</h5>
+                  <p class="form-option-desc">Faça nossa prova online e ingresse rapidamente no curso desejado.</p>
+                </div>
+              </div>
+
+              <div class="form-option" onclick="selectAdmissionType(this, 'enem')">
+                <div class="form-option-icon">
+                  <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="form-option-content">
+                  <h5 class="form-option-title">Nota do ENEM</h5>
+                  <p class="form-option-desc">Use sua nota do ENEM dos últimos 5 anos e garanta sua vaga.</p>
+                </div>
+              </div>
+
+              <div class="form-option" onclick="selectAdmissionType(this, 'transferencia')">
+                <div class="form-option-icon">
+                  <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div class="form-option-content">
+                  <h5 class="form-option-title">Transferência</h5>
+                  <p class="form-option-desc">Transfira-se de outra instituição e continue seus estudos conosco.</p>
+                </div>
+              </div>
+
+              <div class="form-option" onclick="selectAdmissionType(this, 'segunda-graduacao')">
+                <div class="form-option-icon">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="form-option-content">
+                  <h5 class="form-option-title">Segunda Graduação</h5>
+                  <p class="form-option-desc">Já é graduado? Ingresse diretamente em um novo curso.</p>
+                </div>
+              </div>
+            </div>
+
+            <input type="hidden" name="modalidade" id="modalidade" value="">
+
+            <div id="enem-fields" style="display: none;">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="ano_enem" class="form-label">Ano do ENEM*</label>
+                    <select class="form-control" id="ano_enem" name="ano_enem">
+                      <option value="">Selecione</option>
+                      <option value="2025">2025</option>
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="nota_enem" class="form-label">Nota do ENEM*</label>
+                    <input type="number" class="form-control" id="nota_enem" name="nota_enem" min="0" max="1000">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="transferencia-fields" style="display: none;">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="instituicao_origem" class="form-label">Instituição de Origem*</label>
+                    <input type="text" class="form-control" id="instituicao_origem" name="instituicao_origem">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="curso_origem" class="form-label">Curso de Origem*</label>
+                    <input type="text" class="form-control" id="curso_origem" name="curso_origem">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="segunda-graduacao-fields" style="display: none;">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="instituicao_anterior" class="form-label">Instituição da 1ª Graduação*</label>
+                    <input type="text" class="form-control" id="instituicao_anterior" name="instituicao_anterior">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="curso_anterior" class="form-label">Curso Concluído*</label>
+                    <input type="text" class="form-control" id="curso_anterior" name="curso_anterior">
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="ano_conclusao" class="form-label">Ano de Conclusão*</label>
+                <input type="number" class="form-control" id="ano_conclusao" name="ano_conclusao" min="1950" max="2025">
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="btn btn-primary next-step">Próximo Passo</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Dados Pessoais -->
+          <div class="form-step" id="step2">
+            <h3 class="form-title">Dados Pessoais</h3>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome Completo*</label>
+                  <input type="text" class="form-control" id="nome" name="nome" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="cpf" class="form-label">CPF*</label>
+                  <input type="text" class="form-control" id="cpf" name="cpf" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="email" class="form-label">E-mail*</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="telefone" class="form-label">Telefone/WhatsApp*</label>
+                  <input type="tel" class="form-control" id="telefone" name="telefone" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="nascimento" class="form-label">Data de Nascimento*</label>
+                  <input type="date" class="form-control" id="nascimento" name="nascimento" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="cidade" class="form-label">Cidade/UF*</label>
+                  <div class="autocomplete-container">
+                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite o nome da cidade..." required autocomplete="off">
+                    <div class="autocomplete-suggestions" id="cidade-suggestions"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="btn btn-outline-secondary prev-step">Voltar</button>
+              <button type="button" class="btn btn-primary next-step">Próximo Passo</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Curso -->
+          <div class="form-step" id="step3">
+            <h3 class="form-title">Escolha seu Curso</h3>
+
+            <div class="mb-4">
+              <label class="form-label">Selecione o curso de seu interesse*</label>
+
+              <div class="form-option" onclick="selectCourse(this, 'recursos_humanos')">
+                <div class="form-option-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="form-option-content">
+                  <h5 class="form-option-title">Tecnólogo em Recursos Humanos</h5>
+                  <p class="form-option-desc">Duração: 2 anos</p>
+                </div>
+              </div>
+
+
+            </div>
+
+            <input type="hidden" name="curso" id="curso" value="">
+
+            <div class="form-buttons">
+              <button type="button" class="btn btn-outline-secondary prev-step">Voltar</button>
+              <button type="button" class="btn btn-primary next-step">Próximo Passo</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Confirmação -->
+          <div class="form-step" id="step4">
+            <h3 class="form-title">Confirme seus Dados</h3>
+
+            <div class="card mb-4">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Dados Pessoais</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <p><strong>Nome:</strong> <span id="confirm-nome"></span></p>
+                    <p><strong>CPF:</strong> <span id="confirm-cpf"></span></p>
+                    <p><strong>Data de Nascimento:</strong> <span id="confirm-nascimento"></span></p>
+                  </div>
+                  <div class="col-md-6">
+                    <p><strong>E-mail:</strong> <span id="confirm-email"></span></p>
+                    <p><strong>Telefone:</strong> <span id="confirm-telefone"></span></p>
+                    <p><strong>Cidade/UF:</strong> <span id="confirm-cidade"></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Forma de Ingresso</h5>
+              </div>
+              <div class="card-body">
+                <p><strong>Modalidade:</strong> <span id="confirm-modalidade"></span></p>
+                <div id="confirm-extras"></div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Curso Selecionado</h5>
+              </div>
+              <div class="card-body">
+                <p><strong>Curso:</strong> <span id="confirm-curso"></span></p>
+                <p><strong>Duração:</strong> 2 anos</p>
+              </div>
+            </div>
+
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" id="termos" required>
+              <label class="form-check-label" for="termos">
+                Li e concordo com os <a href="#" data-bs-toggle="modal" data-bs-target="#termosModal">Termos e Condições</a> e <a href="#" data-bs-toggle="modal" data-bs-target="#privacidadeModal">Política de Privacidade</a>.
+              </label>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="btn btn-outline-secondary prev-step">Voltar</button>
+              <button type="button" class="btn btn-primary" id="submit-button" onclick="submitForm()">Finalizar Inscrição</button>
+            </div>
+          </div>
+
+          <!-- Success Step -->
+          <div class="form-step" id="success-step">
+            <div class="form-success">
+              <div class="form-success-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <h3 class="form-success-title">Inscrição Realizada com Sucesso!</h3>
+              <p class="form-success-message">Parabéns! Sua inscrição para o Vestibular FaCiencia 2025 foi recebida. Você receberá um e-mail com as próximas instruções para realizar sua prova.</p>
+
+              <div class="row mt-4">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <a href="#" class="btn btn-outline-primary w-100" id="realizar-prova-btn">
+                    <i class="fas fa-edit me-2"></i>Realizar a Prova Agora
+                  </a>
+                </div>
+                <div class="col-md-6">
+                  <a href="/" class="btn btn-outline-secondary w-100">
+                    <i class="fas fa-home me-2"></i>Voltar para Home
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Perguntas Frequentes</h2>
+
+      <div class="accordion" id="accordionFAQ" data-aos="fade-up">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Quais documentos são necessários para a matrícula?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body">
+              <p>Para efetuar sua matrícula, você precisará dos seguintes documentos:</p>
+              <ul>
+                <li>Documento de identidade (RG) ou CNH</li>
+                <li>CPF</li>
+                <li>Comprovante de residência atualizado</li>
+                <li>Certificado de conclusão do Ensino Médio</li>
+                <li>Histórico escolar do Ensino Médio</li>
+                <li>Foto 3x4 recente</li>
+                <li>Certidão de nascimento ou casamento</li>
+              </ul>
+              <p>Os documentos devem ser enviados em formato digital durante o processo de matrícula online.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Como funciona o vestibular online?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body">
+              <p>O vestibular online da FaCiencia é realizado inteiramente pela internet, com as seguintes características:</p>
+              <ul>
+                <li>Disponível 24 horas por dia, dentro do período de inscrições</li>
+                <li>Duração máxima de 1 hora após iniciado</li>
+                <li>Composto por 10 questões de múltipla escolha</li>
+                <li>Sistema com medidas anti-fraude e monitoramento</li>
+                <li>Resultado disponível imediatamente após a conclusão</li>
+                <li>Possibilidade de até 2 tentativas caso não obtenha aprovação na primeira</li>
+              </ul>
+              <p>Após a aprovação, você já pode realizar sua matrícula online.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Quais são as formas de pagamento?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body">
+              <p>A FaCiencia oferece diversas opções de pagamento para sua mensalidade:</p>
+              <ul>
+                <li>Boleto bancário (com desconto de pontualidade)</li>
+                <li>Cartão de crédito (com possibilidade de parcelamento)</li>
+                <li>Débito em conta (para correntistas de bancos conveniados)</li>
+                <li>Pix</li>
+              </ul>
+              <p>Você também pode optar pelo pagamento semestral com desconto adicional.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              O diploma tem validade nacional?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body">
+              <p>Sim! A FaCiencia é uma instituição de ensino superior devidamente credenciada pelo MEC com nota 4. Todos os nossos cursos são reconhecidos e os diplomas têm validade em todo o território nacional.</p>
+              <p>O diploma de Tecnólogo possui o mesmo valor legal que um diploma de bacharelado, permitindo ao formado:</p>
+              <ul>
+                <li>Concorrer a vagas de emprego que exigem formação superior</li>
+                <li>Participar de concursos públicos</li>
+                <li>Fazer pós-graduação (especialização, mestrado e doutorado)</li>
+                <li>Obter registro em conselhos profissionais, quando aplicável</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Quando as aulas começam?
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFAQ">
+            <div class="accordion-body">
+              <p>As aulas para calouros do primeiro semestre de 2025 têm início no dia 17 de fevereiro de 2025. O calendário acadêmico completo é disponibilizado aos alunos matriculados através do AVA (Ambiente Virtual de Aprendizagem).</p>
+              <p>É importante que você faça sua matrícula dentro do prazo estabelecido para garantir o acesso a todos os materiais e atividades desde o primeiro dia de aula.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights-section" id="destaques">
+    <div class="container">
+      <h2 class="section-title text-white" data-aos="fade-up">FaCiencia em Números</h2>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="highlight-number">5000+</div>
+            <div class="highlight-text">Alunos Formados</div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="highlight-number">4</div>
+            <div class="highlight-text">Nota no MEC</div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="highlight-number">85%</div>
+            <div class="highlight-text">Taxa de Empregabilidade</div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="highlight-number">27</div>
+            <div class="highlight-text">Estados Atendidos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" data-aos="fade-up">
+        <h2>Pronto para transformar seu futuro?</h2>
+        <p>Inscreva-se no vestibular 2025 da FaCiencia e dê o primeiro passo para uma carreira de sucesso!</p>
+        <a href="#vestibular-form" class="btn cta-btn">
+          <i class="fas fa-user-graduate me-2"></i>Quero me inscrever agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-logo">
+            <img src="logo.png" alt="FaCiencia">
+          </div>
+          <div class="footer-info">
+            <p><i class="fas fa-map-marker-alt"></i> Rua Visconde de Nacar, 1510 – 10° Andar – Conj. 1003 – Centro – Curitiba/PR</p>
+            <p><i class="fas fa-phone"></i> (41) 9 9256-2500</p>
+            <p><i class="fas fa-envelope"></i> contato@faciencia.edu.br</p>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
+          <h5>Institucional</h5>
+          <ul class="footer-links">
+            <li><a href="quem-somos">Quem Somos</a></li>
+            <li><a href="sede">Nossa Sede</a></li>
+            <li><a href="infra">Infraestrutura</a></li>
+            <li><a href="doc-institucional">Documentos</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
+          <h5>Cursos</h5>
+          <ul class="footer-links">
+            <li><a href="tecnologo">Tecnólogo</a></li>
+            <li><a href="extensao">Extensão</a></li>
+            <li><a href="pos-graduacao">Pós-Graduação</a></li>
+            <li><a href="vestibular">Vestibular</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
+          <h5>Links Rápidos</h5>
+          <ul class="footer-links">
+            <li><a href="https://ava.faciencia.edu.br/login/index.php">AVA</a></li>
+            <li><a href="https://lfmtecnologia.com/reinandus/loginaluno.php">Portal</a></li>
+            <li><a href="biblioteca">Biblioteca</a></li>
+            <li><a href="contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 mb-4 mb-lg-0">
+          <h5>Atendimento</h5>
+          <ul class="footer-links">
+            <li><a href="ouvidoria">Ouvidoria</a></li>
+            <li><a href="contato">Contato</a></li>
+            <li><a href="enviar-documento">Documentos</a></li>
+            <li><a href="https://wa.link/vfs21y">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <p>&copy; 2025 FaCiencia. Todos os direitos reservados.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="https://emec.mec.gov.br/emec/consulta-cadastro/detalhamento/d96957f455f6405d14c6542552b0f6eb/MjQ2Nzc=" target="_blank">
+              <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/Mec-QRcode.png.webp" alt="QR Code MEC" height="50">
+            </a>
+            <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/ULTIMO-SELO.png.webp" alt="Selo MEC" height="50" class="ms-2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Custom Scripts -->
+  <script>
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+
+    // Navbar scroll behavior
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbar = document.querySelector('.navbar');
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 30) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Inicializar autocomplete de cidades
+      initCityAutocomplete();
+    });
+
+    // Funcionalidade de autocomplete para cidades
+    function initCityAutocomplete() {
+      const cidadeInput = document.getElementById('cidade');
+      const suggestionsContainer = document.getElementById('cidade-suggestions');
+      let currentFocus = -1;
+      let cities = [];
+      let searchTimeout;
+
+      // Carregar todas as cidades brasileiras
+      async function loadCities() {
+        try {
+          const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/municipios');
+          const data = await response.json();
+
+          cities = data.map(city => ({
+            nome: city.nome,
+            uf: city.microrregiao.mesorregiao.UF.sigla,
+            display: `${city.nome} - ${city.microrregiao.mesorregiao.UF.sigla}`
+          }));
+        } catch (error) {
+          console.error('Erro ao carregar cidades:', error);
+        }
+      }
+
+      // Carregar cidades ao inicializar
+      loadCities();
+
+      // Função para filtrar cidades
+      function filterCities(query) {
+        if (!query || query.length < 2) return [];
+
+        const normalizedQuery = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+        return cities.filter(city => {
+          const normalizedCity = city.nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          return normalizedCity.includes(normalizedQuery);
+        }).slice(0, 10); // Limitar a 10 resultados
+      }
+
+      // Função para mostrar sugestões
+      function showSuggestions(suggestions) {
+        suggestionsContainer.innerHTML = '';
+        currentFocus = -1;
+
+        if (suggestions.length === 0) {
+          const noResults = document.createElement('div');
+          noResults.className = 'autocomplete-no-results';
+          noResults.textContent = 'Nenhuma cidade encontrada';
+          suggestionsContainer.appendChild(noResults);
+          suggestionsContainer.classList.add('show');
+          return;
+        }
+
+        suggestions.forEach((city, index) => {
+          const suggestion = document.createElement('div');
+          suggestion.className = 'autocomplete-suggestion';
+          suggestion.textContent = city.display;
+          suggestion.addEventListener('click', () => selectCity(city));
+          suggestionsContainer.appendChild(suggestion);
+        });
+
+        suggestionsContainer.classList.add('show');
+      }
+
+      // Função para esconder sugestões
+      function hideSuggestions() {
+        suggestionsContainer.classList.remove('show');
+        currentFocus = -1;
+      }
+
+      // Função para selecionar uma cidade
+      function selectCity(city) {
+        cidadeInput.value = city.display;
+        hideSuggestions();
+      }
+
+      // Função para navegar pelas sugestões com teclado
+      function navigateSuggestions(direction) {
+        const suggestions = suggestionsContainer.querySelectorAll('.autocomplete-suggestion');
+        if (suggestions.length === 0) return;
+
+        // Remover classe active anterior
+        if (currentFocus >= 0) {
+          suggestions[currentFocus].classList.remove('active');
+        }
+
+        currentFocus += direction;
+
+        // Circular navigation
+        if (currentFocus >= suggestions.length) {
+          currentFocus = 0;
+        } else if (currentFocus < 0) {
+          currentFocus = suggestions.length - 1;
+        }
+
+        // Adicionar classe active
+        suggestions[currentFocus].classList.add('active');
+      }
+
+      // Event listeners
+      cidadeInput.addEventListener('input', function() {
+        const query = this.value.trim();
+
+        clearTimeout(searchTimeout);
+
+        if (query.length < 2) {
+          hideSuggestions();
+          return;
+        }
+
+        // Mostrar loading
+        suggestionsContainer.innerHTML = '<div class="autocomplete-loading">Buscando cidades...</div>';
+        suggestionsContainer.classList.add('show');
+
+        searchTimeout = setTimeout(() => {
+          const suggestions = filterCities(query);
+          showSuggestions(suggestions);
+        }, 300);
+      });
+
+      cidadeInput.addEventListener('keydown', function(e) {
+        const suggestions = suggestionsContainer.querySelectorAll('.autocomplete-suggestion');
+
+        switch(e.key) {
+          case 'ArrowDown':
+            e.preventDefault();
+            navigateSuggestions(1);
+            break;
+          case 'ArrowUp':
+            e.preventDefault();
+            navigateSuggestions(-1);
+            break;
+          case 'Enter':
+            e.preventDefault();
+            if (currentFocus >= 0 && suggestions[currentFocus]) {
+              const cityText = suggestions[currentFocus].textContent;
+              const city = cities.find(c => c.display === cityText);
+              if (city) selectCity(city);
+            }
+            break;
+          case 'Escape':
+            hideSuggestions();
+            break;
+        }
+      });
+
+      cidadeInput.addEventListener('blur', function() {
+        // Delay para permitir clique nas sugestões
+        setTimeout(() => {
+          hideSuggestions();
+        }, 200);
+      });
+
+      cidadeInput.addEventListener('focus', function() {
+        if (this.value.length >= 2) {
+          const suggestions = filterCities(this.value);
+          showSuggestions(suggestions);
+        }
+      });
+
+      // Fechar sugestões ao clicar fora
+      document.addEventListener('click', function(e) {
+        if (!cidadeInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+          hideSuggestions();
+        }
+      });
+    }
+
+      // Smooth scrolling for all hash links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = target.offsetTop - navbarHeight - 10;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+
+          // Close the mobile menu if it's open
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+            bsCollapse.hide();
+          }
+        });
+      });
+
+    // Form functionality
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    // Next step button functionality
+    document.querySelectorAll('.next-step').forEach(button => {
+      button.addEventListener('click', function() {
+        if (validateStep(currentStep)) {
+          document.getElementById(`step${currentStep}`).classList.remove('active');
+          currentStep++;
+          document.getElementById(`step${currentStep}`).classList.add('active');
+          updateProgressBar();
+        }
+      });
+    });
+
+    // Previous step button functionality
+    document.querySelectorAll('.prev-step').forEach(button => {
+      button.addEventListener('click', function() {
+        document.getElementById(`step${currentStep}`).classList.remove('active');
+        currentStep--;
+        document.getElementById(`step${currentStep}`).classList.add('active');
+        updateProgressBar();
+      });
+    });
+
+    // Update progress bar
+    function updateProgressBar() {
+      const progressSteps = document.querySelectorAll('.form-progress-step');
+
+      progressSteps.forEach((step, index) => {
+        if (index + 1 < currentStep) {
+          step.classList.add('completed');
+          step.classList.remove('active');
+        } else if (index + 1 === currentStep) {
+          step.classList.add('active');
+          step.classList.remove('completed');
+        } else {
+          step.classList.remove('active', 'completed');
+        }
+      });
+    }
+
+    // Validate each step
+    function validateStep(step) {
+      if (step === 1) {
+        // Validate admission type
+        const modalidade = document.getElementById('modalidade').value;
+        if (!modalidade) {
+          alert('Por favor, selecione uma forma de ingresso.');
+          return false;
+        }
+
+        // Validate specific fields based on admission type
+        if (modalidade === 'enem') {
+          return validateRequiredFields(['ano_enem', 'nota_enem']);
+        } else if (modalidade === 'transferencia') {
+          return validateRequiredFields(['instituicao_origem', 'curso_origem']);
+        } else if (modalidade === 'segunda-graduacao') {
+          return validateRequiredFields(['instituicao_anterior', 'curso_anterior', 'ano_conclusao']);
+        }
+
+        return true;
+      } else if (step === 2) {
+        // Validate personal data
+        const requiredFields = ['nome', 'cpf', 'email', 'telefone', 'nascimento', 'cidade'];
+        return validateRequiredFields(requiredFields);
+      } else if (step === 3) {
+        // Validate course selection
+        const curso = document.getElementById('curso').value;
+        if (!curso) {
+          alert('Por favor, selecione um curso.');
+          return false;
+        }
+
+        // Update confirmation page
+        updateConfirmationPage();
+        return true;
+      }
+
+      return true;
+    }
+
+    // Validate required fields
+    function validateRequiredFields(fields) {
+      let isValid = true;
+
+      fields.forEach(field => {
+        const element = document.getElementById(field);
+        if (element && !element.value.trim()) {
+          element.classList.add('is-invalid');
+          isValid = false;
+        } else if (element) {
+          element.classList.remove('is-invalid');
+        }
+      });
+
+      if (!isValid) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+      }
+
+      return isValid;
+    }
+
+    // Select admission type
+    function selectAdmissionType(element, type) {
+      // Remove selected class from all options
+      document.querySelectorAll('.form-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+
+      // Add selected class to clicked option
+      element.classList.add('selected');
+
+      // Set hidden input value
+      document.getElementById('modalidade').value = type;
+
+      // Hide all specific fields
+      document.getElementById('enem-fields').style.display = 'none';
+      document.getElementById('transferencia-fields').style.display = 'none';
+      document.getElementById('segunda-graduacao-fields').style.display = 'none';
+
+      // Show specific fields based on selected type
+      if (type === 'enem') {
+        document.getElementById('enem-fields').style.display = 'block';
+      } else if (type === 'transferencia') {
+        document.getElementById('transferencia-fields').style.display = 'block';
+      } else if (type === 'segunda-graduacao') {
+        document.getElementById('segunda-graduacao-fields').style.display = 'block';
+      }
+    }
+
+    // Set admission type from outside the form
+    function setAdmissionType(type) {
+      // Find the option element
+      const options = document.querySelectorAll('.form-option');
+      let targetOption = null;
+
+      options.forEach(option => {
+        if (option.querySelector('.form-option-title').textContent.toLowerCase().includes(type)) {
+          targetOption = option;
+        }
+      });
+
+      if (targetOption) {
+        // Scroll to form
+        const form = document.getElementById('vestibular-form');
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const formPosition = form.offsetTop - navbarHeight - 10;
+
+        window.scrollTo({
+          top: formPosition,
+          behavior: 'smooth'
+        });
+
+        // Go to step 2 and select the option
+        setTimeout(() => {
+          document.getElementById('step1').classList.remove('active');
+          document.getElementById('step2').classList.add('active');
+          currentStep = 2;
+          updateProgressBar();
+
+          selectAdmissionType(targetOption, type);
+        }, 1000);
+      }
+    }
+
+    // Select course
+    function selectCourse(element, course) {
+      // Remove selected class from all options
+      document.querySelectorAll('.form-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+
+      // Add selected class to clicked option
+      element.classList.add('selected');
+
+      // Set hidden input value
+      document.getElementById('curso').value = course;
+    }
+
+    // Update confirmation page
+    function updateConfirmationPage() {
+      // Personal data
+      document.getElementById('confirm-nome').textContent = document.getElementById('nome').value;
+      document.getElementById('confirm-cpf').textContent = document.getElementById('cpf').value;
+      document.getElementById('confirm-nascimento').textContent = formatDate(document.getElementById('nascimento').value);
+      document.getElementById('confirm-email').textContent = document.getElementById('email').value;
+      document.getElementById('confirm-telefone').textContent = document.getElementById('telefone').value;
+      document.getElementById('confirm-cidade').textContent = document.getElementById('cidade').value;
+
+      // Admission type
+      const modalidade = document.getElementById('modalidade').value;
+      let modalidadeText = '';
+      let extrasHtml = '';
+
+      if (modalidade === 'vestibular') {
+        modalidadeText = 'Vestibular Tradicional';
+      } else if (modalidade === 'enem') {
+        modalidadeText = 'Nota do ENEM';
+        extrasHtml = `
+          <p><strong>Ano do ENEM:</strong> ${document.getElementById('ano_enem').value}</p>
+          <p><strong>Nota:</strong> ${document.getElementById('nota_enem').value}</p>
+        `;
+      } else if (modalidade === 'transferencia') {
+        modalidadeText = 'Transferência Externa';
+        extrasHtml = `
+          <p><strong>Instituição de Origem:</strong> ${document.getElementById('instituicao_origem').value}</p>
+          <p><strong>Curso de Origem:</strong> ${document.getElementById('curso_origem').value}</p>
+        `;
+      } else if (modalidade === 'segunda-graduacao') {
+        modalidadeText = 'Segunda Graduação';
+        extrasHtml = `
+          <p><strong>Instituição Anterior:</strong> ${document.getElementById('instituicao_anterior').value}</p>
+          <p><strong>Curso Concluído:</strong> ${document.getElementById('curso_anterior').value}</p>
+          <p><strong>Ano de Conclusão:</strong> ${document.getElementById('ano_conclusao').value}</p>
+        `;
+      }
+
+      document.getElementById('confirm-modalidade').textContent = modalidadeText;
+      document.getElementById('confirm-extras').innerHTML = extrasHtml;
+
+      // Course
+      const curso = document.getElementById('curso').value;
+      let cursoText = '';
+
+      if (curso === 'recursos_humanos') {
+        cursoText = 'Tecnólogo em Recursos Humanos';
+      } else if (curso === 'gestao_publica') {
+        cursoText = 'Tecnólogo em Gestão Pública';
+      } else if (curso === 'marketing') {
+        cursoText = 'Tecnólogo em Marketing';
+      } else if (curso === 'logistica') {
+        cursoText = 'Tecnólogo em Logística';
+      } else if (curso === 'gestao_comercial') {
+        cursoText = 'Tecnólogo em Gestão Comercial';
+      }
+
+      document.getElementById('confirm-curso').textContent = cursoText;
+    }
+
+    // Format date
+    function formatDate(dateString) {
+      if (!dateString) return '';
+
+      const date = new Date(dateString);
+      return date.toLocaleDateString('pt-BR');
+    }
+
+    // Submit form
+    function submitForm() {
+      if (!document.getElementById('termos').checked) {
+        alert('Você precisa aceitar os termos e condições para prosseguir.');
+        return;
+      }
+
+      // Coletar dados do formulário
+      const formData = new FormData(document.getElementById('vestibular-form-element'));
+
+      // Mostrar indicador de carregamento
+      const loadingHtml = `
+        <div class="text-center p-4">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Carregando...</span>
+          </div>
+          <p class="mt-2">Processando sua inscrição...</p>
+        </div>
+      `;
+      document.getElementById(`step${currentStep}`).innerHTML = loadingHtml;
+
+      // Salvar dados do candidato no localStorage para uso na página da prova
+      localStorage.setItem('vestibular_nome', document.getElementById('nome').value);
+      localStorage.setItem('vestibular_cpf', document.getElementById('cpf').value);
+      localStorage.setItem('vestibular_email', document.getElementById('email').value);
+
+      // Enviar dados para o servidor
+      fetch('processar-inscricao.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Esconder loading e mostrar mensagem de sucesso
+        document.getElementById(`step${currentStep}`).classList.remove('active');
+        document.getElementById('success-step').classList.add('active');
+
+        // Se vestibular tradicional, mostrar botão para realizar a prova
+        const modalidade = document.getElementById('modalidade').value;
+        if (modalidade === 'vestibular') {
+          document.getElementById('realizar-prova-btn').style.display = 'block';
+
+          // Adicionar evento de clique para redirecionar para a página da prova
+          document.getElementById('realizar-prova-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'prova-vestibular.html';
+          });
+        } else {
+          document.getElementById('realizar-prova-btn').style.display = 'none';
+        }
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro ao processar sua inscrição. Por favor, tente novamente.');
+        // Voltar para o passo atual em caso de erro
+        document.getElementById(`step${currentStep}`).classList.add('active');
+      });
+    }
+  </script>
+</body>
+</html>

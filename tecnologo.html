@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curso Superior de Tecnologia em Gestão de Recursos Humanos EAD da FaCiencia. Formação completa em apenas 2 anos, reconhecida pelo MEC com nota 4.">
+    <title>Tecnólogo em Gestão de Recursos Humanos - FaCiencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9d359c;
+            --primary-dark: #7d287c;
+            --primary-light: #c965cc;
+            --secondary: #ffe925;
+            --dark: #333333;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --success: #28a745;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Base Styles */
+        body {
+            font-family: "Roboto", sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover, 
+        .btn-primary:focus {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(157, 53, 156, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background-color: #e6d020;
+            border-color: #e6d020;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 233, 37, 0.3);
+            color: var(--primary-dark);
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-primary:focus {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title.text-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: var(--primary-dark);
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .navbar-nav .nav-link:hover:before,
+        .navbar-nav .nav-link.active:before {
+            left: 15px;
+            right: 15px;
+            opacity: 1;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--secondary);
+        }
+
+        .dropdown-menu {
+            background-color: var(--primary-dark);
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 150px 0 100px;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 14px;
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: both;
+        }
+
+        .hero-rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: both;
+        }
+
+        .hero-rating .badge {
+            background-color: var(--success);
+            color: var(--white);
+            font-size: 14px;
+            padding: 6px 15px;
+            border-radius: 50px;
+            margin-left: 10px;
+        }
+
+        .hero-cta {
+            animation: fadeInUp 1s ease-out 0.7s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Quick Info Section */
+        .quick-info-section {
+            background-color: var(--white);
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .info-item i {
+            color: var(--primary);
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .info-item strong {
+            color: var(--dark);
+            margin-right: 5px;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background-color: var(--light);
+        }
+
+        .benefit-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 100%;
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(157, 53, 156, 0.1);
+            border-radius: 50%;
+            margin-bottom: 25px;
+            font-size: 35px;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Course Content Section */
+        .course-content-section {
+            background-color: var(--white);
+        }
+
+        .content-tabs .nav-link {
+            color: var(--gray);
+            font-weight: 600;
+            border: none;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .content-tabs .nav-link.active {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .content-tabs .nav-link:hover:not(.active) {
+            background-color: rgba(157, 53, 156, 0.1);
+            color: var(--primary);
+        }
+
+        .tab-content {
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-top: 20px;
+        }
+
+        .module-list h4 {
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .module-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .module-list ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .module-list ul li:before {
+            content: "\f105";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary);
+        }
+
+        .teacher-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .teacher-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 15px;
+            font-weight: 700;
+        }
+
+        .teacher-info h5 {
+            margin: 0 0 5px;
+            font-size: 16px;
+        }
+
+        .teacher-info p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Investment Section */
+        .investment-section {
+            background-color: rgba(157, 53, 156, 0.05);
+        }
+
+        .price-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .price-header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .price-header h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .price-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 10px;
+            text-decoration: line-through;
+        }
+
+        .discounted-price {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .price-feature {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .price-feature ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .price-feature ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .price-feature ul li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--success);
+        }
+
+        .price-footer {
+            padding: 0 30px 30px;
+            text-align: center;
+        }
+
+        .price-badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        /* Career Section */
+        .career-section {
+            background-color: var(--white);
+        }
+
+        .career-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .career-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(157, 53, 156, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .career-content h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .career-content p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--light);
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(157, 53, 156, 0.1);
+            font-family: 'Georgia', serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .testimonial-author div h5 {
+            margin: 0 0 5px;
+            font-size: 16px;
+        }
+
+        .testimonial-author div p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .accordion-button {
+            padding: 20px 25px;
+            font-weight: 600;
+            font-family: "Montserrat", sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: var(--primary);
+            background-color: rgba(157, 53, 156, 0.05);
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(157, 53, 156, 0.1);
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%239d359c'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        .accordion-body {
+            padding: 20px 25px;
+            font-size: 15px;
+            color: var(--gray);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('pattern.png');
+            opacity: 0.1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background-color: var(--white);
+            color: var(--primary);
+            font-weight: 700;
+            padding: 15px 40px;
+            font-size: 16px;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary);
+            color: var(--primary-dark);
+        }
+
+        /* Admission Process Section */
+        .admission-section {
+            background-color: var(--light);
+        }
+
+        .step-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(157, 53, 156, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .step-card h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .step-card p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+
+        .footer-logo img {
+            height: 80px;
+        }
+
+        .footer-info p {
+            margin-bottom: 10px;
+        }
+
+        .footer-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .footer h5 {
+            color: var(--white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer h5:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* Application Form */
+        .application-form {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+
+        .application-form.active {
+            right: 0;
+        }
+
+        .form-header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 20px;
+            position: relative;
+        }
+
+        .form-header h3 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .form-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .form-body {
+            padding: 30px;
+        }
+
+        .form-control {
+            height: 50px;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            height: 120px;
+            resize: none;
+        }
+
+        /* Floating Action Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-btn:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 5px 20px rgba(157, 53, 156, 0.4);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* Back-to-top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 100px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--gray);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--dark);
+            transform: translateY(-5px);
+            color: var(--white);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                background-color: var(--primary);
+                padding: 20px;
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+                margin-top: 10px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .info-item {
+                margin-bottom: 15px;
+            }
+            
+            .application-form {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 120px 0 80px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                margin-bottom: 30px;
+            }
+            
+            .benefit-card, .step-card, .price-card {
+                margin-bottom: 30px;
+            }
+            
+            .cta-title {
+                font-size: 28px;
+            }
+            
+            .cta-text {
+                font-size: 16px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                right: 20px;
+                bottom: 20px;
+            }
+            
+            .back-to-top {
+                right: 80px;
+                bottom: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content-tabs .nav-link {
+                margin-bottom: 10px;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="home">
+            <img src="logo.png" alt="FaCiencia">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="home">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Institucional</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="quem-somos">Quem Somos</a></li>
+                  <li><a class="dropdown-item" href="sede">Sede FaCiencia</a></li>
+                  <li><a class="dropdown-item" href="infra">Infraestrutura</a></li>
+                  <li><a class="dropdown-item" href="valida">Validador Diploma</a></li>
+                  <li><a class="dropdown-item" href="doc-institucional">Doc Institucional</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Cursos</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="tecnologo">Tecnólogo</a></li>
+                  <li><a class="dropdown-item" href="extensao">Extensão</a></li>
+                  <li><a class="dropdown-item" href="pos-graduacao">Pós-Graduação</a></li>
+                </ul>
+              </li>
+              <!-- Parceria -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+                  <li><a class="dropdown-item" href="polo-apoio">Polo de Apoio</a></li>
+                  <li><a class="dropdown-item" href="solicitacao">Solicitação do Polo</a></li>
+                </ul>
+              </li>
+              <!-- Biblioteca -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+                  <li><a class="dropdown-item" href="biblioteca">Biblioteca</a></li>
+                  <li><a class="dropdown-item" href="revista">Revista</a></li>
+                  <li><a class="dropdown-item" href="editora">Editora</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Acesso</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://ava.faciencia.edu.br/login/index.php">AVA</a></li>
+                  <li><a class="dropdown-item" href="https://lfmtecnologia.com/reinandus/loginaluno.php">Portal do Aluno</a></li>
+                </ul>
+              </li>
+              <!-- Atendimento -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+                  <li><a class="dropdown-item" href="ouvidoria">Ouvidoria</a></li>
+                  <li><a class="dropdown-item" href="contato">Contato</a></li>
+                  <li><a class="dropdown-item" href="enviar-documento">Enviar Documento</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="indicacao.php">Indique um Amigo</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-secondary ms-lg-3" href="https://wa.link/vfs21y" target="_blank">
+                  <i class="fas fa-user-plus me-2"></i>Inscreva-se
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <span class="hero-badge">Curso Superior de Tecnologia</span>
+            <h1>Gestão de Recursos Humanos</h1>
+            <p>Formação completa em apenas 2 anos, com foco no desenvolvimento de competências estratégicas para o mercado de trabalho.</p>
+            <div class="hero-rating">
+                <div class="stars">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="far fa-star text-warning"></i>
+                </div>
+                <span class="badge">Nota 4 no MEC</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#investment" class="btn btn-secondary me-3">Ver Investimento</a>
+                <a href="#" class="btn btn-outline-light" id="openFormBtn">Inscreva-se</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Section -->
+    <section class="quick-info-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span><strong>Duração:</strong> 24 meses</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-item">
+                        <i class="fas fa-laptop"></i>
+                        <span><strong>Modalidade:</strong> EAD</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span><strong>Titulação:</strong> Tecnólogo</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-item">
+                        <i class="fas fa-certificate"></i>
+                        <span><strong>Nota MEC:</strong> 4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Benefícios do Curso</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Formação Dinâmica</h3>
+                        <p>Conclua sua graduação em apenas 2 anos e entre rapidamente no mercado de trabalho com uma formação completa e reconhecida.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Mercado em Alta</h3>
+                        <p>Estude disciplinas atualizadas e alinhadas com as demandas do mercado, diretamente ligadas à sua área de atuação profissional.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Empregabilidade</h3>
+                        <p>Obtenha seu diploma com habilidades valorizadas pelo mercado, preparando-se para conquistar oportunidades em uma carreira promissora.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-laptop-house"></i>
+                        </div>
+                        <h3>Flexibilidade</h3>
+                        <p>Estude onde e quando quiser, com acesso a uma plataforma EAD moderna e interativa, conciliando estudos com outras atividades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content Section -->
+    <section class="course-content-section" id="content">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Conheça o Curso</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <ul class="nav nav-pills mb-4 content-tabs justify-content-center" id="courseTabs" role="tablist" data-aos="fade-up">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true">Sobre o Curso</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="modules-tab" data-bs-toggle="tab" data-bs-target="#modules" type="button" role="tab" aria-controls="modules" aria-selected="false">Módulos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="faculty-tab" data-bs-toggle="tab" data-bs-target="#faculty" type="button" role="tab" aria-controls="faculty" aria-selected="false">Corpo Docente</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="methodology-tab" data-bs-toggle="tab" data-bs-target="#methodology" type="button" role="tab" aria-controls="methodology" aria-selected="false">Metodologia</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="courseTabsContent" data-aos="fade-up">
+                        <!-- About Tab -->
+                        <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
+                            <h4>Sobre o Curso de Gestão de Recursos Humanos</h4>
+                            <p>O Curso Superior de Tecnologia em Gestão de Recursos Humanos da FaCiencia foi concebido para atender às transformações do mercado de trabalho, proporcionando uma formação completa e dinâmica na área de gestão de pessoas.</p>
+                            
+                            <p>Com foco na formação de profissionais estratégicos, o curso oferece uma base sólida de conhecimentos teóricos e práticos sobre os principais processos de RH: recrutamento e seleção, treinamento e desenvolvimento, gestão de desempenho, remuneração e benefícios, além de cultura organizacional e relações trabalhistas.</p>
+                            
+                            <p>A FaCiencia obteve <strong>nota 4 no MEC</strong>, um resultado excelente que comprova a qualidade do ensino oferecido. O curso é oficialmente reconhecido pelo Ministério da Educação, garantindo a validade do diploma em todo o território nacional.</p>
+                            
+                            <div class="mt-4">
+                                <h5>Diferenciais do Curso:</h5>
+                                <ul>
+                                    <li>Metodologia exclusiva FaCiencia</li>
+                                    <li>Parcelas com valor fixo durante todo o curso</li>
+                                    <li>Programas de mentoria e acompanhamento individualizado</li>
+                                    <li>Suporte ao bem-estar do aluno</li>
+                                    <li>Corpo docente qualificado com experiência de mercado</li>
+                                    <li>Conteúdo atualizado e alinhado às demandas do mercado</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="PPC2024.pdf" class="btn btn-primary" download>Download do PPC Completo</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Modules Tab -->
+                        <div class="tab-pane fade" id="modules" role="tabpanel" aria-labelledby="modules-tab">
+                            <h4>Matriz Curricular</h4>
+                            <p>O curso está estruturado em 8 módulos semestrais, com disciplinas estrategicamente organizadas para garantir o desenvolvimento progressivo das competências necessárias para o profissional de Recursos Humanos.</p>
+                            
+                            <div class="module-list">
+                                <h4>MÓDULO 01</h4>
+                                <ul>
+                                    <li>Recrutamento e Seleção</li>
+                                    <li>Comportamento Organizacional</li>
+                                    <li>Gestão de Talento</li>
+                                </ul>
+                                
+                                <h4>MÓDULO 02</h4>
+                                <ul>
+                                    <li>Liderança e Desenvolvimento de Equipes</li>
+                                    <li>Modelação de Cargos e Salários</li>
+                                    <li>Gestão da Inovação e Criatividade</li>
+                                </ul>
+                                
+                                <h4>MÓDULO 03</h4>
+                                <ul>
+                                    <li>Gestão de Desempenho e Desenvolvimento</li>
+                                    <li>Gestão de Carreira e Empregabilidade</li>
+                                    <li>Direito do Trabalho</li>
+                                </ul>
+                                
+                                <h4>MÓDULO 04</h4>
+                                <ul>
+                                    <li>Psicologia Geral e Social</li>
+                                    <li>Cultura e Clima Organizacional</li>
+                                    <li>Direito Previdenciário</li>
+                                </ul>
+                                
+                                <h4>MÓDULO 05</h4>
+                                <ul>
+                                    <li>Planejamento Estratégico em RH</li>
+                                    <li>Ética e Cidadania</li>
+                                    <li>Gestão de Projetos em Recursos Humanos</li>
+                                </ul>
+                                
+                                <h4>MÓDULO 06</h4>
+                                <ul>
+                                    <li>Gestão de Qualidade e Produtividade</li>
+                                    <li>Segurança do Trabalho e Saúde</li>
+                                    <li>Empreendedorismo e Novos Negócios</li>
+                                </ul>
+                                
+                                <h4>MÓDULO 07</h4>
+                                <ul>
+                                    <li>Jogos Aplicados à Aprendizagem</li>
+                                    <li>Rotinas e Práticas de Recursos Humanos</li>
+                                    <li>Optativa</li>
+                                </ul>
+                                
+                                <h4>MÓDULO 08</h4>
+                                <ul>
+                                    <li>Consultoria Empresarial</li>
+                                    <li>Liderança e Coaching</li>
+                                    <li>Responsabilidade Socioambiental</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <p><strong>Carga Horária Total:</strong> 1.632 horas</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Faculty Tab -->
+                        <div class="tab-pane fade" id="faculty" role="tabpanel" aria-labelledby="faculty-tab">
+                            <h4>Corpo Docente</h4>
+                            <p>O curso conta com professores especialistas, mestres e doutores com ampla experiência acadêmica e de mercado, garantindo uma formação teórica e prática de excelência.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="teacher-card">
+                                        <div class="teacher-photo">JV</div>
+                                        <div class="teacher-info">
+                                            <h5>Jane Vecki</h5>
+                                            <p>Mestre | Coordenadora do Curso</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="teacher-card">
+                                        <div class="teacher-photo">PS</div>
+                                        <div class="teacher-info">
+                                            <h5>Pedro Carlos Schenini</h5>
+                                            <p>Doutor</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="teacher-card">
+                                        <div class="teacher-photo">MA</div>
+                                        <div class="teacher-info">
+                                            <h5>Murilo Martins de Andrade</h5>
+                                            <p>Doutor</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="teacher-card">
+                                        <div class="teacher-photo">MK</div>
+                                        <div class="teacher-info">
+                                            <h5>Maria Angela Sant Anna Kafrouni</h5>
+                                            <p>Mestre</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="teacher-card">
+                                        <div class="teacher-photo">SP</div>
+                                        <div class="teacher-info">
+                                            <h5>Sergio Luiz Pirani</h5>
+                                            <p>Mestre</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="teacher-card">
+                                        <div class="teacher-photo">DG</div>
+                                        <div class="teacher-info">
+                                            <h5>Dennys Robson Girardi</h5>
+                                            <p>Mestre</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="teacher-card">
+                                        <div class="teacher-photo">FG</div>
+                                        <div class="teacher-info">
+                                            <h5>Filipe Eduardo Martins Guedes</h5>
+                                            <p>Mestre</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Methodology Tab -->
+                        <div class="tab-pane fade" id="methodology" role="tabpanel" aria-labelledby="methodology-tab">
+                            <h4>Metodologia de Ensino</h4>
+                            <p>A metodologia proposta pela Faculdade FaCiencia para a modalidade a distância se define como um conjunto de procedimentos didático-pedagógicos visando proporcionar uma experiência de aprendizagem completa e eficaz.</p>
+                            
+                            <div class="mt-4">
+                                <h5>Como funcionam as aulas:</h5>
+                                <ul>
+                                    <li><strong>Aulas gravadas (EAD):</strong> Conteúdos disponíveis 24h por dia na plataforma, permitindo que você estude no seu próprio ritmo</li>
+                                    <li><strong>Aulas ao vivo (REMOTO):</strong> Encontros síncronos para aprofundamento e discussão dos temas</li>
+                                    <li><strong>Avaliações presenciais:</strong> Realizadas obrigatoriamente nos Polos de Apoio da Faculdade FaCiencia</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h5>Avaliação de Aprendizagem:</h5>
+                                <ul>
+                                    <li>O processo de avaliação do desempenho acadêmico é previsto em calendário acadêmico</li>
+                                    <li>Avaliação realizada através de Atividades Online, Avaliação Presencial Obrigatória, Avaliação Substitutiva e, se necessário, Avaliação Especial</li>
+                                    <li>Para aprovação, o aluno precisa alcançar nota maior ou igual a 7 (sete) em cada disciplina</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="Metodologia de ensino Graduação FaCiencia[1].pdf" class="btn btn-primary" download>Download da Metodologia Completa</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="investment-section" id="investment">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Investimento</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <!-- Standard Plan -->
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="price-card">
+                                <div class="price-header">
+                                    <h3>Pacote FaCiencia</h3>
+                                </div>
+                                <div class="price-body">
+                                    <div class="price">R$ 300,00</div>
+                                    <div class="discounted-price">R$ 240,00</div>
+                                    <p>Mensalidade com desconto de pontualidade</p>
+                                    <div class="price-feature">
+                                        <ul>
+                                            <li>Desconto de pontualidade de 20%</li>
+                                            <li>24 parcelas mensais</li>
+                                            <li>Material didático digital incluso</li>
+                                            <li>Acesso completo à plataforma EAD</li>
+                                            <li>Suporte acadêmico</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="price-footer">
+                                    <a href="#" class="btn btn-primary" id="standardPlanBtn">Quero Este Plano</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Partnership Plan -->
+                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="price-card">
+                                <div class="price-header">
+                                    <h3>Bolsa Parcerias/Convênios</h3>
+                                </div>
+                                <div class="price-body">
+                                    <span class="price-badge">Economia de 50%</span>
+                                    <div class="price">R$ 300,00</div>
+                                    <div class="discounted-price">R$ 120,00</div>
+                                    <p>Mensalidade com desconto especial para conveniados</p>
+                                    <div class="price-feature">
+                                        <ul>
+                                            <li>Desconto especial de 60%</li>
+                                            <li>24 parcelas mensais</li>
+                                            <li>Material didático digital incluso</li>
+                                            <li>Acesso completo à plataforma EAD</li>
+                                            <li>Suporte acadêmico prioritário</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="price-footer">
+                                    <a href="#" class="btn btn-primary" id="partnershipPlanBtn">Quero Este Plano</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4" data-aos="fade-up">
+                        <p class="small text-muted">
+                            * Valores das mensalidades para alunos ingressantes a partir de março/2025.<br>
+                            ** Desconto nos valores das mensalidades para pagamento até a data de vencimento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Section -->
+    <section class="career-section" id="career">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Oportunidades de Carreira</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="career-item">
+                                <div class="career-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="career-content">
+                                    <h4>Analista de Recursos Humanos</h4>
+                                    <p>Responsável por conduzir os processos de recrutamento e seleção, desenvolvimento de pessoas, gestão de benefícios e outras funções gerais da área de RH.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="career-item">
+                                <div class="career-icon">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <div class="career-content">
+                                    <h4>Gestor de Departamento Pessoal</h4>
+                                    <p>Administra os processos legais e burocráticos relacionados à vida funcional dos colaboradores, como contratação, folha de pagamento e demissão.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="career-item">
+                                <div class="career-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="career-content">
+                                    <h4>Consultor de RH</h4>
+                                    <p>Presta serviços de consultoria para empresas em diversas áreas de recursos humanos, auxiliando na implementação de programas e políticas de gestão de pessoas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="career-item">
+                                <div class="career-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="career-content">
+                                    <h4>Especialista em T&D</h4>
+                                    <p>Responsável por planejar e executar programas de treinamento e desenvolvimento para os colaboradores, visando o crescimento profissional e organizacional.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                            <div class="career-item">
+                                <div class="career-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div class="career-content">
+                                    <h4>Analista de Cargos e Salários</h4>
+                                    <p>Desenvolve e administra políticas de remuneração, estrutura de cargos e planos de carreira, garantindo equilíbrio interno e competitividade externa.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                            <div class="career-item">
+                                <div class="career-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="career-content">
+                                    <h4>Coordenador de RH</h4>
+                                    <p>Gerencia equipes de recursos humanos e coordena as políticas e práticas de gestão de pessoas alinhadas aos objetivos estratégicos da organização.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Depoimentos de Alunos</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    "Enfrentei dificuldades pessoais, mas não desisti. Desde que comecei na FaCiencia, consegui estágios e experiências em RH. Fui promovido no meu trabalho e agradeço muito o apoio da faculdade!"
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-photo">B</div>
+                                    <div>
+                                        <h5>Brendon</h5>
+                                        <p>Aluno de Recursos Humanos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    "O curso de Recursos Humanos EAD me preparou de forma prática e objetiva. Consegui conciliar trabalho e estudos e já colho ótimos resultados na minha carreira!"
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-photo">M</div>
+                                    <div>
+                                        <h5>Maria Santos</h5>
+                                        <p>Aluna de Recursos Humanos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    "A FaCiencia superou minhas expectativas, oferecendo um ambiente virtual de aprendizado excelente e suporte constante dos professores."
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-photo">J</div>
+                                    <div>
+                                        <h5>João Silva</h5>
+                                        <p>Tecnólogo em Recursos Humanos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    "A metodologia EAD da FaCiencia me permitiu conciliar os estudos com minha rotina de trabalho. O conteúdo é atualizado e os professores são muito atenciosos."
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-photo">C</div>
+                                    <div>
+                                        <h5>Carla Dias</h5>
+                                        <p>Aluna de Recursos Humanos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Perguntas Frequentes</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="fade-up">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Como funciona o curso EAD?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    O curso EAD (Ensino a Distância) funciona através da nossa plataforma virtual de aprendizagem, onde você terá acesso a videoaulas, materiais de leitura, atividades interativas e fóruns de discussão. As aulas são disponibilizadas de acordo com o cronograma do curso, e você pode acessá-las no horário que for mais conveniente. Apenas as avaliações precisam ser realizadas presencialmente nos polos de apoio.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    O diploma do curso EAD tem a mesma validade de um curso presencial?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim! De acordo com a legislação brasileira, os diplomas de cursos EAD reconhecidos pelo MEC têm exatamente a mesma validade dos diplomas de cursos presenciais. O diploma da FaCiencia é reconhecido em todo o território nacional e não faz qualquer menção à modalidade do curso (presencial ou EAD).
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Quanto tempo dura o curso de Tecnólogo em Gestão de Recursos Humanos?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    O curso tem duração de 24 meses (2 anos), divididos em 8 módulos trimestrais. Esta é uma das grandes vantagens do curso de tecnólogo: você obtém uma formação de nível superior em metade do tempo de um bacharelado tradicional, podendo ingressar mais rapidamente no mercado de trabalho.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Como funciona o processo seletivo?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Temos duas modalidades de ingresso: o Processo Seletivo Tradicional, que consiste em uma prova online com 10 questões objetivas sobre temas da atualidade, ou o aproveitamento da nota do ENEM, onde o candidato deve ter obtido no mínimo 400 pontos e não ter zerado na redação. Ambas as formas são simples e acessíveis, garantindo que você possa iniciar seus estudos rapidamente.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Posso fazer pós-graduação com o diploma de tecnólogo?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim! O diploma de tecnólogo é de nível superior e habilita o egresso a cursar qualquer tipo de pós-graduação, incluindo especializações, MBA, mestrado e doutorado. O curso superior de tecnologia abre as mesmas portas acadêmicas que um bacharelado ou licenciatura.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process Section -->
+    <section class="admission-section" id="admission">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Processo de Inscrição</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                            <div class="step-card">
+                                <div class="step-number">1</div>
+                                <div class="step-icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <h4>Inscrição</h4>
+                                <p>Preencha o formulário de inscrição online com seus dados pessoais e escolha a forma de ingresso.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                            <div class="step-card">
+                                <div class="step-number">2</div>
+                                <div class="step-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h4>Processo Seletivo</h4>
+                                <p>Realize a prova online ou envie sua nota do ENEM para análise e aprovação.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                            <div class="step-card">
+                                <div class="step-number">3</div>
+                                <div class="step-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <h4>Documentação</h4>
+                                <p>Envie os documentos necessários para matrícula e assine o contrato de prestação de serviços.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                            <div class="step-card">
+                                <div class="step-number">4</div>
+                                <div class="step-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h4>Início das Aulas</h4>
+                                <p>Receba seu acesso à plataforma EAD e comece sua jornada acadêmica na FaCiencia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5" data-aos="fade-up">
+                        <a href="#" class="btn btn-primary btn-lg" id="startAdmissionBtn">Iniciar Processo de Inscrição</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2 class="cta-title">Transforme sua Carreira com a FaCiencia</h2>
+                <p class="cta-text">Junte-se aos milhares de alunos que escolheram a FaCiencia para sua formação superior. Diploma reconhecido pelo MEC, corpo docente qualificado e metodologia inovadora para impulsionar seu futuro profissional.</p>
+                <a href="#" class="btn cta-btn" id="ctaBtn">Inscreva-se Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="FaCiencia">
+                    </div>
+                    <div class="footer-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Rua Visconde de Nacar, 1510 – 10° Andar – Conj. 1003 – Centro – Curitiba/PR – 80.410-201</p>
+                        <p><i class="fas fa-phone"></i> (41) 9 9256-2500</p>
+                        <p><i class="fas fa-envelope"></i> contato@faciencia.edu.br</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h5>Institucional</h5>
+                    <ul class="footer-links">
+                        <li><a href="quem-somos">Quem Somos</a></li>
+                        <li><a href="sede">Sede FaCiencia</a></li>
+                        <li><a href="infra">Infraestrutura</a></li>
+                        <li><a href="doc-institucional">Documentos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h5>Cursos</h5>
+                    <ul class="footer-links">
+                        <li><a href="tecnologo">Tecnólogo</a></li>
+                        <li><a href="extensao">Extensão</a></li>
+                        <li><a href="pos-graduacao">Pós-Graduação</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h5>Links Rápidos</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://ava.faciencia.edu.br/">AVA</a></li>
+                        <li><a href="https://portal.faciencia.edu.br/">Portal do Aluno</a></li>
+                        <li><a href="biblioteca">Biblioteca</a></li>
+                        <li><a href="contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h5>Atendimento</h5>
+                    <ul class="footer-links">
+                        <li><a href="ouvidoria">Ouvidoria</a></li>
+                        <li><a href="contato">Contato</a></li>
+                        <li><a href="enviar-documento">Enviar Documento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <p>&copy; 2025 FaCiencia. Todos os direitos reservados.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="https://emec.mec.gov.br/emec/consulta-cadastro/detalhamento/d96957f455f6405d14c6542552b0f6eb/MjQ2Nzc=" target="_blank">
+                            <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/Mec-QRcode.png.webp" alt="QR Code MEC" height="60">
+                        </a>
+                        <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/ULTIMO-SELO.png.webp" alt="Selo MEC" height="60" class="ms-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Form -->
+    <div class="application-form" id="applicationForm">
+        <div class="form-header">
+            <h3>Inscreva-se</h3>
+            <button class="form-close" id="closeFormBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="form-body">
+            <form id="enrollmentForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Nome completo*" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="E-mail*" required>
+                </div>
+                <div class="mb-3">
+                    <input type="tel" class="form-control" placeholder="Telefone/WhatsApp*" required>
+                </div>
+                <div class="mb-3">
+                    <select class="form-control" required>
+                        <option value="" selected disabled>Forma de ingresso*</option>
+                        <option value="vestibular">Processo Seletivo Tradicional</option>
+                        <option value="enem">ENEM</option>
+                        <option value="transferencia">Transferência</option>
+                        <option value="segunda_graduacao">Segunda Graduação</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <select class="form-control" required>
+                        <option value="" selected disabled>Plano de pagamento*</option>
+                        <option value="standard">Pacote FaCiencia - R$ 240,00</option>
+                        <option value="partnership">Bolsa Parcerias/Convênios - R$ 120,00</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <textarea class="form-control" rows="4" placeholder="Alguma dúvida específica?"></textarea>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Enviar Inscrição</button>
+                </div>
+                <p class="text-center mt-3 small">Ao enviar, você concorda com nossa <a href="privacy">Política de Privacidade</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="floating-btn" id="whatsappBtn">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- Back-to-top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom Scripts -->
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar Scroll Effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+
+        // Application Form Toggle
+        const applicationForm = document.getElementById('applicationForm');
+        const openFormBtn = document.getElementById('openFormBtn');
+        const closeFormBtn = document.getElementById('closeFormBtn');
+        const startAdmissionBtn = document.getElementById('startAdmissionBtn');
+        const standardPlanBtn = document.getElementById('standardPlanBtn');
+        const partnershipPlanBtn = document.getElementById('partnershipPlanBtn');
+        const ctaBtn = document.getElementById('ctaBtn');
+        const enrollmentForm = document.getElementById('enrollmentForm');
+
+        openFormBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            applicationForm.classList.add('active');
+        });
+
+        closeFormBtn.addEventListener('click', function() {
+            applicationForm.classList.remove('active');
+        });
+
+        startAdmissionBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            applicationForm.classList.add('active');
+        });
+
+        standardPlanBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('select[name="plan"]').value = 'standard';
+            applicationForm.classList.add('active');
+        });
+
+        partnershipPlanBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('select[name="plan"]').value = 'partnership';
+            applicationForm.classList.add('active');
+        });
+
+        ctaBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            applicationForm.classList.add('active');
+        });
+
+        enrollmentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Inscrição enviada com sucesso! Em breve entraremos em contato.');
+            applicationForm.classList.remove('active');
+            enrollmentForm.reset();
+        });
+
+        // WhatsApp Button
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        
+        whatsappBtn.addEventListener('click', function() {
+            window.open('https://wa.link/vfs21y', '_blank');
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#' && 
+                    this.getAttribute('id') !== 'openFormBtn' && 
+                    this.getAttribute('id') !== 'standardPlanBtn' && 
+                    this.getAttribute('id') !== 'partnershipPlanBtn' && 
+                    this.getAttribute('id') !== 'startAdmissionBtn' && 
+                    this.getAttribute('id') !== 'ctaBtn') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - navbarHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

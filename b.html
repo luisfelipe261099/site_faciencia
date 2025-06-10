@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Biblioteca - FaCiencia</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<style>
+		/* Estilos Globais */
+		body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+		h2, p {
+		    font-family: 'Roboto', sans-serif;
+		}
+		
+		/* Navbar */
+		.navbar {
+		    background-color: #9d359c;
+		    padding: 10px 20px;
+		    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		}
+		
+		.navbar-brand img {
+		    height: 60px;
+		}
+		
+		.navbar-nav .nav-link {
+		    color: #ffffff;
+		    font-weight: bold;
+		    font-size: 16px;
+		    margin-right: 20px;
+		    transition: color 0.4s ease;
+		}
+		
+		.navbar-nav .nav-link:hover {
+		    color: #ffe925;
+		}
+		
+		.dropdown-menu {
+		    background-color: #9d359c;
+		    border: none;
+		    border-radius: 0;
+		}
+		
+		.dropdown-menu .dropdown-item {
+		    color: #ffffff;
+		    font-size: 16px;
+		    transition: background-color 0.3s ease;
+		}
+		
+		.dropdown-menu .dropdown-item:hover {
+		    background-color: #ffe925;
+		    color: #9d359c;
+		}
+		
+		/* Content Section */
+.content-section {
+    padding: 40px 0;
+    background-color: #ffffff;
+    flex: 1; /* Isso faz com que o conteúdo ocupe o espaço restante */
+}
+
+		
+		.content-section h2 {
+		    color: #9d359c;
+		    text-align: center;
+		    margin-bottom: 40px;
+		}
+		
+		.content-section .nav-tabs {
+		    border: none;
+		    justify-content: center;
+		}
+		
+		.content-section .nav-item {
+		    margin: 0 10px;
+		}
+		
+		.content-section .nav-link {
+		    color: #9d359c;
+		    font-weight: bold;
+		    border: none;
+		    border-radius: 0;
+		    transition: color 0.3s;
+		}
+		
+		.content-section .nav-link:hover {
+		    color: #fbff00;
+		}
+		
+		.content-section .tab-content {
+		    margin-top: 20px;
+		}
+		
+		.content-section .tab-pane {
+		    padding: 20px;
+		    background-color: #f9f9f9;
+		    border-radius: 5px;
+		}
+		
+		/* Footer */
+		/* Footer */
+.footer {
+    background-color: #9d359c;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: auto; /* Isso garante que o footer fique no rodapé */
+}
+		.footer img {
+		    max-height: 110px;
+		    margin: 0 35px;
+		}
+		
+		.footer .footer-contact {
+		    margin-top: 20px;
+		    font-size: 16px;
+		}
+		
+		.footer a {
+		    color: #ffe925;
+		    text-decoration: none;
+		    transition: color 0.3s ease;
+		}
+		
+		.footer a:hover {
+		    color: #fff;
+		}
+		
+		/* Botão Flutuante */
+		.floating-button {
+		    position: fixed;
+		    bottom: 30px;
+		    right: 30px;
+		    background-color: #9d359c;
+		    color: #ffffff;
+		    padding: 15px 25px;
+		    border-radius: 50px;
+		    text-decoration: none;
+		    font-size: 18px;
+		    font-weight: bold;
+		    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+		    transition: background-color 0.3s, transform 0.3s;
+		    z-index: 1000;
+		    display: flex;
+		    align-items: center;
+		    animation: pulse 2s infinite;
+		}
+		
+		.floating-button i {
+		    margin-right: 10px;
+		    font-size: 20px;
+		}
+		
+		.floating-button:hover {
+		    background-color: #c000ff;
+		    transform: scale(1.1);
+		    text-decoration: none;
+		    color: #ffffff;
+		}
+		
+		@keyframes pulse {
+		    0% {
+		        transform: scale(1);
+		    }
+		    50% {
+		        transform: scale(1.1);
+		    }
+		    100% {
+		        transform: scale(1);
+		    }
+		}
+		
+		@media (max-width: 576px) {
+		    .floating-button {
+		        padding: 10px 20px;
+		        font-size: 16px;
+		        bottom: 20px;
+		        right: 20px;
+		    }
+		
+		    .floating-button i {
+		        margin-right: 5px;
+		        font-size: 18px;
+		    }
+		}
+		.scrollable-list::-webkit-scrollbar {
+		    width: 8px;
+		}
+		
+		.scrollable-list::-webkit-scrollbar-thumb {
+		    background-color: #888;
+		    border-radius: 4px;
+		}
+		
+		.scrollable-list::-webkit-scrollbar-thumb:hover {
+		    background-color: #555;
+		}
+		.scrollable-list {
+		    max-height: 300px; /* Defina a altura máxima desejada */
+		    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+		    padding-right: 15px; /* Espaço para a barra de rolagem */
+		}
+		
+	</style>
+</head>
+
+<body>
+	 <!-- Header -->
+     <nav class="custom-navbar navbar navbar-expand-md navbar-dark" aria-label="Furni navigation bar">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="FaCiencia">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+                  aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="home">Home</a>
+              </li>
+              <!-- Institucional -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownInstitucional" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownInstitucional">
+                  <li><a class="dropdown-item" href="quem-somos">Quem Somos</a></li>
+                  <li><a class="dropdown-item" href="sede">Sede FaCiencia</a></li>
+				  <li><a class="dropdown-item" href="infra">Infraestrutura</a></li>
+                  <li><a class="dropdown-item" href="valida">Validador Diploma</a></li>
+                  <li><a class="dropdown-item" href="doc-institucional">Doc Institucional</a></li>
+                  <li><a class="dropdown-item" href="relatorios.html">Relatorio Autoavaliaçao</a></li>
+                </ul>
+              </li>
+              <!-- Cursos -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCursos" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
+                  <li><a class="dropdown-item" href="tecnologo">Tecnólogo</a></li>
+                  <li><a class="dropdown-item" href="extensao">Extensão</a></li>
+                  <li><a class="dropdown-item" href="pos-graduacao">Pós-Graduação</a></li>
+                </ul>
+              </li>
+              <!-- Parceria -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+                  <li><a class="dropdown-item" href="influenciadores">Influenciadores</a></li>
+                  <li><a class="dropdown-item" href="polo-apoio">Polo de Apoio</a></li>
+                  <li><a class="dropdown-item" href="solicitacao">Solicitação do Polo</a></li>
+                </ul>
+              </li>
+              <!-- Biblioteca -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+                  <li><a class="dropdown-item" href="biblioteca">Normas Biblioteca</a></li>
+                  <li><a class="dropdown-item" href="revista">Revista</a></li>
+                  <li><a class="dropdown-item" href="editora">Editora</a></li>
+                </ul>
+              </li>
+              <!-- Login -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Login</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="https://ava.faciencia.edu.br/login/index.php">Ava</a></li>
+                  <li><a class="dropdown-item" href="https://portal.faciencia.edu.br/usuarios/login">Portal</a></li>
+                </ul>
+              </li>
+              <!-- Atendimento -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+                  <li><a class="dropdown-item" href="ouvidoria">Ouvidoria</a></li>
+                  <li><a class="dropdown-item" href="contato">Contato</a></li>
+                  <li><a class="dropdown-item" href="enviar-documento">Enviar Documento</a></li>
+                </ul>
+              </li>
+        </div>
+      </nav>
+	<!-- Content Section -->
+	<div class="content-section">
+		<div class="container">
+			<h2>Biblioteca FaCiencia</h2>
+			<ul class="nav nav-tabs" id="libraryTabs" role="tablist">
+				<li class="nav-item" role="presentation">
+					<a class="nav-link active" id="consulta-tab" data-bs-toggle="tab" href="#consulta" role="tab" aria-controls="consulta" aria-selected="true">Consulta ao Acervo/Renovação</a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="normas-tab" data-bs-toggle="tab" href="#normas" role="tab" aria-controls="normas" aria-selected="false">Normas para Apresentação de Trabalho</a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="materiais-tab" data-bs-toggle="tab" href="#materiais" role="tab" aria-controls="materiais" aria-selected="false">Materiais On-line</a>
+				</li>
+                <li class="nav-item" role="presentation">
+					<a class="nav-link" id="sobre-tab" data-bs-toggle="tab" href="#sobre" role="tab" aria-controls="sobre" aria-selected="false">Sobre a Biblioteca</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="libraryTabsContent">
+				<div class="tab-pane fade show active" id="consulta" role="tabpanel" aria-labelledby="consulta-tab">
+					<p class="mt-4"> Nossa biblioteca é totalmente virtual, permitindo que todos os alunos acessem nosso acervo digital de forma fácil e conveniente. Através da plataforma, você pode consultar uma ampla variedade de materiais acadêmicos e realizar renovações de empréstimos conforme necessário. </p>
+					<div class="text-center mt-4">
+						<a href="https://bibliogratuita.curatoriaeditora.com.br/" target="_blank" class="btn btn-custom">Acessar Biblioteca Virtual</a>
+					</div>
+				</div>
+                <div class="tab-pane fade" id="sobre" role="tabpanel" aria-labelledby="sobre-tab">
+                    <h2>Normas da Biblioteca FaCiencia</h2>
+                    <div class="normas-container">
+                        <h4>1. Biblioteca Virtual Curatoria</h4>
+                        <p></p>
+                        <h4>2. Acesso ao Acervo Digital</h4>
+                        <p>Os alunos e professores têm acesso ao acervo digital da biblioteca através do portal online da FaCiencia, utilizando suas credenciais de login.</p>
+                        <h4>3. Suporte e Atendimento</h4>
+                        <p>Em caso de dúvidas ou necessidade de suporte, os usuários podem procurar atendimento pelo E-mail biblioteca@faciencia.edu.br ou pelo Whatsapp </p>
+                    </div>
+					<p>A Biblioteca Universitária desempenha um papel essencial no suporte às atividades acadêmicas, oferecendo recursos informacionais e serviços que atendem às necessidades de ensino, pesquisa e extensão da comunidade universitária. Além de disponibilizar um vasto acervo de livros, periódicos e materiais digitais, a biblioteca promove eventos culturais, palestras e workshops, visando à disseminação do conhecimento e ao incentivo à leitura. Com um ambiente acolhedor e infraestrutura moderna, buscamos proporcionar aos usuários espaços adequados para estudo individual e em grupo, bem como acesso a tecnologias que facilitam o aprendizado e a pesquisa. Nossa equipe está sempre pronta para auxiliar na busca por informações e no desenvolvimento de competências informacionais, contribuindo para a formação integral dos estudantes e para o avanço científico.
+
+                        Para mais informações sobre nossos serviços e horários de funcionamento, visite nosso site oficial ou entre em contato conosco.</p>
+					
+				</div>
+				<div class="tab-pane fade" id="normas" role="tabpanel" aria-labelledby="normas-tab">
+					<p>A FaCiencia adota um padrão específico para a apresentação de trabalhos acadêmicos, garantindo uniformidade e qualidade nas produções científicas. Seguir essas normas é fundamental para assegurar a coerência e o profissionalismo dos trabalhos apresentados.</p>
+					<a href="caminho/para/apresentacao_padrao.pdf" download="Apresentacao_Padrao_FaCiencia.pdf" class="btn btn-custom mt-3">Baixar Apresentação Padrão</a>
+				</div>
+				<div class="tab-pane fade" id="materiais" role="tabpanel" aria-labelledby="materiais-tab">
+					<p>Explore os seguintes portais de periódicos disponíveis para pesquisa:</p>
+					<div class="scrollable-list">
+						<ul>
+							<li><a href="http://acessolivre.capes.gov.br/" target="_blank">CAPES – Acesso Livre Textos Completos</a></li>
+							<li><a href="http://livre.cnen.gov.br/Inicial.asp" target="_blank">Livre – Portal para periódicos de livre acesso na Internet</a></li>
+							<li><a href="http://www.unifesp.br/dis/bibliotecas/index.php?pag=revistas.php" target="_blank">Revistas médicas de acesso gratuito</a></li>
+							<li><a href="http://www.scielo.org/php/index.php" target="_blank">SCIELO – Scientific Electronic Library Online</a></li>
+							<li><a href="http://www.ibict.br/secao.php?cat=SEER" target="_blank">Sistema Eletrônico de Editoração de Revistas</a></li>
+							<li><a href="http://www.gestaoerh.com.br" target="_blank">Gestão RH Online</a></li>
+							<li><a href="http://www.rhonline.pt" target="_blank">RHOnline</a></li>
+							<li><a href="http://profissionalenegocios.com.br" target="_blank">Revista Profissional & Negócios - A referência do RH</a></li>
+							<li><a href="http://www.revistamelhor.com.br" target="_blank">Revista Melhor Gestão de Pessoas</a></li>
+							<li><a href="http://www.rhportal.com.br/assinar.php" target="_blank">Revista RH Portal</a></li>
+							<li><a href="http://www.canalrh.com.br/revista/" target="_blank">Revista On-Line - Canal RH</a></li>
+							<li><a href="http://www.guiademidia.com.br/revistas/rh.htm" target="_blank">Revista de Recursos Humanos</a></li>
+							<li><a href="http://www.upf.br/biblioteca/index.php?option=com_content&view=article&id=89:gestao-de-recursos-humanos&catid=10:periodicos-on-line&Itemid=75" target="_blank">Gestão de Recursos Humanos - Universidade de Passo Fundo</a></li>
+							<li><a href="http://editorarevistas.mackenzie.br/index.php/RAM/index" target="_blank">Revista de Administração Mackenzie</a></li>
+							<li><a href="http://www.governet.com.br/revista.php?cod=4" target="_blank">Boletim de Recursos Humanos</a></li>
+							<li><a href="http://www.revistas.usp.br/cpst/index" target="_blank">Cadernos de Psicologia Social do Trabalho</a></li>
+							<li><a href="http://revistas.unifacs.br/index.php/rgb/index" target="_blank">Revista Gestão e Planejamento</a></li>
+							<li><a href="http://www.revista.epsjv.fiocruz.br/index.php?Area=Periodico" target="_blank">Revista Trabalho, Educação e Saúde</a></li>
+							<li><a href="http://pepsic.bvsalud.org/scielo.php?script=sci_serial&pid=1984-6657&lng=pt&nrm=iso" target="_blank">Revista Psicologia: Organizações e Trabalho</a></li>
+							<li><a href="http://www.scielo.br/scielo.php?script=sci_serial&pid=0034-7590&lng=pt&nrm=iso" target="_blank">Revista de Administração de Empresas – RAE</a></li>
+							<li><a href="http://www.anpad.org.br/periodicos/content/frame_base.php?revista=" target="_blank">Revista de Administração Contemporânea – RAC</a></li>
+							<li><a href="https://administradores.com.br/" target="_blank">Administradores.com</a></li>
+							<li><a href="https://revistas.unisinos.br/index.php/base" target="_blank">Base (Unisinos)</a></li>
+							<li><a href="https://repositorio.ipea.gov.br/handle/11058/12010" target="_blank">Boletim Mercado de Trabalho - Conjuntura e Análise</a></li>
+							<li><a href="https://periodicos.uem.br/ojs/index.php/CadAdm" target="_blank">Caderno de Administração</a></li>
+							<li><a href="https://seer.ufrgs.br/index.php/ConTexto/about" target="_blank">Contexto</a></li>
+							<li><a href="https://seer.ufrgs.br/index.php/ConTexto/about" target="_blank">Contextus</a></li>
+							<li><a href="https://revistas.unibh.br/dcjpg" target="_blank">E-Civitas</a></li>
+							<li><a href="https://revistas.unifacs.br/index.php/rgb/index" target="_blank">Gestão & Planejamento</a></li>
+							<li><a href="https://www.gestaoeproducao.com/" target="_blank">Gestão & Produção</a></li>
+							<li><a href="https://www.grupogestaorh.com.br/pt_br/publicacoes" target="_blank">Gestão RH</a></li>
+							<li><a href="https://www.scielo.br/j/rac/" target="_blank">RAC – Revista de Administração Contemporânea</a></li>
+							<li><a href="https://www.scielo.br/j/rbgn/" target="_blank">RBGN – Revista Brasileira de Gestão de Negócios</a></li>
+							<li><a href="https://www.revistas.usp.br/rege" target="_blank">REGE</a></li>
+							<li><a href="https://rbmaes.emnuvens.com.br/revista" target="_blank">Revista Brasileira de Meio Ambiente e Sustentabilidade</a></li>
+							<li><a href="http://rausp.usp.br/" target="_blank">Revista de Administração da USP</a></li>
+							<li><a href="https://editorarevistas.mackenzie.br/index.php/RAM" target="_blank">Revista de Administração Mackenzie</a></li>
+					</div>
+                    
+				</div>
+               
+				</div>
+                
+			</div>
+            
+	  <!-- Footer -->
+
+      
+    <!-- Botão Flutuante -->
+    <a href="https://wa.link/vfs21y" class="floating-button" target="_blank" aria-label="Matricular Agora">
+        <i class="fas fa-user-plus"></i> Inscreva-se Já
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <img src="logo.png" alt="FaCiencia" class="img-fluid mb-3">
+                <p>Rua Visconde de Nacar, 1510 – 10. Andar – Conj. 1003 – Centro – Curitiba/PR – 80.410-201</p>
+                <p>📞 (41) 9 9256-2500 | 📧 contato@faciencia.edu.br</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/Mec-QRcode.png.webp" alt="QR Code" class="img-fluid mb-2">
+                <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/ULTIMO-SELO.png.webp" alt="MEC Seal" class="img-fluid mb-2">
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

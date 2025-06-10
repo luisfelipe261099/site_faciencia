@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista - FaCiencia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #e4e4e4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #9D359C;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fbff00;
+        }
+
+        .dropdown-menu {
+            background-color: #9D359C;
+            border: none;
+            border-radius: 0;
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #fbff00;
+            color: #9D359C;
+        }
+
+        .content-section {
+            padding: 40px 0;
+            background-color: #ffffff;
+        }
+
+        .content-section h2 {
+            color: #9D359C;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .edition-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .edition-item {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .edition-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .edition-item h4 {
+            color: #9D359C;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .edition-item p {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+ /* ------------------------------------------------
+           Footer
+        -------------------------------------------------- */
+        .footer {
+          background-color: #9d359c;
+          color: white;
+          padding: 40px 0;
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+        }
+    
+        .footer img {
+          max-height: 100px;
+          margin: 0 25px;
+        }
+    
+        .footer .footer-logo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+    
+        .footer .footer-contact {
+          margin-top: 20px;
+          font-size: 14px;
+        }
+    
+        .footer a {
+          color: #ffe925;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+    
+        .footer a:hover {
+          color: #fff;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+       <nav class="custom-navbar navbar navbar-expand-md navbar-dark" aria-label="Furni navigation bar">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo.png" alt="FaCiencia"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+                aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsFurni">
+               <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home">Home</a>
+                    </li>
+                    <!-- Institucional -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownInstitucional" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownInstitucional">
+                            <li><a class="dropdown-item" href="quem-somos">Quem Somos</a></li>
+                            <li><a class="dropdown-item" href="sede">Sede FaCiencia</a></li>
+                            <li><a class="dropdown-item" href="infra">Infraestrutura</a></li>
+                            <li><a class="dropdown-item" href="valida">Validador Diploma</a></li>
+                            <li><a class="dropdown-item" href="doc-institucional">Doc Institucional</a></li>
+                            <li><a class="dropdown-item" href="relatorios">Relatorio Autoavaliaçao</a></li>
+                        </ul>
+                    </li>
+                    <!-- Cursos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCursos" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
+                            <li><a class="dropdown-item" href="tecnologo">Tecnólogo</a></li>
+                            <li><a class="dropdown-item" href="extensao">Extensão</a></li>
+                            <li><a class="dropdown-item" href="pos-graduacao">Pós-Graduação</a></li>
+                        </ul>
+                    </li>
+                    <!-- Parceria -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParceria" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Parceria</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownParceria">
+                            <li><a class="dropdown-item" href="influenciadores">Influenciadores</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Parceiros Comercial</a></li> -->
+                            <li><a class="dropdown-item" href="polo-apoio">Polo de Apoio</a></li>
+                            <li><a class="dropdown-item" href="solicitacao">Solicitação do Polo</a></li>
+                        </ul>
+                    </li>
+                    <!-- Biblioteca -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBiblioteca" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Biblioteca</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownBiblioteca">
+                            <li><a class="dropdown-item" href="biblioteca">Biblioteca</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Acervo Acadêmico</a></li> -->
+                            <li><a class="dropdown-item" href="revista">Revista</a></li>
+                            <li><a class="dropdown-item" href="editora">Editora</a></li> 
+                        </ul>
+                    </li>
+                    <!-- Atendimento -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtendimento" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Atendimento</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
+                            <li><a class="dropdown-item" href="ouvidoria">Ouvidoria</a></li>
+                            <li><a class="dropdown-item" href="contato">Contato</a></li>
+                            <li><a class="dropdown-item" href="enviar-documento">Enviar Documento</a></li>
+                        </ul>
+                    </li>
+                         <!-- login -->
+           <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownlogin"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+            Login
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownlogin">
+              <li><a class="dropdown-item" href="https://ava.faciencia.edu.br/">AVA</a></li>
+              <li><a class="dropdown-item" href="https://portal.faciencia.edu.br/">Portal</a></li>
+            </ul>
+          </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="content-section">
+        <div class="container">
+            <h2>Revista Ciência da Sabedoria</h2>
+
+            <div class="edition-list">
+                <div class="edition-item" data-bs-toggle="modal" data-bs-target="#modal1">
+                    <img src="https://revista.faciencia.com.br/public/journals/1/cover_issue_10_pt_BR.png" alt="Capa v. 4 n. 1 (2023)">
+                    <h4>v. 4 n. 1 (2023)</h4>
+                    <p>18 October 2023</p>
+                    <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+                </div>
+                <div class="edition-item" data-bs-toggle="modal" data-bs-target="#modal2">
+                    <img src="https://revista.faciencia.com.br/public/journals/1/cover_issue_9_pt_BR.jpg" alt="Capa v. 3 n. 2 (2022)">
+                    <h4>v. 3 n. 2 (2022)</h4>
+                    <p>14 April 2023</p>
+                    <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+                </div>
+                <div class="edition-item" data-bs-toggle="modal" data-bs-target="#modal3">
+                    <img src="https://revista.faciencia.com.br/public/journals/1/cover_issue_8_pt_BR.jpg" alt="Capa v. 3 n. 1 (2022)">
+                    <h4>v. 3 n. 1 (2022)</h4>
+                    <p>1 January 2022</p>
+                    <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+                </div>
+                <div class="edition-item" data-bs-toggle="modal" data-bs-target="#modal4">
+                    <img src="https://revista.faciencia.com.br/public/journals/1/cover_issue_7_pt_BR.jpg" alt="Capa v. 2 n. 2 (2021)">
+                    <h4>v. 2 n. 2 (2021)</h4>
+                    <p>1 July 2021</p>
+                    <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+                </div>
+                <div class="edition-item" data-bs-toggle="modal" data-bs-target="#modal5">
+                    <img src="https://revista.faciencia.com.br/public/journals/1/cover_issue_6_pt_BR.jpg" alt="Capa v. 2 n. 1 (2021)">
+                    <h4>v. 2 n. 1 (2021)</h4>
+                    <p>1 January 2021</p>
+                    <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+                </div>
+                <div class="edition-item" data-bs-toggle="modal" data-bs-target="#modal6">
+                    <img src="https://revista.faciencia.com.br/public/journals/1/cover_issue_3_pt_BR.jpg" alt="Capa v. 1 n. 2 (2020)">
+                    <h4>v. 1 n. 2 (2020)</h4>
+                    <p>1 July 2020</p>
+                    <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+                </div>
+                <div class="edition-item" data-bs-toggle="modal" data-bs-target="#modal7">
+                    <img src="https://revista.faciencia.com.br/public/journals/1/cover_issue_5_pt_BR.jpg" alt="Capa v. 1 n. 1 (2020)">
+                    <h4>v. 1 n. 1 (2020)</h4>
+                    <p>1 January 2020</p>
+                    <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+                </div>
+                <div class="edition-item" data-bs-toggle="modal" data-bs-target="#modal8">
+                    <img src="https://revista.faciencia.com.br/public/journals/1/cover_issue_11_pt_BR.jpg" alt="Template para os autores">
+                    <h4>Template para os autores</h4>
+                    <p>13 May 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- Modals -->
+ <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel1">v. 4 n. 1 (2023)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.download.com/v4n1" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modals -->
+ <div class="modal fade" id="modal2" tabindex="-2" aria-labelledby="modalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel2">v. 4 n. 1 (2023)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.download.com/v4n1" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modals -->
+ <div class="modal fade" id="modal3" tabindex="-3" aria-labelledby="modalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel3">v. 4 n. 1 (2023)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.download.com/v4n1" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modals -->
+ <div class="modal fade" id="modal4" tabindex="-4" aria-labelledby="modalLabel4" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel4">v. 4 n. 1 (2023)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.download.com/v4n1" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modals -->
+ <div class="modal fade" id="modal5" tabindex="-5" aria-labelledby="modalLabel5" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel5">v. 4 n. 1 (2023)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.download.com/v4n1" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modals -->
+ <div class="modal fade" id="modal6" tabindex="-6" aria-labelledby="modalLabel6" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel6">v. 4 n. 1 (2023)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.download.com/v4n1" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modals -->
+ <div class="modal fade" id="modal7" tabindex="-7" aria-labelledby="modalLabel7" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel7">v. 4 n. 1 (2023)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.download.com/v4n1" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Modals -->
+ <div class="modal fade" id="modal8" tabindex="-8" aria-labelledby="modalLabel8" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel8">v. 4 n. 1 (2023)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Revista Ciência da Sabedoria (RCS – FaCiencia)</p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.download.com/v4n1" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <!-- Logo Section -->
+                <div class="col-lg-3 col-md-6 text-center text-lg-start mb-3 mb-lg-0">
+                    <img src="logo.png" alt="FaCiencia" class="img-fluid">
+                </div>
+
+                <!-- Address Section -->
+               <div class="col-lg-5 col-md-6 text-center text-lg-start mb-3 mb-lg-0">
+                    <div class="footer-contact">
+                        <p>Rua Visconde de Nacar, 1510 – 10. Andar – Conj. 1003 – Centro – Curitiba/PR – 80.410-201</p>
+                        <p>📞 (41)9 9256-2500 | 📧 contato@faciencia.edu.br</p>
+                        <a href="https://www.google.com/maps/place/R.+Visconde+de+Nacar,+1510+-+Centro,+Curitiba+-+PR,+80410-201"
+                            target="_blank">
+                            Ver no Google Maps
+                        </a>
+                    </div>
+                </div>
+                <!-- QR Code and Seal Section -->
+                <div class="col-lg-4 col-md-12 text-center text-lg-end">
+                    <div class="footer-logos">
+                        <a href="https://emec.mec.gov.br/emec/consulta-cadastro/detalhamento/d96957f455f6405d14c6542552b0f6eb/MjQ2Nzc=" target="_blank">
+                            <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/Mec-QRcode.png.webp" alt="QR Code" class="img-fluid mb-2" />
+                          </a>
+                          
+                    <img src="https://faciencia.edu.br/antigo/wp-content/webp-express/webp-images/uploads/2023/11/ULTIMO-SELO.png.webp"
+                        alt="MEC Seal" class="img-fluid mb-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

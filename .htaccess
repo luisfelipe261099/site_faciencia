@@ -1,0 +1,96 @@
+RewriteEngine On
+
+# Remover extensão .html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
+
+# Vestibular
+RewriteRule ^vestibular$ vestibular.html [L]
+RewriteRule ^prova-vestibular$ prova-vestibular.html [L]
+
+# Livros da Editora - Redirecionamentos diretos para PDFs
+RewriteRule ^coletanea-frutos$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/CIENCIAS-CONTABEIS-V1.pdf [L]
+RewriteRule ^coletanea-universitaria-v1$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/CIENCIAS-CONTABEIS-V1.pdf [L]
+RewriteRule ^coletanea-universitaria-v2$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/CIENCIAS-CONTABEIS-V2.pdf [L]
+RewriteRule ^coletanea-universitaria-v3$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/CIENCIAS-CONTABEIS-V3.pdf [L]
+RewriteRule ^coletanea-universitaria-v4/?$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/10/Colecao-Ciencias-Contabeis-VOL-4-inteiro.pdf [L]
+RewriteRule ^educacao-intercultural$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/03/Ebook-Educacao-Intercultural-em-pauta.pdf [L]
+RewriteRule ^educacao-basica$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/03/Ebook-Educacao-Basica-em-pauta.pdf [L]
+RewriteRule ^ciencias-agrarias-v1$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/Ciencias-Agrarias-v1.pdf [L]
+RewriteRule ^agro-meio-ambiente-v2$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/03/CIENCIAS-AGRARIAS-2-ebook.pdf [L]
+RewriteRule ^pequena-princesa$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/A-PEQUENA-PRINCESA-DO-PANTANAL.pdf [L]
+RewriteRule ^pequena-princesa-pantanal$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/A-PEQUENA-PRINCESA-DO-PANTANAL.pdf [L]
+RewriteRule ^ideias-jovem$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/UM-CADERNO-PARA-O-JOVEM-DO-IF-GOIANO.pdf [L]
+RewriteRule ^caderno-ideias-if-goiano$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/UM-CADERNO-PARA-O-JOVEM-DO-IF-GOIANO.pdf [L]
+RewriteRule ^pequeno-professor-inhumas$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/O-PEQUENO-PROFESSOR-DE-INHUMAS.pdf [L]
+RewriteRule ^menino-inhumas-nao-lia$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/02/O-menino-de-Inhumas-que-nao-lia-o-mundo.pdf [L]
+RewriteRule ^menino-inhumas-aprendeu-ler$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/06/Ebook-O-menino-de-Inhumas-que-aprendeu-a-ler-o-mundo.pdf [L]
+
+# Redirecionamentos de URLs antigas da editora
+RewriteRule ^editora-faciencia-2/cdea-eip$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/03/Ebook-Educacao-Intercultural-em-pauta.pdf [L]
+RewriteRule ^editora-faciencia-2/cdeaebp/.*$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/03/Ebook-Educacao-Basica-em-pauta.pdf [L]
+RewriteRule ^editora-faciencia-2/cdeaebp/?$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/03/Ebook-Educacao-Basica-em-pauta.pdf [L]
+RewriteRule ^colecao-agro-v1$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/Ciencias-Agrarias-v1.pdf [L]
+RewriteRule ^colecao-universitaria-v2$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/03/CIENCIAS-AGRARIAS-2-ebook.pdf [L]
+RewriteRule ^cópia-um-caderno-as-ideias-de-um-jovem$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/01/O-PEQUENO-PROFESSOR-DE-INHUMAS.pdf [L]
+RewriteRule ^editora-faciencia/?$ editora.html [L]
+
+
+# Regras específicas redirecionamento
+RewriteRule ^antigo/wp-content/uploads/2024/10/Colecao-Ciencias-Contabeis-VOL-4-inteiro\.pdf$ https://faciencia.edu.br/antigo/wp-content/uploads/2024/10/Colecao-Ciencias-Contabeis-VOL-4-inteiro.pdf [R=301,L]
+RewriteRule ^_files/ugd/a4b32a_ed0aa4e106e641b0abe5e14cb693eec9.pdf$ https://836b7de6-49b8-48ae-a8c7-5d25e7c43c87.filesusr.com/ugd/a4b32a_ed0aa4e106e641b0abe5e14cb693eec9.pdf [L]
+RewriteRule ^_files/ugd/a4b32a_f891c4dae5c24ce9a2314c7b2703687f.pdf$ https://836b7de6-49b8-48ae-a8c7-5d25e7c43c87.filesusr.com/ugd/a4b32a_f891c4dae5c24ce9a2314c7b2703687f.pdf [L]
+RewriteRule ^_files/ugd/a4b32a_c7fb38a91e694b548877ed4eb057db71.pdf$ https://836b7de6-49b8-48ae-a8c7-5d25e7c43c87.filesusr.com/ugd/a4b32a_c7fb38a91e694b548877ed4eb057db71.pdf [L]
+RewriteRule ^_files/ugd/a4b32a_d7ede59700af469cab9fb703ce16d6ca.pdf$ https://836b7de6-49b8-48ae-a8c7-5d25e7c43c87.filesusr.com/ugd/a4b32a_d7ede59700af469cab9fb703ce16d6ca.pdf [L]
+RewriteRule ^_files/ugd/a4b32a_a3abc6099f724ffd861bfdca2a4de5aa.pdf$ https://836b7de6-49b8-48ae-a8c7-5d25e7c43c87.filesusr.com/ugd/a4b32a_a3abc6099f724ffd861bfdca2a4de5aa.pdf [L]
+RewriteRule ^_files/ugd/a4b32a_f73313533cb5405b9074462e5ea99bd3.pdf$ https://836b7de6-49b8-48ae-a8c7-5d25e7c43c87.filesusr.com/ugd/a4b32a_f73313533cb5405b9074462e5ea99bd3.pdf [L]
+RewriteRule ^_files/ugd/a4b32a_dd88cf6b50e148ad944e75088ad1ca36.pdf$ https://836b7de6-49b8-48ae-a8c7-5d25e7c43c87.filesusr.com/ugd/a4b32a_dd88cf6b50e148ad944e75088ad1ca36.pdf [L]
+RewriteRule ^_files/ugd/a4b32a_dd88cf6b50e148ad944e75088ad1ca36.pdf$ https://836b7de6-49b8-48ae-a8c7-5d25e7c43c87.filesusr.com/ugd/a4b32a_dd88cf6b50e148ad944e75088ad1ca36.pdf [L]
+RewriteRule ^_files/ugd/a4b32a_cf9f1b48db1c435abbe64de4773b3709.pdf$ https://836b7de6-49b8-48ae-a8c7-5d25e7c43c87.filesusr.com/ugd/a4b32a_cf9f1b48db1c435abbe64de4773b3709.pdf [L]
+
+
+
+
+
+
+
+# Institucional
+RewriteRule ^quem-somos$ about.html [L]
+RewriteRule ^sede$ sede.html [L]
+RewriteRule ^doc-institucional$ institucional.html [L]
+RewriteRule ^privacy-policy$ privacy-policy.html [L]
+RewriteRule ^politica-de-privacidade$ privacy-policy.html [L]
+RewriteRule ^editora$ editora.html [L]
+RewriteRule ^relatorios$ relatorios.html [L]
+RewriteRule ^envio-doc$ documento.php [L]
+RewriteRule ^valida$ https://validador.faciencia.edu.br/ [L]
+RewriteRule ^infra$ infra.html [L]
+RewriteRule ^verificar$ verificar.php [L,QSA]
+
+# Cursos
+RewriteRule ^tecnologo$ tecnologo.html [L]
+RewriteRule ^extensao$ extensao.html [L]
+RewriteRule ^pos-graduacao$ posgraducao.php [L]
+
+
+# Parceria
+RewriteRule ^influenciadores$ influenciadores.html [L]
+RewriteRule ^polo-apoio$ polos.html [L]
+RewriteRule ^convenios$ convenios.html [L]
+
+# Biblioteca
+RewriteRule ^biblioteca$ biblioteca.html [L]
+RewriteRule ^revista$ https://revista.faciencia.com.br/index.php/rcs/issue/archive [L]
+
+# Atendimento
+RewriteRule ^ouvidoria$ ouvidoria.html [L]
+RewriteRule ^contato$ contact.html [L]
+RewriteRule ^enviar-documento$ documento.php [L]
+
+# Login
+RewriteRule ^login$ https://portal.faciencia.edu.br/aluno/portal/login [L]
+RewriteRule ^home$ index.html [L]
+RewriteRule ^solicitacao$ solicitacao.html [L]
+
